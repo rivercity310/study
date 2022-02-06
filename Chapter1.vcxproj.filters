@@ -141,6 +141,30 @@
     <ClCompile Include="chap4_Ex5.cpp">
       <Filter>소스 파일\Chap4_Test</Filter>
     </ClCompile>
+    <ClCompile Include="chap4_Ex6.cpp">
+      <Filter>소스 파일\Chap4_Test</Filter>
+    </ClCompile>
+    <ClCompile Include="chap4_Ex7, 8.cpp">
+      <Filter>소스 파일\Chap4_Test</Filter>
+    </ClCompile>
+    <ClCompile Include="chap4_Ex9.cpp">
+      <Filter>소스 파일\Chap4_Test</Filter>
+    </ClCompile>
+    <ClCompile Include="chap4_Ex10.cpp">
+      <Filter>소스 파일\Chap4_Test</Filter>
+    </ClCompile>
+    <ClCompile Include="chap4_Ex11.cpp">
+      <Filter>소스 파일\Chap4_Test</Filter>
+    </ClCompile>
+    <ClCompile Include="chap4_Ex12.cpp">
+      <Filter>소스 파일\Chap4_Test</Filter>
+    </ClCompile>
+    <ClCompile Include="chap4_Ex13.cpp">
+      <Filter>소스 파일\Chap4_Test</Filter>
+    </ClCompile>
+    <ClCompile Include="chap4_Ex14.cpp">
+      <Filter>소스 파일\Chap4_Test</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Box.h">
@@ -162,6 +186,30 @@
       <Filter>헤더 파일\Chap5</Filter>
     </ClInclude>
     <ClInclude Include="Sample.h">
+      <Filter>헤더 파일\Chap5</Filter>
+    </ClInclude>
+    <ClInclude Include="Circle.h">
+      <Filter>헤더 파일\Chap5</Filter>
+    </ClInclude>
+    <ClInclude Include="Person.h">
+      <Filter>헤더 파일\Chap5</Filter>
+    </ClInclude>
+    <ClInclude Include="Family.h">
+      <Filter>헤더 파일\Chap5</Filter>
+    </ClInclude>
+    <ClInclude Include="CoffeeVendingMachine.h">
+      <Filter>헤더 파일\Chap5</Filter>
+    </ClInclude>
+    <ClInclude Include="Container.h">
+      <Filter>헤더 파일\Chap5</Filter>
+    </ClInclude>
+    <ClInclude Include="CircleManager.h">
+      <Filter>헤더 파일\Chap5</Filter>
+    </ClInclude>
+    <ClInclude Include="Histogram.h">
+      <Filter>헤더 파일\Chap5</Filter>
+    </ClInclude>
+    <ClInclude Include="GamblingGame.h">
       <Filter>헤더 파일\Chap5</Filter>
     </ClInclude>
   </ItemGroup>

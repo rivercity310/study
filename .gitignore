@@ -1,5 +1,6 @@
 ## 폴더 무시
 Debug/
+x64/
 
 ## 확장자 무시
 *.exe
@@ -10,3 +11,4 @@ Debug/
 *.tlog  
 *.vcxproj
 *.filters
+*.user

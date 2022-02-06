@@ -29,10 +29,18 @@
     <ClCompile Include="chap3_Ex5, 6, 7.cpp" />
     <ClCompile Include="chap3_Ex8.cpp" />
     <ClCompile Include="chap3_Ex9N.cpp" />
+    <ClCompile Include="chap4_Ex10.cpp" />
+    <ClCompile Include="chap4_Ex11.cpp" />
+    <ClCompile Include="chap4_Ex12.cpp" />
+    <ClCompile Include="chap4_Ex13.cpp" />
+    <ClCompile Include="chap4_Ex14.cpp" />
     <ClCompile Include="chap4_Ex2.cpp" />
     <ClCompile Include="chap4_Ex3.cpp" />
     <ClCompile Include="chap4_Ex4.cpp" />
     <ClCompile Include="chap4_Ex5.cpp" />
+    <ClCompile Include="chap4_Ex6.cpp" />
+    <ClCompile Include="chap4_Ex7, 8.cpp" />
+    <ClCompile Include="chap4_Ex9.cpp" />
     <ClCompile Include="cstringEx.cpp" />
     <ClCompile Include="delegateEx.cpp" />
     <ClCompile Include="dynamicMem.cpp" />
@@ -56,6 +64,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Calculator.h" />
+    <ClInclude Include="Circle.h" />
+    <ClInclude Include="CircleManager.h" />
+    <ClInclude Include="CoffeeVendingMachine.h" />
+    <ClInclude Include="Container.h" />
+    <ClInclude Include="Family.h" />
+    <ClInclude Include="GamblingGame.h" />
+    <ClInclude Include="Histogram.h" />
+    <ClInclude Include="Person.h" />
     <ClInclude Include="Sample.h" />
     <ClInclude Include="Test.h" />
     <ClInclude Include="Oval.h" />

@@ -6,7 +6,7 @@
 using namespace std;
 
 /*
-string 클래스를 이용하여 영문 한 줄을 입력받고 글자 하나만 랜덤하게 수정하여 출력하는 프로그램 작성
+Ex5: string 클래스를 이용하여 영문 한 줄을 입력받고 글자 하나만 랜덤하게 수정하여 출력하는 프로그램 작성
 */
 
 char randomAlphabet[26];
