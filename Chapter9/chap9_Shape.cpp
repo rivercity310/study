@@ -1,5 +1,6 @@
 #include <iostream>
 
+/*
 class Shape {
 	Shape* next;
 protected:
@@ -69,3 +70,4 @@ void chap9_Shape() {
 		p = q;
 	}
 }
+*/
