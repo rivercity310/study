@@ -1,55 +1,75 @@
 #include <iostream>
 
-template <class T> class MyStack {
-	int tos;
-	T* data;        // T 타입의 배열, 스택에 최대 100개의 원소 저장
+template <class T> class Stack {
+	T* data;
+	int tos, capacity;
 public:
-	MyStack();
-	~MyStack();
-	void push(T element);
-	bool pop(T& a);
+	Stack(int capacity = 100) { 
+		this->tos = 0;
+		this->capacity = capacity;
+		data = new T();
+	}
+
+	~Stack() { delete data; }
+
+	bool push(T d) {
+		if (tos <= this->capacity) {
+			*(data + tos) = d;
+			tos++;
+			return true;
+		}
+		else {
+			std::cout << "Stack Full!" << std::endl;
+			return false;
+		}
+	}
+
+	bool pop(T& retData) {
+		if (tos > 0) {
+			tos--;
+			retData = *(data + tos);
+			return true;
+		}
+		else {
+			std::cout << "Stack Empty!" << std::endl;
+			return false;
+		}
+	}
 };
 
-template <class T> MyStack<T>::MyStack() {
-	data = new T[100];
-	this->tos = 0;
-}
 
-template <class T> MyStack<T>::~MyStack() {
-	delete[] data;
-}
+void chap10_GenericStack() {
 
-template <class T> void MyStack<T>::push(T element) {
-	if (tos < 100) data[this->tos++] = element;
-	else std::cout << "Stack Full!" << std::endl;
-}
-
-template <class T> bool MyStack<T>::pop(T& a) {
-	if (tos > 0) {
-		a = data[--tos];
-		return true;
+	/*
+	Stack<int>* iPtr = new Stack<int>(10);
+	for (int i = 0; i < 10; i++) {
+		std::cout << i + 1 << ": ";
+		int data; std::cin >> data;
+		iPtr->push(data);
 	}
-	else
-		return false;
-	
+
+	for (int i = 0; i < 10; i++) {
+		int retData;
+		std::cout << i + 1 << ": ";
+		iPtr->pop(retData);
+		std::cout << retData << std::endl;
+	}
+	*/
+
+	Stack<double>* dPtr = new Stack<double>(5);
+	for (int i = 0; i < 5; i++) {
+		std::cout << i + 1 << ": ";
+		double data; std::cin >> data;
+		dPtr->push(data);
+	}
+
+	for (int i = 0; i < 5; i++) {
+		double retData;
+		std::cout << i + 1 << ": ";
+		dPtr->pop(retData);
+		std::cout << retData << std::endl;
+	}
 }
 
-void chap10_genericStack() {
-	MyStack<int> iStack;   // int 타입을 다루는 스택 객체 생성
-	MyStack<double> dStack; 
 
-	iStack.push(1);
-	iStack.push(2);
 
-	int a;
-	while (iStack.pop(a)) std::cout << a << " ";
-	std::cout << std::endl;
-
-	dStack.push(1.2);
-	dStack.push(1.3);
-	dStack.push(1.4);
-
-	double d;
-	while (dStack.pop(d)) std::cout << d << " ";
-	std::cout << std::endl;
-}
