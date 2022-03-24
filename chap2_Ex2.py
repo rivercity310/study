@@ -3,7 +3,6 @@
 # - x + 3y + 2z = 13
 # - 3x + y + 3z = 14
 
-from re import I
 import numpy as np
 
 # 행렬 A를 출려겨하는 함수
@@ -30,7 +29,7 @@ def gauss(A):
     for i in range(0, min(n, m)):
         # 1번째 열에서 절댓값이 최대인 성분의 행을 선택한다
         maxEl = abs(A[i, i])
-        maxRow = I
+        maxRow = 
         for k in range(i + 1, n):
             if abs(A[k, i]) > maxEl:
                 maxEl = abs(A[k, i])
