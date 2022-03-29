@@ -5,7 +5,7 @@
 
 import numpy as np
 
-# 행렬 A를 출려겨하는 함수
+# 행렬 A를 출력하는 함수
 
 
 def pprint(msg, A):
