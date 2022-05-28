@@ -1,46 +1,39 @@
 package Socket;
 
-import java.io.*;
-import java.net.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.Socket;
 
 public class ClientEx {
 	public static void main(String[] args) {
-		BufferedReader in = null;
-		BufferedWriter out = null;
-		Socket socket = null;
-		Scanner scanner = new Scanner(System.in);
-		
 		try {
-			socket = new Socket("localhost", 9999);  // 클라이언트 소켓 생성, 서버에 연결
-			in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-			out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+			Socket socket = new Socket("localhost", 9999);
+			System.out.println("Client on....");
 			
-			while (true) {
-				System.out.print("보내기 >> ");
-				String outputMessage = scanner.nextLine();
-				if (outputMessage.equals("bye")) {
-					out.write(outputMessage + "\n");
-					out.flush();
-					break;
-				}
+			// readLine() 함수 이용을 위해, BufferedReader 클래스 이용
+			BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+			PrintWriter out = new PrintWriter(socket.getOutputStream());
+			
+			String[] msgs = {"hello", "aloha", "bye"};
+			for (int i = 0; i < msgs.length; i++) {
+				// 서버로 메세지 전송
+				out.println(msgs[i]);
+				out.flush();         					// 출력 스트림 버퍼를 비움 -> 서버로 전송
 				
-				out.write(outputMessage + "\n");
-				out.flush();
-				
-				String inputMessage = in.readLine();
-				System.out.println("서버: " + inputMessage);
+				// 메세지 수신
+				String msg = in.readLine();
+				System.out.println(msg);
 			}
 			
-		} catch (IOException e) {
-			System.out.println(e.getMessage());
-		} finally {
-			try {
-				scanner.close();
-				if (socket != null) socket.close();
-			} catch (IOException e) {
-				System.out.println("서버와 채팅 중 오류가 발생하였습니다.");
-			}
+			in.close();
+			out.close();
+			socket.close();
+			System.out.println("Client Stopped");
+			
+		} catch (IOException ex) {
+			ex.printStackTrace();
 		}
 	}
 }

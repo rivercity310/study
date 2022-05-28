@@ -1,48 +1,44 @@
 package Socket;
 
-import java.io.*;
-import java.net.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.ServerSocket;
+import java.net.Socket;
 
 public class ServerEx {
 	public static void main(String[] args) {
-		BufferedReader in = null;
-		BufferedWriter out = null;
-		ServerSocket listener = null;
-		Socket socket = null;
-		Scanner scanner = new Scanner(System.in);
-		
 		try {
-			listener = new ServerSocket(9999);
-			System.out.println("연결 대기중....");
-			socket = listener.accept();
-			in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-			out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+			ServerSocket srvk = new ServerSocket(9999);
+			System.out.println("Server on...");
+			
+			Socket socket = srvk.accept();
+			// 클라이언트로부터 접속 시 아래 코드가 실행됩니다.
+			
+			// readLine() 함수 이용을 위해, BufferedReader 클래스 이용
+			BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+			PrintWriter out = new PrintWriter(socket.getOutputStream());
 			
 			while (true) {
-				String inputMessage = in.readLine();
-				if (inputMessage.equals("bye")) {
-					System.out.println("클라이언트에서 bye로 연결을 종료하였음");
-					break;
-				}
+				String msg = in.readLine();
+				System.out.println(msg);
 				
-				System.out.println("클라이언트: " + inputMessage);
-				System.out.print("보내기 >> ");
-				String outputMessage = scanner.nextLine();
-				out.write(outputMessage + "\n");
+				out.println("Server: Ack");
 				out.flush();
+				
+				if (msg.equals("bye")) break;
 			}
+
+			in.close();
+			out.close();
+			socket.close();
+			srvk.close();
 			
-		} catch (IOException e) {
-			System.out.println(e);
-		} finally {
-			try {
-				scanner.close();
-				socket.close();
-				listener.close();
-			} catch (IOException e) {
-				System.out.println("클라이언트와 채팅 중 오류가 발생하였습니다.");
-			}
+			System.out.println("Server Stopped");
+			
+		} catch(IOException err) {
+			err.printStackTrace();
 		}
 	}
 }
