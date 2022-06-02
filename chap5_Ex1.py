@@ -38,15 +38,19 @@ if __name__ == "__main__":
                   [-2, 1, -3, -1, 5], [1, -5, 1, 0, 5]])
     print("<행렬 A>\n", A)
     print("det(A) = ", determinant(A))
+    print("A = {0:.2f}".format(np.linalg.det(A)))
 
     print()
 
     B = np.array([[1, 3], [2, 4]])
     print("<행렬 B>\n", B)
     print("det(B) = ", determinant(B))
+    print("B = {0:.2f}".format(np.linalg.det(B)))
 
     print()
 
     C = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
     print("<행렬 C>\n", C)
     print("det(C) = ", determinant(C))
+
+    print("C = {0:.2f}".format(np.linalg.det(C)))
