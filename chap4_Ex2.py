@@ -71,15 +71,16 @@ def LUSolver(A, b):
     return x
 
 
-A = np.array([[5, 3, 2, 1], [6, 2, 4, 5], [7, 4, 1, 3], [4, 3, 5, 2]])
-b = np.array([[4], [2], [5], [1]])
+if __name__ == "__main__":
+    A = np.array([[5, 3, 2, 1], [6, 2, 4, 5], [7, 4, 1, 3], [4, 3, 5, 2]])
+    b = np.array([[4], [2], [5], [1]])
 
-# 행렬 A의 LU 분해
-L, U = LU(A)
-pprint("A", A)
-pprint("L", L)
-pprint("U", U)
+    # 행렬 A의 LU 분해
+    L, U = LU(A)
+    pprint("A", A)
+    pprint("L", L)
+    pprint("U", U)
 
-# LU 분해를 이용한 Ax = b의 해 구하기
-x = LUSolver(A, b)
-pprint("x", x)
+    # LU 분해를 이용한 Ax = b의 해 구하기
+    x = LUSolver(A, b)
+    pprint("x", x)

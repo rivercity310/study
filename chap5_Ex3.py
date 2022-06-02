@@ -5,6 +5,18 @@
 import numpy as np
 
 
+def pprint(msg, A):
+    print("--- ", msg, " ---")
+    (n, m) = A.shape
+    print("{} x {}".format(n, m))
+    for i in range(0, n):
+        line = ""
+        for j in range(0, m):
+            line += "{0:.2f}".format(A[i, j]) + "\t"
+        print(line)
+    print("")
+
+
 # 크래머 공식을 이용한 연립선형방정식 Ax = b 풀이
 # 행렬 A의 i열을 b로 대체한 행렬을 M이라 할 때
 # x_i = det(M_i) / det(A)
@@ -29,6 +41,6 @@ if __name__ == "__main__":
     b = np.array([[-3], [-32], [-47], [49]])
 
     x = solveByCramer(A, b)
-    print("A\n", A)
-    print("b\n", b)
-    print("x^T\n", x)
+    pprint("A", A)
+    pprint("b", b)
+    print("x", x)
