@@ -28,8 +28,8 @@ def inverseByAdjointMatrix(A):
     (n, m) = A.shape
     adjA = np.zeros((n, m))
 
-    for i in range(0, n):
-        for j in range(0, m):
+    for i in range(n):
+        for j in range(m):
             adjA[j, i] = cofactor(A, i, j)
 
     print("수반행렬 adj(A)")

@@ -1,4 +1,5 @@
 import random
+import time
 
 '''
 두개 맞으면 200점, 세개 맞으면 300점, 모두 다르면 -100점
@@ -46,3 +47,5 @@ def exchange_point(point):
 
 if __name__ == "__main__":
     slot_machine()
+    time.sleep(1)
+    print("sleep!")
