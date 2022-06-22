@@ -25,4 +25,6 @@ void std_iterator_ex1();
 void chap1_std_list();
 void chap1_std_list2();
 
+void chap1_std_deque();
+
 #endif
