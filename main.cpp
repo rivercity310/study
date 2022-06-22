@@ -1,6 +1,5 @@
 #include "test.h"
 
 int main() {
-	chap1_forward_list3();
-
+	chap1_std_list2();
 }
