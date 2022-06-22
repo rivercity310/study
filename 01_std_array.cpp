@@ -27,6 +27,8 @@ void chap1_array() {
 	std::array<int, 4> arr2 = { 1, 2, 3, 4 };
 	std::cout << "arr2의 모든 원소: ";
 	for (int i = 0; i < arr2.size(); i++) std::cout << arr2[i] << " ";
+	for (auto element : arr2) std::cout << element << " ";
+	for (auto it = arr2.begin(); it != arr2.end(); it++) std::cout << *it << " ";
 	std::cout << std::endl;
 
 
@@ -39,7 +41,7 @@ void chap1_array() {
 		std::cout << arr3.at(4) << std::endl;
 	}
 	catch (const std::out_of_range& ex) {
-		std::cerr << ex.what() << std::endl;
+		std::cerr << ex.what() << std::endl;       // std::cerr : 에러 출력 관련 -> C의 stdout과 stderr이 있듯이
 	}
 
 

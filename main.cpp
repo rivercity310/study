@@ -1,5 +1,6 @@
 #include "test.h"
 
 int main() {
-	std_array_ex1();
+	chap1_forward_list3();
+
 }
