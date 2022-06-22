@@ -1,6 +1,12 @@
 #ifndef TEST_H
 #define TEST_H
 
+// Ex
+void friendEx();
+void copy_constructor();
+void operator_overloading();
+
+
 // Chapter01
 void chap1_array();
 void std_array_ex1();
