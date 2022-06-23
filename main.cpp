@@ -1,5 +1,6 @@
 #include "chapter2.h"
+#include "Ex.h"
 
 int main() {
-	chap2_adj_list_graph();
+	manipulator_ex();
 }
