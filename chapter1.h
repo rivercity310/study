@@ -1,12 +1,4 @@
-#ifndef TEST_H
-#define TEST_H
-
-// Ex
-void friendEx();
-void copy_constructor();
-void operator_overloading();
-
-
+#pragma once
 // Chapter01
 void chap1_array();
 void std_array_ex1();
@@ -26,5 +18,5 @@ void chap1_std_list();
 void chap1_std_list2();
 
 void chap1_std_deque();
+void chap1_std_queue();
 
-#endif
