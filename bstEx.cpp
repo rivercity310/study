@@ -1,7 +1,7 @@
 #include <iostream>
-using namespace std;
+using namespace std;;
 
-struct bst {
+class bst_ex {
 private:
 	struct node {
 		int data;
@@ -92,6 +92,10 @@ private:
 	}
 
 public:
+	bst_ex(int val) {
+		root = new node{ val, NULL, NULL };
+	}
+
 	node* find(int value) {
 		return find_impl(root, value);
 	}
@@ -108,10 +112,18 @@ public:
 	void deleteValue(int value) {
 		root = delete_impl(root, value);
 	}
+
+	void inorder(node* start) {
+		if (!start) return;
+
+		inorder(start->left);
+		std::cout << start->data << " ";
+		inorder(start->right);
+	}
 };
 
-void chap2_BST() {
-	bst tree;
+void bstEX() {
+	bst_ex tree(20);
 	tree.insert(12);
 	tree.insert(10);
 	tree.insert(20);
