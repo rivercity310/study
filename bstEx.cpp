@@ -133,6 +133,13 @@ void bstEX() {
 	tree.insert(28);
 	tree.insert(4);
 	tree.insert(2);
+	tree.insert(20);
+	tree.insert(8);
+	tree.insert(11);
+	tree.insert(15);
+	tree.insert(28);
+	tree.insert(4);
+	tree.insert(2);
 
 	cout << "중위 순회: ";
 	tree.inorder();      // BST에서 중위 순회는 모든 원소를 오름차순으로 출력한다
