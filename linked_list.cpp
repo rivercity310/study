@@ -53,22 +53,22 @@ public:
 			node* prv = head;
 			while (prv->next->data != val)
 				prv = prv->next;
-			
+
 			node* tmp = prv->next->next;
-			if (!tmp) cout << "NULL" << endl;
-			else cout << tmp->data << " 선택" << endl;
 
 			if (!tmp) {
-				delete prv->next;
-				prv->next = tmp;
-
-				tail = tmp;
-			}
-			// 마지막 노드를 제거하는 경우
-			else {
-				cout << "Last Node Del" << endl;
-				delete tail;
+				cout << "NULL" << endl;
 				tail = prv;
+				delete tail->next;
+
+				tail->next = NULL;
+			}
+			else {
+				cout << tmp->data << " 선택" << endl;
+				tail = tmp;
+				delete prv->next;
+
+				prv->next = tmp;
 			}
 		}
 	}
