@@ -1,5 +1,5 @@
 #include "Ex.h"
 
 int main() {
-	bstEX();
+	ll_ex();
 }
