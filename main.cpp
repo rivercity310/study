@@ -1,5 +1,6 @@
-#include "Ex.h"
+#include "chapter3.h"
+
 
 int main() {
-	ll_ex();
+	cuckoo_hashing_ex();
 }
