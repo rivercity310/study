@@ -107,13 +107,15 @@ struct adj_list_graph {
 		int n1 = static_cast<int>(c1);
 		int n2 = static_cast<int>(c2);
 
-		remove_if(data[n1].begin(), data[n1].end(), [n2](const auto& pair) {
+		auto it = remove_if(data[n1].begin(), data[n1].end(), [n2](const auto& pair) {
 			return pair.first == n2;
 			});
+		data[n1].erase(it, data[n1].end());
 
-		remove_if(data[n2].begin(), data[n2].end(), [n1](const auto& pair) {
+		it = remove_if(data[n2].begin(), data[n2].end(), [n1](const auto& pair) {
 			return pair.first == n1;
 			});
+		data[n2].erase(it, data[n2].end());
 	}
 
 	void prt_graph() {

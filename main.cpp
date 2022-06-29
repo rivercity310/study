@@ -1,5 +1,6 @@
 #include "chapter3.h"
+using namespace std;
 
 int main() {
-	blm_ft();
+	bm_ft();
 }
