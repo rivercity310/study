@@ -23,7 +23,7 @@ public:
 	}
 
 	void lookup(int key) {
-		auto rst = data[hash(0, key)] & data[hash(1, key)] & data[hash(2, key)];
+		bool rst = (bool)(data[hash(0, key)] & data[hash(1, key)] & data[hash(2, key)]);
 
 		if (rst) cout << key << ": 있을 수 있음" << endl;
 		else cout << key << ": 절대 없음" << endl;

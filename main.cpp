@@ -1,6 +1,5 @@
-#include "chapter3.h"
-using namespace std;
+#include "chapter4.h"
 
 int main() {
-	bm_ft();
+	sch_test();
 }
