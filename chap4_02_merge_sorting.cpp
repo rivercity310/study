@@ -58,15 +58,14 @@ void print_template_vt(vector<T>& arr) {
 void merged_sort_test() {
 	random_device rd;
 	mt19937 rand(rd());
-
 	uniform_int_distribution<mt19937::result_type> uniform_dist(1, 1000);
-	
+
 	vector<int> v1;
 	for (int i = 0; i < 100; i++)
 		v1.emplace_back(uniform_dist(rand));
 
 	cout << "Á¤·Ä Àü º¤ÅÍ" << endl;
-	print_template_vt(v1);
+	print_template_vt(v1);	
 	cout << "\n\n" << endl;
 
 	vector<int> s1 = merge_sort(v1);
