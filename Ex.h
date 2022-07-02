@@ -15,6 +15,6 @@ void operator_overloading2();
 void grp_ex();
 void tr_ex();
 void bstEX();
-void bstEx2();
 
 void ll_ex();
+void rd_int_chrono();

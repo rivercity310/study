@@ -1,5 +1,5 @@
-#include "chapter4.h"
+#include "Ex.h"
 
 int main() {
-	q_sort_test();
+	rd_int_chrono();
 }

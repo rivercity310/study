@@ -92,6 +92,7 @@ void sch_test() {
 			else 
 				cout << key << ": 존재하지 않습니다!" << endl;
 			break;
+
 		case 2:
 			if (bin_sch(v, key, idx)) {
 				cout << key << ": " << idx << "번째에 존재!" << endl;
