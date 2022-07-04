@@ -1,6 +1,8 @@
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
+/*
 class linked_list {
 private:
 	struct node {
@@ -92,13 +94,85 @@ public:
 		cout << endl;
 	}
 };
+*/
+
+template <typename T>
+class linked_list {
+private:
+	struct node {
+		T data;
+		node* next;
+	};
+
+	node* head = nullptr;
+	node* tail = nullptr;
+
+public:
+	linked_list(T val) {
+		head = new node{ val, NULL };
+		tail = head;
+	}
+
+	~linked_list() {
+		while (head != NULL) {
+			cout << head->data << " 삭제" << endl;
+			node* tmp = head->next;
+			delete head;
+
+			head = tmp;
+		}
+	}
+
+	void add_data(int val) {
+		if (!tail->next) {
+			tail->next = new node{ val, NULL };
+			tail = tail->next;
+		}
+	}
+
+	void del_data(int val) {
+		node* p = head;
+
+		// 첫번째 노드를 제거하는 경우
+		if (p->data == val) {
+			node* tmp = p->next;
+			delete p;
+
+			head = tmp;
+		}
+		else {
+			while (p->next->data == val) p = p->next;
+			delete p->next;
+			
+			p->next = p->next->next;
+		}
+	}
+
+	node* find_data(int val) {
+		node* p = head;
+		while (true) {
+			if (p->data == val) return p;
+			p = p->next;
+		}
+
+		return NULL;
+	}
+
+	void prt_data() {
+		node* p = head;
+		while (p != NULL) {
+			cout << setw(5) << left << p->data;
+			p = p->next;
+		}
+	}
+};
 
 void ll_ex() {
 	int n;
 	cout << "초깃값: ";
 	cin >> n;
 	
-	auto p = new linked_list(n);
+	auto p = new linked_list<int>(n);
 
 	while (true) {
 		int sel;
@@ -128,4 +202,6 @@ void ll_ex() {
 		p->prt_data();
 		cout << "\n\n" << endl;
 	}
+
+	delete p;
 }

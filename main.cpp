@@ -1,5 +1,5 @@
-#include "Ex.h"
+#include "chapter5.h"
 
 int main() {
-	rd_int_chrono();
+	fractinal_knapsack_problem_test();
 }
