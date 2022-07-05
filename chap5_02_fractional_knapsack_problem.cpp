@@ -16,6 +16,7 @@ struct Object {
 		this->value_per_unit_weight = value / weight;
 	}
 
+	// sort()에서 사용
 	inline bool operator<(const Object& obj) {
 		return this->value_per_unit_weight < obj.value_per_unit_weight;
 	}
