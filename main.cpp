@@ -1,5 +1,5 @@
-#include "chapter5.h"
+#include "chapter6.h"
 
 int main() {
-	mst_test();
+	dijkstra_test();
 }

@@ -124,6 +124,8 @@ void chap2_tree_test() {
 
 	root->levelOrder(root->getRoot());
 	cout << "\n" << endl;
+
+	delete root;
 }
 
 /*
