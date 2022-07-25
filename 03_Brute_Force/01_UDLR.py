@@ -1,4 +1,3 @@
-'''
 # 책 풀이
 n = int(input())
 x, y = 1, 1
@@ -27,9 +26,9 @@ for plan in plans:
     x, y = nx, ny
 
 print(x, y)
+
+
 '''
-
-
 import sys
 
 N = int(sys.stdin.readline().rstrip())
@@ -57,3 +56,4 @@ for ch in move:
 direction[0] = N - direction[0] + 1
 direction[1] = N - direction[1] + 1
 print(direction)
+'''
