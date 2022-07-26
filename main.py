@@ -1,45 +1,31 @@
-from collections import deque
+N, M = map(int, input().split())
 
-visited = [False] * 9
-
-
-def bfs(graph, start, visited):
-    queue = deque([start])
-    visited[start] = True
-
-    while queue:
-        v = queue.popleft()
-        print(v, end=" ")
-
-        for i in graph[v]:
-            if not visited[i]:
-                queue.append(i)
-                visited[i] = True
+graph = []
+for i in range(N):
+    graph.append(list(map(int, input())))
 
 
-visited2 = [False] * 9
+def dfs(x, y):
+    if x <= -1 or x >= N or y <= -1 or y >= M:
+        return False
+
+    if graph[x][y] == 0:
+        graph[x][y] = 1
+
+        dfs(x - 1, y)
+        dfs(x, y - 1)
+        dfs(x + 1, y)
+        dfs(x, y + 1)
+
+        return True
+
+    return False
 
 
-def dfs(graph, start, visited2):
-    visited2[start] = True
-    print(start, end=" ")
+cnt = 0
+for i in range(N):
+    for j in range(M):
+        if dfs(i, j):
+            cnt += 1
 
-    for i in graph[start]:
-        if not visited2[i]:
-            dfs(graph, i, visited2)
-
-
-graph = [[] for _ in range(9)]
-graph[0] = []
-graph[1] = [2, 3, 8]
-graph[2] = [1, 7]
-graph[3] = [1, 4, 5]
-graph[4] = [3, 5]
-graph[5] = [3, 4]
-graph[6] = [7]
-graph[7] = [2, 6, 8]
-graph[8] = [1, 7]
-
-bfs(graph, 1, visited)
-print()
-dfs(graph, 1, visited2)
+print(cnt)
