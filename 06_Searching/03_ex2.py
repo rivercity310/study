@@ -45,7 +45,7 @@ while start <= end:
     for x in arr:
         # 잘랐을 때의 떡의 양 계산
         if x > mid:
-            atotal += (x - mid)
+            total += (x - mid)
 
     print(f"total: {total}")
 

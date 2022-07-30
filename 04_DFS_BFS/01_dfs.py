@@ -10,6 +10,15 @@ def dfs(graph, v, visited):
             dfs(graph, i, visited)
 
 
+def dfs2(start):
+    visited[start] = True
+    print(start, end=" ")
+
+    for i in graph[start]:
+        if not visited[i]:
+            dfs2(i)
+
+
 '''
 graph = [
     [],
@@ -37,4 +46,4 @@ graph[8] = [1, 7]
 
 visited = [False] * 9
 
-dfs(graph, 1, visited)
+dfs2(1)
