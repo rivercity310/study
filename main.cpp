@@ -1,5 +1,5 @@
-#include "chapter6.h"
+#include "chapter7.h"
 
 int main() {
-	dijkstra_test();
+	dijk_to_fw();
 }

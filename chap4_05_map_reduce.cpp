@@ -33,7 +33,7 @@ void transform_test(vector<int>& v) {
 	cout << endl;
 }
 
-void reduce_test(vector<int> v) {
+void edr_test(vector<int> v) {
 	cout << "\n[리듀스 테스트]" << endl;
 	cout << "입력 배열: ";
 	for (auto i : v) cout << i << " ";
@@ -51,5 +51,5 @@ void map_reduce_test() {
 	vector<int> v = { 1, 10, 4, 7, 3, 5, 6, 9, 8, 2 };
 
 	transform_test(v);
-	reduce_test(v);
+	//reduce_test(v);
 }

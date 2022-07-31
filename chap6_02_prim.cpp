@@ -6,7 +6,7 @@
 #include <queue>
 #include <limits>
 #include "graph_and_edge.h"
-
+#include "label.h"
 using namespace std;
 
 // 프림 알고리즘 구현 함수

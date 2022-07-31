@@ -1,5 +1,4 @@
 #pragma once
-#include <vector>
 
 using namespace std;
 
@@ -56,5 +55,9 @@ public:
 
 		nodes[root_x].parent = nodes[root_y].parent;
 		nodes[root_y].rank++;
+	}
+
+	vector<Node> get_forest() {
+		return this->nodes;
 	}
 };

@@ -16,7 +16,7 @@ using namespace std;
 => 두 힙의 최상단 원소를 이용하여 중앙값을 계산할 수 있다.
 */
 struct median {
-	priority_queue<int> maxHeap;
+	priority_queue<int, vector<int>, less<int>> maxHeap;
 	priority_queue<int, vector<int>, greater<int>> minHeap;
 
 	// 새로 들어오는 데이터를 저장

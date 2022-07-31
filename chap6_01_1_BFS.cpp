@@ -37,6 +37,7 @@ vector<unsigned> breadth_first_search(const Graph<T>& G, unsigned start) {
 	return visit_order;
 }
 
+
 // 테스트 함수
 void bfs_test() {
 	using T = unsigned;
@@ -50,6 +51,8 @@ void bfs_test() {
 	// 1번 정점부터 BFS 실행 & 방문 순서 출력
 	cout << "\n\n[BFS 방문 순서]" << endl;
 	vector<unsigned> bfs_visit_order = breadth_first_search(G, 1);
-	for (unsigned v : bfs_visit_order)
-		cout << v << endl;
+	for (int i = 0; i < bfs_visit_order.size(); i++) {
+		cout << bfs_visit_order[i];
+		if (i != bfs_visit_order.size() - 1) cout << " -> ";
+	}
 }

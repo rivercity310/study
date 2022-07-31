@@ -7,6 +7,7 @@
 #include <limits>
 #include <algorithm>
 
+#include "Label.h"
 #include "graph_and_edge.h"
 using namespace std;
 
