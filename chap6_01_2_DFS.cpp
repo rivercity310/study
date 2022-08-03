@@ -66,11 +66,9 @@ void dfs(int x) {
 	visited[x] = true;
 	cout << x << " ";
 
-	for (int i = 0; i < graph[x].size(); i++) {
-		int y = graph[x][i];
+	for (int y : graph[x])
 		if (!visited[y]) 
 			dfs(y);
-	}
 }
 
 bool visited2[9];

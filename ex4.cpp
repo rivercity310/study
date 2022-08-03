@@ -45,7 +45,7 @@ void tp_st(int N) {
 	}
 }
 
-int main() {
+void ex4_test() {
 	int N;
 	cin >> N;
 
@@ -61,8 +61,8 @@ int main() {
 		}
 
 		t[i] = data[i][0];
-		
-		for (int j = 1; j < data[i].size(); j++) 
+
+		for (int j = 1; j < data[i].size(); j++)
 			g[data[i][j]].push_back(i);
 	}
 

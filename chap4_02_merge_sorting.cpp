@@ -79,15 +79,6 @@ vector<T> merge_sort(vector<T> arr) {
 		vector<T> left_half = merge_sort(vector<T>(arr.begin(), arr.begin() + mid));
 		vector<T> right_half = merge_sort(vector<T>(arr.begin() + mid, arr.end()));
 
-		cout << "[left_half]" << "\n";
-		print_template_vt(left_half);
-
-		cout << endl;
-
-		cout << "[right_half]" << "\n";
-		print_template_vt(right_half);
-		cout << "\n" << endl;
-
 		return merging(left_half, right_half);
 	}
 

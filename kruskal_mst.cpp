@@ -6,61 +6,87 @@ using namespace std;
 
 constexpr int MAX = 7;
 
-int parent[MAX];
-vector<pair<int, pair<int, int>>> edges;
+struct edg {
+	int src;
+	int dst;
+	int weight;
+};
 
-int find_parent(int x) {
-	if (parent[x] != x)
-		return find_parent(parent[x]);
-	return x;
+int pa[MAX];
+vector<edg> edges;
+
+void prt_edges() {
+	for (edg& e : edges)
+		cout << e.src << " " << e.dst << " " << e.weight << endl;
 }
 
-void union_parent(int a, int b) {
-	int root_a = find_parent(a);
-	int root_b = find_parent(b);
+int find_par(int x) {
+	if (pa[x] != x)
+		pa[x] = find_par(pa[x]);
+	return pa[x];
+}
+
+void union_par(int a, int b) {
+	int root_a = find_par(a);
+	int root_b = find_par(b);
+
+	cout << "root_a : " << root_a << "\troot_b : " << root_b << "\n";
 
 	if (root_a < root_b)
-		parent[b] = a;
+		pa[root_b] = root_a;
 	else
-		parent[a] = b;
+		pa[root_a] = root_b;
+}
+
+vector<edg> kr(int& result) {
+	result = 0;
+
+	vector<edg> mst;
+
+	for (edg& e : edges) {
+		if (find_par(e.src) != find_par(e.dst)) {
+			union_par(e.src, e.dst);
+			result += e.weight;
+			mst.push_back(edg{ e.src, e.dst, e.weight });
+		}
+		else
+			cout << e.src << " <---> " << e.dst << " 사이클 발생\n";
+
+	}
+
+	return mst;
 }
 
 void kruskal_mst() {
+	int N;
+	cin >> N;
+
 	for (int i = 1; i < MAX; i++)
-		parent[i] = i;
+		pa[i] = i;
 
-	int M;
-	cin >> M;
-
-	for (int i = 0; i < M; i++) {
+	for (int i = 0; i < N; i++) {
 		int a, b, cost;
 		cin >> a >> b >> cost;
 
-		edges.push_back({ cost, {a, b} });
+		edges.push_back(edg{ a, b, cost });
 	}
 
-	std::sort(edges.begin(), edges.end());
+	cout << "[입력 완료]" << "\n";
+	prt_edges();
 
-	int result = 0;
-	vector<pair<int, int>> lst;
+	std::sort(edges.begin(), edges.end(), [](const edg& a, const edg& b) {
+		return a.weight < b.weight;
+		});
 
-	for (auto& p : edges) {
-		int cost = p.first;
-		int a = p.second.first;
-		int b = p.second.second;
+	cout << "[가중치 기준으로 정렬 완료]" << "\n";
+	prt_edges();
 
-		if (find_parent(a) != find_parent(b)) {
-			union_parent(a, b);
+	cout << "[kruskal]" << "\n";
+	int result;
+	vector<edg> mst = kr(result);
 
-			result += cost;
-			lst.push_back({ a, b });
-		}
-		else
-			cout << a << " <--> " << b << " 사이클 발생!" << endl;
-	}
-
-	cout << "최소 비용 : " << result << "\n";
-	cout << "연결된 정점\n";
-	for (auto& p : lst)
-		cout << "(" << p.first << ", " << p.second << ")\t";
+	cout << "MST의 가중치 합 : " << result << "\n";
+	for (edg& e : mst)
+		cout << "(" << e.src << ", " << e.dst << ", " << e.weight << ")\t";
+	cout << endl;
 }
