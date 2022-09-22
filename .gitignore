@@ -1,0 +1,11 @@
+*.class
+*.classpath
+*.project
+*.iml
+
+.settings/
+META-INF/
+build/
+/bin/
+out/
+.idea/
