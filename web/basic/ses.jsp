@@ -26,10 +26,10 @@
             alert("로그인 성공");
           </script>
           <h3><%= name %> 회원님! 좋은 하루 되세요...</h3>
-          <a href="ses.jsp">로그아웃</a>
-          <% }
+          <a href="ses2.jsp">로그아웃</a>
+    <% }
         else {
-          %>
+    %>
             <script>
               alert("로그인 실패");
             </script>
