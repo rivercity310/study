@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        window.onload = function() {
+            const xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = () => {
+                if (xhr.status == 200 && xhr.readyState == XMLHttpRequest.DONE) {
+                    const xml = xhr.responseXML;
+                    const root_element = xml.getElementsByTagName("testxml");
+                    let output = "";
+
+                    for (let i = 1; i < root_element[0].childNodes.length; i += 2) {
+                        output += "<h3>" + root_element[0].childNodes[i].firstChild.nodeValue;
+                        output += "</h3>";
+                    }
+
+                    document.body.innerHTML += output
+                }
+            }
+
+            xhr.open("GET", "sample.xml", true);
+            xhr.send();
+        }
+    </script>
+
+</head>
+<body>
+    <h2>onreadystatechange 속성 사용 - XML 응답</h2>
+    <hr/>
+</body>
+</html>
