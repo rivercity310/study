@@ -14,8 +14,8 @@
                     const result = JSON.parse(str);
 
                     let output = "";
-                    for (let val of result)
-                        output += "<h3>" + val + "</h3>";
+                    for (let i in result)
+                        output += "<h3>" + i + " : " + result[i] + "</h3>";
 
                     document.body.innerHTML += output;
                 }
