@@ -17,7 +17,7 @@
         const formData = new FormData(form);
 
         xhr.onload = () => document.querySelector("output").innerHTML += "<hr/>" + xhr.responseText;
-        xhr.open("POST", "UploadServlet", true);
+        xhr.open("POST", "../UploadServlet", true);
         xhr.send(formData);
       }
     </script>
