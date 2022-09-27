@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        function doAjax() {
+            const output = document.querySelector("output");
+            const xhr = new XMLHttpRequest();
+
+            xhr.addEventListener("readystatechange", () => {
+                if (xhr.status == 200 && xhr.readyState == XMLHttpRequest.DONE) {
+                    output.innerHTML += xhr.responseText + "<br/>";
+                }
+            })
+
+            xhr.open("GET", "sample/sample.json", true);
+            xhr.send();
+        }
+    </script>
+
+</head>
+<body>
+    <h1>아래 버튼 클릭</h1>
+    <button id="btn" onclick="doAjax();">Click Me</button>
+    <output></output>
+</body>
+</html>
