@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="http://openapi.map.naver.com/openapi/v3/maps.js?clientId=xx"></script>
+    <script>
+      function navermap() {
+        const lat_p = lat;
+        const long_p = lng;
+
+        const map_option = {
+          center: new naver.maps.LatLng(lat_p, long_p),
+          zoom: 10,
+          minZoom: 1,
+          zoomControl: true,
+          zoomControlOptions: {
+            position: naver.maps.Position.TOP_RIGHT
+          }
+        };
+
+        const map = new naver.maps.Map("map", map_option);
+        new naver.maps.Marker({
+          position: new naver.maps.LatLng(lat_p, long_p),
+          map: map
+        })
+      }
+
+      let lat, lng, addr;
+      function inputAddress() {
+        addr = window.prompt("주소 입력");
+        const xhr = new XMLHttpRequest();
+
+        xhr.addEventListener("load", () => {
+          if (xhr.status == 200) {
+            const str = xhr.responseText;
+            const data = JSON.parse(str);
+            lat = data.results[0].geometry.location.lat;
+            lng = data.results[0].geometry.location.lng;
+            document.getElementById("map").innerHTML = "";
+            navermap();
+          }
+        });
+
+        addr = "http://maps.googleapis.com/maps/api/geocode/json?address=" + encodeURIComponent(addr);
+        xhr.open("GET", addr, true);
+        xhr.send();
+      }
+
+      function clickme() {
+        document.getElementById("btn").onclick = inputAddress();
+      }
+
+      window.onload = clickme;
+    </script>
+
+</head>
+<body>
+  <h2>주소를 입력받아 지도를 출력</h2>
+  <button id="btn">주소 입력</button>
+  <br/><br/>
+  <div id="map" style="width:700px;height:450px;"></div>
+</body>
+</html>
