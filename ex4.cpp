@@ -29,7 +29,6 @@ void tp_st(int N) {
 
 		for (int k : g[now]) {
 			indg[k]--;
-
 			rst[k] = max(rst[k], rst[now] + t[k]);
 
 			if (indg[k] == 0)
