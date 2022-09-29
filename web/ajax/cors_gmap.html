@@ -6,6 +6,27 @@
 
     <script src="http://openapi.map.naver.com/openapi/v3/maps.js?clientId=xx"></script>
     <script>
+      let lat, lng, addr;
+      function inputAddress() {
+        addr = window.prompt("주소 입력");
+        const xhr = new XMLHttpRequest();
+
+        xhr.addEventListener("load", () => {
+          if (xhr.status == 200) {
+            const str = xhr.responseText;
+            const data = JSON.parse(str);
+            lat = data.results[0].geometry.location.lat;
+            lng = data.results[0].geometry.location.lng;
+            document.getElementById("map").innerHTML = "";
+            navermap();
+          }
+        });
+
+        addr = "https://maps.googleapis.com/maps/api/geocode/json?address=" + encodeURIComponent(addr);
+        xhr.open("GET", addr, true);
+        xhr.send();
+      }
+
       function navermap() {
         const lat_p = lat;
         const long_p = lng;
@@ -25,27 +46,6 @@
           position: new naver.maps.LatLng(lat_p, long_p),
           map: map
         })
-      }
-
-      let lat, lng, addr;
-      function inputAddress() {
-        addr = window.prompt("주소 입력");
-        const xhr = new XMLHttpRequest();
-
-        xhr.addEventListener("load", () => {
-          if (xhr.status == 200) {
-            const str = xhr.responseText;
-            const data = JSON.parse(str);
-            lat = data.results[0].geometry.location.lat;
-            lng = data.results[0].geometry.location.lng;
-            document.getElementById("map").innerHTML = "";
-            navermap();
-          }
-        });
-
-        addr = "http://maps.googleapis.com/maps/api/geocode/json?address=" + encodeURIComponent(addr);
-        xhr.open("GET", addr, true);
-        xhr.send();
       }
 
       function clickme() {
