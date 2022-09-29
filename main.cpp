@@ -1,5 +1,5 @@
 #include "ds.h"
 
 int main() {
-	ringbuffer();
+	set_ex();
 }

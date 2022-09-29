@@ -1,4 +1,5 @@
 #include <iostream>
+#include <random>
 
 using namespace std;
 
@@ -74,6 +75,7 @@ public:
 	}
 
 	void Print() {
+		printf("QUEUE(front=%d rear=%d) = ", front, rear);
 		for (int i = 0; i < num; i++)
 			printf("%-5d", q[(i + front) % max]);
 		putchar('\n');
@@ -95,17 +97,20 @@ void ringbuffer() {
 
 	RingBuffer rb(n);
 
+	random_device rd;
+	mt19937 rand(rd());
+	uniform_int_distribution<int> dist(1, 100);
+
+	int x;
 	while (!rb.isFull()) {
-		int x;
-		cin >> x;
+		if (dist(rand) % 5 == 0)
+			rb.Enque(dist(rand));
 
-		rb.Enque(x);
-	}
+		rb.Print();
 
-	while (!rb.isEmpty()) {
-		int x;
-		rb.Deque(x);
+		if (dist(rand) % 10 == 0)
+			rb.Deque(x);
 
-		cout << "Deque : " << x << "\n";
+		rb.Print();
 	}
 }
