@@ -1,13 +1,9 @@
 package dao;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.sql.DataSource;
 import jspbean.VisitorVO;
 
 public class VisitorDAO {
@@ -18,12 +14,10 @@ public class VisitorDAO {
         ResultSet rs = null;
 
         try {
-            Context initCtx = new InitialContext();
-            Context envCtx = (Context)initCtx.lookup("java:comp/env");
-            DataSource ds = (DataSource)envCtx.lookup("jdbc/myoracle");
-            conn = ds.getConnection();
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysns?serverTimezone=UTC", "root", "8452994ash!");
             stmt = conn.createStatement();
-            rs = stmt.executeQuery("select name, to_char(writedate, 'yyyy\"년\"mm\"월\"dd\"일\"'), content from visitor");
+            rs = stmt.executeQuery("select name, writedate, content from visitor");
 
             result = new ArrayList<VisitorVO>();
             VisitorVO vo = null;
@@ -55,14 +49,13 @@ public class VisitorDAO {
         PreparedStatement pstmt = null;
 
         try {
-            Context initCtx = new InitialContext();
-            Context envCtx = (Context)initCtx.lookup("java:comp/env");
-            DataSource ds = (DataSource)envCtx.lookup("jdbc/myoracle");
-            conn = ds.getConnection();
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysns?serverTimezone=UTC", "root", "8452994ash!");
 
-            pstmt = conn.prepareStatement("insert into visitor (name, writedate, content) values(?, sysdate, ?)");
+            pstmt = conn.prepareStatement("insert into visitor (name, writedate, content) values(?, ?, ?)");
             pstmt.setString(1, vo.getName());
-            pstmt.setString(2, vo.getContent());
+            pstmt.setString(2, LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd-HH-mm-ss")));
+            pstmt.setString(3, vo.getContent());
 
             int su = pstmt.executeUpdate();
             if (su != 1) result = false;
