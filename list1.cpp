@@ -2,6 +2,10 @@
 #include <vector>
 #include <iomanip>
 
+/*
+[ 단순 연결 리스트 구현 ]
+*/
+
 using namespace std;
 
 typedef struct node {
@@ -143,7 +147,7 @@ int Select_Menu() {
 		"모든 노드 삭제 & 종료"
 	};
 
-	int ch;
+	int ch = NULL;
 	do {
 		for (int i = 0; i < msg.size(); i++) {
 			cout << "(" << i + 1 << ")";
