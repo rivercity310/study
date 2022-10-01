@@ -1,5 +1,5 @@
 #include "ds.h"
 
 int main() {
-	bitset_test();
+	list1_test();
 }

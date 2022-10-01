@@ -1,6 +1,6 @@
 #include <iostream>
 
-typedef unsigned long BitSet;
+typedef size_t BitSet;
 
 #define BitSetNull (BitSet)0
 #define BitSetBits 32
