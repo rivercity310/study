@@ -14,8 +14,7 @@ public class VisitorDAO {
         ResultSet rs = null;
 
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysns?serverTimezone=UTC", "root", "8452994ash!");
+            conn = ConnectionPool.get();
             stmt = conn.createStatement();
             rs = stmt.executeQuery("select name, writedate, content from visitor");
 
@@ -49,8 +48,7 @@ public class VisitorDAO {
         PreparedStatement pstmt = null;
 
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysns?serverTimezone=UTC", "root", "8452994ash!");
+            conn = ConnectionPool.get();
 
             pstmt = conn.prepareStatement("insert into visitor (name, writedate, content) values(?, ?, ?)");
             pstmt.setString(1, vo.getName());
