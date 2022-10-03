@@ -14,7 +14,7 @@ Dynamic Programming에 대해 알아보면서 전수 조사(Brute-Force), 백트래킹, 메모이제
 그럼에도 이들 방법을 차례대로 구현해봄으로서 각 접근 방식의 차이를 알아가는 것이 목표이다.
 */
 
-#define DEBUG 0
+#define DEBUG 1
 #if DEBUG
 #define PRINT(x) cerr << x
 #else
@@ -67,7 +67,7 @@ bool SubsetSum_BruteForce(vector<int> set, int target) {
 	return false;
 }
 
-void subset_test() {
+void subset_bf_test() {
 	vector<int> set = { 13, 79, 45, 29 };
 	int target = 58;
 
