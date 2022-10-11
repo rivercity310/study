@@ -33,6 +33,8 @@ void subset_tabulation_test() {
 	vector<vector<bool>> DP = SubsetSum_Tabulation(set);
 	bool found = DP[set.size()][target];
 
+	printf("DP ªÁ¿Ã¡Ó = %d\n", (unsigned int)sizeof(DP));
+
 	int total = 0;
 	for (auto number : set) total += number;
 
