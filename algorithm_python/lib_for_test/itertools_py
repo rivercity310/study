@@ -1,0 +1,22 @@
+from itertools import permutations
+from itertools import combinations
+from itertools import product
+from itertools import combinations_with_replacement
+
+data = ["A", "B", "C"]
+
+# data에서 3개를 뽑는 순열
+result = list(permutations(data, 3))
+print(result)
+
+# data에서 2개를 뽑는 조합
+result2 = list(combinations(data, 2))
+print(result2)
+
+# data에서 3개를 뽑는 중복순열 (repeat 속성 이용)
+result3 = list(product(data, repeat=2))
+print(result3)
+
+# data에서 2개를 뽑는 중복조합
+result4 = list(combinations_with_replacement(data, 2))
+print(result4)
