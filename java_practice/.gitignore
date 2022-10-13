@@ -1,0 +1,10 @@
+## 폴더 무시
+.metadata/
+bin/
+.settings/
+
+## 확장자 무시
+*.class
+*.
+*.classpath
+*.project
