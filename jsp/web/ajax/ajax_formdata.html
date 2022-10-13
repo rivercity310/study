@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+      window.addEventListener("load", () => {
+        document.getElementById("submitb").onclick = handleButtonPress2;
+      });
+
+      function handleButtonPress2(e) {
+        e.preventDefault();
+
+        const xhr = new XMLHttpRequest();
+        const form = document.querySelector("#inputForm");
+        const formData = new FormData(form);
+
+        xhr.onload = () => document.querySelector("output").innerHTML += "<hr/>" + xhr.responseText;
+        xhr.open("POST", "../UploadServlet", true);
+        xhr.send(formData);
+      }
+    </script>
+
+</head>
+<body>
+  <h1>Ajax로 입력폼 전송 테스트</h1>
+  <form id="inputForm">
+    작성자 : <input type="text" name="theAuthor"/><br/>
+    나이 : <input type="text" name="theAge"/><br/>
+    파일 : <input type="file" name="theFile"/><br/>
+    <input type="submit" id="submitb" value="업로드"/>
+  </form>
+  <output></output>
+</body>
+</html>

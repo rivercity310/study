@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+      const requestAjax = () => {
+        const xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = () => {
+          const result = document.querySelector("#result");
+          if (xhr.status == 200 && xhr.readyState == XMLHttpRequest.DONE)
+            result.innerHTML = xhr.responseText;
+        }
+
+        // sample.jsp를 비동기 GET 방식으로 요청하는 내용을 XMLHttpRequest 객체에 설정
+        xhr.open("GET", "sample.jsp", true);
+        // 서버에 Ajax 통신 요청을 전달
+        xhr.send();
+      }
+    </script>
+
+</head>
+<body>
+  <h1>Non-Ajax 통신 테스트</h1>
+  <button onclick="location.href='sample.jsp'">요청</button>
+  <hr/>
+
+  <h1>Ajax 통신 테스트</h1>
+  <button onclick="requestAjax();">요청</button>
+  <div id="result" style="margin-top:5px"></div>
+</body>
+</html>

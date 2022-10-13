@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+      function getImage() {
+        const xhr = new XMLHttpRequest();
+        xhr.responseType = "blob";
+
+        xhr.onreadystatechange = () => {
+          if (this.status == 200) {
+            const blob = xhr.response;
+            const img = document.createElement("img");
+            img.width = 100;
+            img.height = 100;
+            img.onload = () => URL.revokeObjectURL(img.src);
+            img.src = URL.createObjectURL(blob);
+
+            const container = document.querySelector("output");
+            container.appendChild(img);
+          }
+        }
+
+        xhr.open("GET", "../img/KakaoTalk_20220926_144743240.jpg", true);
+        xhr.send();
+      }
+    </script>
+
+</head>
+<body>
+    <h2>Ajax로 이미지 요청하기</h2>
+    <button onclick="getImage();">Click Me</button>
+    <output></output>
+</body>
+</html>
