@@ -1,0 +1,8 @@
+*.sin
+*.suo
+*.vcxproj
+*.filters
+*.user
+
+x64/
+.vs/
