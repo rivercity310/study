@@ -13,7 +13,7 @@ private:
 
 public:
 	Linked_Stack() { this->tos = NULL; }
-	
+
 	~Linked_Stack() {
 		while (tos) {
 			Node* tmp = tos->next;
@@ -58,7 +58,7 @@ public:
 	}
 };
 
-int main() {
+void Linked_Stack_Test() {
 	Linked_Stack stk;
 
 	int n;
@@ -66,6 +66,6 @@ int main() {
 
 	for (int i = 0; i < n; i++)
 		stk.insert(i);
-	
+
 	stk.print();
 }
