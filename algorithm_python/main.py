@@ -1,49 +1,36 @@
 import sys
-import math
 
 input = sys.stdin.readline
 
 n = int(input())
 
-pt = []
+arr = []
+cnt = [0] * (8001)           # cnt -4000 ~ 4000  cnt[4000] == 0
 for _ in range(n):
-    x, y = map(float, input().split())
-    pt.append((x, y))
+    x = int(input())
+    arr.append(x)
+    cnt[4000 + x] += 1
 
-grp = []
-for i in range(n):
-    x1, y1 = pt[i]
-    for j in range(i + 1, n):
-        x2, y2 = pt[j]
+arr.sort()
 
-        weight = math.sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2))
-        grp.append((i, j, weight))
+avg = sum(arr) / n
+med = arr[(int)(n / 2)]
+fre = -1
+ran = arr[n - 1] - arr[0]
 
-grp.sort(key=lambda x: x[2])
+if cnt.count(max(cnt)) == 1:
+    fre = cnt.index(max(cnt))
+else:
+    arr2 = []
+    f = max(cnt)
+    for i in range(len(cnt)):
+        if cnt[i] == f:
+            arr2.append(i)
 
-parent = [i for i in range(len(grp) + 1)]
-
-
-def fp(x):
-    if parent[x] != x:
-        parent[x] = fp(parent[x])
-    return parent[x]
-
-
-def up(a, b):
-    ra = fp(a)
-    rb = fp(b)
-
-    if ra < rb:
-        parent[rb] = ra
-    else:
-        parent[ra] = rb
+    fre = arr2[1]
 
 
-ans = 0
-for a, b, w in grp:
-    if fp(a) != fp(b):
-        up(a, b)
-        ans += w
-
-print("%.2f" % ans)
+print("%d" % (avg + 0.5))
+print(med)
+print(fre)
+print(ran)
