@@ -5,9 +5,10 @@
 
 #ifdef DAY2
 extern void boj_9012();
+extern void boj_1541();
 
 #endif
 
 int main() {
-	boj_9012();
+	boj_1541();
 }
