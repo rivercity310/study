@@ -2,35 +2,26 @@ import sys
 
 input = sys.stdin.readline
 
-n = int(input())
+# [ 입력 예시 ] => 20+55-40+35-30+25
+# 답이 최소가 되려면 => 20+55-(40+35)-(30+25)
 
-arr = []
-cnt = [0] * (8001)           # cnt -4000 ~ 4000  cnt[4000] == 0
-for _ in range(n):
-    x = int(input())
-    arr.append(x)
-    cnt[4000 + x] += 1
+s = input().split('-')
 
-arr.sort()
-
-avg = sum(arr) / n
-med = arr[(int)(n / 2)]
-fre = -1
-ran = arr[n - 1] - arr[0]
-
-if cnt.count(max(cnt)) == 1:
-    fre = cnt.index(max(cnt))
-else:
-    arr2 = []
-    f = max(cnt)
-    for i in range(len(cnt)):
-        if cnt[i] == f:
-            arr2.append(i)
-
-    fre = arr2[1]
+# ["20+55", "40+35", "30+25"]
 
 
-print("%d" % (avg + 0.5))
-print(med)
-print(fre)
-print(ran)
+# 문자열에 -가 없으면 s[0]는 식 그대로 => 식 자체에 묶을게 없음, 다 더해주면 됨
+# 있으면 s[1:]에 있는 값들을 인트 변환후 모두 빼주기 => 괄호로 묶인 영역
+
+ans = 0
+
+for a in s[0].split('+'):            # ["20", "55"] => ans = 75
+    ans += int(a)
+
+for a in s[1:]:
+    for b in a.split('+'):
+        # i = 0) b = ["40", "35"]
+        # i = 1) b = ["30", "25"]
+        ans -= int(b)                # 75 - 40 - 35 - 30 - 25 = -55
+
+print(ans)
