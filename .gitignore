@@ -9,6 +9,11 @@ algorithm_cpp/Project1/*.sln
 x64/
 .vs/
 Spring/hello-spring/gradle/
+Spring/hello-spring/*.gradle
+Spring/hello-spring/gradlew
+Spring/hello-spring/gradlew.bat
+Spring/hello-spring/settings.gradle
+
 algorithm_python/tempCodeRunnerFile.py
 algorithm_java/.idea/
 algorithm_java/out/
