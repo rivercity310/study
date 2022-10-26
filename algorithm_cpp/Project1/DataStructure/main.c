@@ -10,6 +10,7 @@ extern void double_ended_queue();
 
 #ifdef LIST
 extern void Linked_List();
+extern void DoublePointer_LinkedList();
 extern void Ring_LinkedList();
 extern void double_linkedlist();
 extern void Linked_Stack();
@@ -21,5 +22,5 @@ extern void Linked_Queue();
 #endif
 
 int main() {
-	Linked_Queue();
+	DoublePointer_LinkedList();
 }
