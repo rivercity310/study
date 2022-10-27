@@ -46,5 +46,6 @@ public class boj_1620 {
         }
 
         System.out.println(sb);
+        br.close();
     }
 }

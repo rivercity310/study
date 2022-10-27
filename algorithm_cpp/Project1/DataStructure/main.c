@@ -18,9 +18,9 @@ extern void Linked_Queue();
 #endif
 
 #ifdef TREE
-
+extern void Linked_Tree();
 #endif
 
 int main() {
-	DoublePointer_LinkedList();
+	Linked_Tree();
 }
