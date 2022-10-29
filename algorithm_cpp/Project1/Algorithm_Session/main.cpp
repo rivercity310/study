@@ -1,12 +1,13 @@
 #define MAIN
-//#define DAY1
+#define DAY1
 #define BS
-//#define DAY2
+#define DAY2
+#define DAY3
 
 #ifdef MAIN
+#define FAST_IO ios::sync_with_stdio(0); cin.tie(0); cout.tie(0)
 #include <iostream>
 #include <stack>
-#define FAST_IO ios::sync_with_stdio(0); cin.tie(0); cout.tie(0)
 using namespace std;
 #endif
 
@@ -14,13 +15,17 @@ using namespace std;
 #endif
 
 #ifdef BS
-extern void boj_1620();
-extern void boj_2504();
+extern void boj_1620();			// 나는야 포켓몬 마스터 이다솜
+extern void boj_2504();			// * 미해결
 #endif
 
 #ifdef DAY2
-extern void boj_9012();
-extern void boj_1541();
+extern void boj_9012();			// 괄호 문자열
+extern void boj_1541();			// 잃어버린 괄호
+#endif
+
+#ifdef DAY3
+extern void boj_1874();			// 스택 수열
 #endif
 
 int main() {
@@ -31,40 +36,28 @@ int main() {
 
 	stack<int> stk;
 	string ans = "";
+	int bp = 0;
 
-	int x;
-	cin >> x;
-
-	for (int i = 1; i <= x; i++) {
-		ans += "+\n";
-		stk.push(i);
-	}
-	ans += "-\n";
-	stk.pop();
-
-	while (true) {
+	while (n--) {
 		int k;
 		cin >> k;
 
-		if (k < x) {
-			for (int i = 0; i < x - k; i++) {
-				stk.pop();
-				ans += "-\n";
-			}
-		}
-		else {
-			for (int i = x + 1; i <= k; i++) {
-				stk.push(i);
+		if (k > bp) {
+			for (int i = bp + 1; i <= k; i++) {
 				ans += "+\n";
+				stk.push(i);
 			}
-			stk.pop();
-			ans += "-\n";
+
+			bp = k;
 		}
 
-		if (stk.empty()) {
+		if (stk.top() != k) {
 			cout << "NO";
-			return 0;
+			exit(0);
 		}
+
+		ans += "-\n";
+		stk.pop();
 	}
 
 	cout << ans;
