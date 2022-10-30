@@ -2,7 +2,20 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:p="http://www.springframework.org/schema/p"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+    <context:component-scan base-package="polymorphism"></context:component-scan>
+
+    <bean id="apple" class="polymorphism.AppleSpeaker"></bean>
+
+    <!--
+    [ p namespace ]
+    beans 태그에 xmlns:p="http://www.springframework.org/schema/p" 추가
+    !-->
 
     <!--
     [ Constructor Injection ]
