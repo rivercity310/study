@@ -1,7 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="tv" class="polymorphism.SamsungTV" init-method="initMethod" destroy-method="destroyMethod" scope="prototype"/>
+    <!--
+    [ Constructor Injection ]
+    <bean id="tv" class="polymorphism.LgTV">
+        <constructor-arg index="0" ref="sony"></constructor-arg>
+        <constructor-arg index="1" value="3000000"></constructor-arg>
+    </bean>
+
+    <bean id="sony" class="polymorphism.SonySpeaker" lazy-init="true"></bean>
+    <bean id="apple" class="polymorphism.AppleSpeaker"></bean>
+    !-->
+
+    <!--
+    [ Setter Injection ]
+    <bean id="tv" class="polymorphism.AppleTV">
+        <property name="price" value="3500000"></property>
+        <property name="speaker" ref="apple"></property>
+    </bean>
+
+    <bean id="apple" class="polymorphism.AppleSpeaker"></bean>
+    !-->
+
+    <!--
+    [ Setter Injection - p namespace ]
+    <bean id="tv" class="polymorphism.SeungsuTV" p:speaker-ref="sony" p:price="3300000"></bean>
+    <bean id="sony" class="polymorphism.SonySpeaker"></bean>
+    <bean id="apple" class="polymorphism.AppleSpeaker" lazy-init="true"></bean>
+    -->
+
+    <!--
+    [ Collection Type Mapping ]
+
+    1. List Type Mapping
+    <bean id="collectionBean" class="injection.CollectionBean">
+        <property name="addressList">
+            <list>
+                <value>서울시 강남구 역삼동</value>
+                <value>서울시 성동구 행당동</value>
+            </list>
+        </property>
+    </bean>
+
+    2. Set Type Mapping
+    <bean id="collectionBean" class="injection.CollectionBean">
+        <property name="addressList">
+            <set value-type="java.lang.String">
+                <value>서울시 강남구 역삼동</value>
+                <value>서울시 성동구 성수동</value>
+            </set>
+        </property>
+    </bean>
+
+    3. Map Type Mapping
+    <bean id="collectionBean" class="injection.CollectionBean">
+        <property name="addressList">
+            <map>
+                <entry>
+                    <key><value>고길동</value></key>
+                    <value>서울시 강남구 역삼동</value>
+                </entry>
+                <entry>
+                    <key><value>마이콜</value></key>
+                    <value>서울시 강서구 화곡동</value>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+    4. Properties Type Mapping
+    <bean id="collectionBean" class="injection.CollectionBean">
+        <property name="addressList">
+            <props>
+                <prop key="고길동">서울시 강남구 역삼동</prop>
+                <prop key="마이콜">서울시 강서구 화곡동</prop>
+            </props>
+        </property>
+    </bean>
+    !-->
+
 </beans>
