@@ -10,27 +10,37 @@ typedef struct tn {
 } TreeNode;
 
 extern void traversal(TreeNode* root, int mode);
-
-static TreeNode* make_tree() {
-	TreeNode* root = NULL;
-
-	for (int i = 0; i < 3; i++) {
-		TreeNode tr = { i + 3, NULL, NULL };
-
-		if (!root) root = &tr;
-		else if (!root->left) root->left = &tr;
-		else if (!root->right) root->right = &tr;
-	}
-
-	return root;
-}
+extern void lt_terminate(TreeNode* root);
 
 void Linked_Tree() {
-	TreeNode* root = make_tree();
-	printf("root->data: %d\n", root->data);
-	
-	for (int i = 1; i <= 3; i++) {
-		traversal(root, i);
-		puts("\n");
+	TreeNode* root = NULL;
+
+	int n;
+	scanf_s("%d", &n);
+
+	for (int i = 1; i <= n; i++) {
+		TreeNode* tmp = (TreeNode*)malloc(sizeof(TreeNode));
+		tmp->data = i;
+		tmp->left = tmp->right = NULL;
+
+		if (!root) {
+			root = tmp;
+			continue;
+		}
+
+		TreeNode* p = root;
+
+		if (!p->left) p->left = tmp;
+		else if (!p->right) p->right = tmp;
+		else {
+			while (p->left) p = p->left;
+			p->left = tmp;
+
+		}
 	}
+
+	for (int i = 1; i <= 3; i++)
+		traversal(root, i);
+
+	lt_terminate(root);
 }

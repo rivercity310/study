@@ -18,12 +18,13 @@ extern void error(const char* msg);
 typedef struct {
 	int front;
 	int rear;
-	int data[MAX_QUEUE_SIZE];
+	int* data;
 } RingBuffer;
 
 /* 원형큐 초기화 함수 */
-void rb_init(RingBuffer* rbuf) {
+void rb_init(RingBuffer* rbuf, int n) {
 	rbuf->front = rbuf->rear = 0;
+	rbuf->data = (int*)malloc(sizeof(int) * (n + 1));
 }
 
 /* 상태 조건 검사 함수 */
@@ -31,8 +32,8 @@ int rb_is_empty(RingBuffer* rbuf) {
 	return rbuf->front == rbuf->rear;
 }
 
-int rb_is_full(RingBuffer* rbuf) {
-	return rbuf->front == (rbuf->rear + 1) % MAX_QUEUE_SIZE;
+int rb_is_full(RingBuffer* rbuf, int n) {
+	return rbuf->front == (rbuf->rear + 1) % n;
 }
 
 /* 원형큐 출력 함수 */
@@ -54,23 +55,24 @@ void rb_print(RingBuffer* rbuf) {
 }
 
 /* 인큐 함수 */
-void rb_enqueue(RingBuffer* rbuf, int x) {
-	if (rb_is_full(rbuf))
+void rb_enqueue(RingBuffer* rbuf, int x, int n) {
+	if (rb_is_full(rbuf, n))
 		error("RingBuffer is Full!");
 
-	rbuf->rear = (rbuf->rear + 1) % MAX_QUEUE_SIZE;
+	rbuf->rear = (rbuf->rear + 1) % n;
 	rbuf->data[rbuf->rear] = x;
 }
 
 /* 디큐 함수 */
-int rb_dequeue(RingBuffer* rbuf) {
+int rb_dequeue(RingBuffer* rbuf, int n) {
 	if (rb_is_empty(rbuf))
 		error("RingBuffer is Empty!");
 
-	rbuf->front = (rbuf->front + 1) % MAX_QUEUE_SIZE;
+	rbuf->front = (rbuf->front + 1) % n;
 	return rbuf->data[rbuf->front];
 }
 
+/*
 void ring_buffer() {
 	RingBuffer* rb = (RingBuffer*)malloc(sizeof(RingBuffer));
 	rb_init(rb);
@@ -91,4 +93,32 @@ void ring_buffer() {
 	}
 
 	free(rb);
+}
+*/
+
+void boj_11866() {
+	RingBuffer rb;
+
+	int n, k;
+	scanf_s("%d %d", &n, &k);
+
+	rb_init(&rb, n);
+
+	for (int i = 1; i <= n; i++)
+		rb_enqueue(&rb, i, n);
+
+	RingBuffer* p = &rb;
+
+	int* ans = (int*)malloc(sizeof(int) * n);
+	for (int i = 0; i < n; i++) {
+		int tmp = k - 1;
+		while (tmp--) {
+			p->front++;
+			if (p->front == n) p->front = 0;
+			p->rear++;
+			if (p->rear == n) p->rear = 0;
+		}
+
+		ans[i] = rb_dequeue(p, n);
+	}
 }

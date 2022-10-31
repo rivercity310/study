@@ -1,4 +1,4 @@
-package DAY3;
+package Week2.Stack;
 
 import java.io.BufferedReader;
 import java.io.IOException;

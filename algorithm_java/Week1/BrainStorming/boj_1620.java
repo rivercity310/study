@@ -1,4 +1,4 @@
-package BrainStorming;
+package Week1.BrainStorming;
 
 import java.io.BufferedReader;
 import java.io.IOException;

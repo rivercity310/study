@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAX_QUEUE_SIZE 10
+#define MAX_QUEUE_SIZE 1001
 
 typedef struct {
 	int front;
@@ -67,6 +67,7 @@ int queue_Dequeue(QueueType* q) {
 
 	return q->data[++(q->front)];
 }
+
 
 void linear_queue() {
 	QueueType q;
