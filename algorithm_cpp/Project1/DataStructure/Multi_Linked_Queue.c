@@ -20,17 +20,17 @@ static QueueNode* allocNode() {
 	return (QueueNode*)malloc(sizeof(QueueNode));
 }
 
-void init(LinkedQueueType q[], int size) {
+static void init(LinkedQueueType q[], int size) {
 	for (int i = 0; i < size; i++) {
 		q[i].front = NULL;
 	}
 }
 
-int is_empty(LinkedQueueType q[], int i) {
+static int is_empty(LinkedQueueType q[], int i) {
 	return q[i].front == NULL;
 }
 
-void push(LinkedQueueType q[], int data, int i) {
+static void push(LinkedQueueType q[], int data, int i) {
 	QueueNode* tmp = allocNode();
 	tmp->data = data;
 	tmp->next = NULL;
@@ -48,7 +48,7 @@ void push(LinkedQueueType q[], int data, int i) {
 
 }
 
-int pop(LinkedQueueType q[], int i) {
+static int pop(LinkedQueueType q[], int i) {
 	QueueNode* tmp = q[i].front;
 	int data = tmp->data;
 
@@ -58,7 +58,7 @@ int pop(LinkedQueueType q[], int i) {
 	return data;
 }
 
-void print_queue(LinkedQueueType q[], int i) {
+static void print_queue(LinkedQueueType q[], int i) {
 	QueueNode* tmp = q[i].front;
 
 	for (; tmp; tmp = tmp->next) 
@@ -66,7 +66,7 @@ void print_queue(LinkedQueueType q[], int i) {
 	puts("NULL");
 }
 
-void terminate(LinkedQueueType q[], int size) {
+static void terminate(LinkedQueueType q[], int size) {
 	for (int i = 0; i < size; i++) {
 		QueueNode* tmp = q[i].front;
 		QueueNode* p = tmp;

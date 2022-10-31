@@ -11,19 +11,19 @@ typedef struct {
 
 extern void error(const char* msg);
 
-void init_deque(Deque* dq) {
+static void init_deque(Deque* dq) {
 	dq->front = dq->rear = 0;
 }
 
-int dq_is_empty(Deque* dq) {
+static int dq_is_empty(Deque* dq) {
 	return dq->front == dq->rear;
 }
 
-int dq_is_full(Deque* dq) {
+static int dq_is_full(Deque* dq) {
 	return (dq->rear + 1) % MAX_QUEUE_SIZE == dq->front;
 }
 
-void dq_print(Deque* dq) {
+static void dq_print(Deque* dq) {
 	printf("(front = %d, rear = %d)\t", dq->front, dq->rear);
 	
 	if (!dq_is_empty(dq)) {
@@ -38,7 +38,7 @@ void dq_print(Deque* dq) {
 	putchar('\n');
 }
 
-void dq_add_front(Deque* dq, int x) {
+static void dq_add_front(Deque* dq, int x) {
 	if (dq_is_full(dq))
 		error("Deque is Full!");
 	
@@ -46,7 +46,7 @@ void dq_add_front(Deque* dq, int x) {
 	dq->front = (dq->front - 1 + MAX_QUEUE_SIZE) % MAX_QUEUE_SIZE;
 }
 
-void dq_add_rear(Deque* dq, int x) {
+static void dq_add_rear(Deque* dq, int x) {
 	if (dq_is_full(dq))
 		error("Deque is Full!");
 
@@ -54,14 +54,14 @@ void dq_add_rear(Deque* dq, int x) {
 	dq->data[dq->rear] = x;
 }
 
-int dq_get_front(Deque* dq) {
+static int dq_get_front(Deque* dq) {
 	if (dq_is_empty(dq))
 		error("Deque is Empty!");
 
 	return dq->data[(dq->front + 1) % MAX_QUEUE_SIZE];
 }
 
-int dq_delete_front(Deque* dq) {
+static int dq_delete_front(Deque* dq) {
 	if (dq_is_empty(dq))
 		error("Deque is Empty!");
 
@@ -69,7 +69,7 @@ int dq_delete_front(Deque* dq) {
 	return dq->data[dq->front];
 }
 
-int dq_delete_rear(Deque* dq) {
+static int dq_delete_rear(Deque* dq) {
 	int prev = dq->rear;
 
 	if (dq_is_empty(dq))
@@ -79,7 +79,7 @@ int dq_delete_rear(Deque* dq) {
 	return dq->data[prev];
 }
 
-int dq_get_rear(Deque* dq) {
+static int dq_get_rear(Deque* dq) {
 	if (dq_is_empty(dq))
 		error("Deque is Empty!");
 

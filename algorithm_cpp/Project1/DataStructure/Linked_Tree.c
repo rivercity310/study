@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <memory.h>
+#include <string.h>
 
 /* 메모리 할당 정책에 따라 24바이트 할당 (8, 8, 8) */
 typedef struct tn {
@@ -10,37 +11,73 @@ typedef struct tn {
 } TreeNode;
 
 extern void traversal(TreeNode* root, int mode);
-extern void lt_terminate(TreeNode* root);
 
-void Linked_Tree() {
-	TreeNode* root = NULL;
+/* 특정 노드를 초기화하는 함수 */
+static TreeNode* initNode(int data, TreeNode* leftChild, TreeNode* rightChild) {
+	TreeNode* node = (TreeNode*)malloc(sizeof(TreeNode));
 
-	int n;
-	scanf_s("%d", &n);
+	node->data = data;
+	node->left = leftChild;
+	node->right = rightChild;
 
-	for (int i = 1; i <= n; i++) {
-		TreeNode* tmp = (TreeNode*)malloc(sizeof(TreeNode));
-		tmp->data = i;
-		tmp->left = tmp->right = NULL;
+	return node;
+}
 
-		if (!root) {
-			root = tmp;
-			continue;
-		}
+extern TreeNode* makeTree() {
+	TreeNode* n7 = initNode(7, NULL, NULL);
+	TreeNode* n6 = initNode(6, NULL, NULL);
+	TreeNode* n5 = initNode(5, NULL, NULL);
+	TreeNode* n4 = initNode(4, NULL, NULL);
+	TreeNode* n3 = initNode(3, n6, n7);
+	TreeNode* n2 = initNode(2, n4, n5);
+	TreeNode* n1 = initNode(1, n2, n3);
 
-		TreeNode* p = root;
+	return n1;
+}
 
-		if (!p->left) p->left = tmp;
-		else if (!p->right) p->right = tmp;
+/* 노드 개수 연산 함수 */
+static int node_count(TreeNode* root) {
+	int count = 0;
+	if (root) 
+		count = 1 + node_count(root->left) + node_count(root->right);
+	
+	return count;
+}
+
+/* 단말 노드 개수 */
+static int leaf_node_count(TreeNode* node) {
+	int count = 0;
+
+	if (node) {
+		if (node->left == NULL && node->right == NULL)
+			return 1;
 		else {
-			while (p->left) p = p->left;
-			p->left = tmp;
-
+			count = leaf_node_count(node->left) + leaf_node_count(node->right);
 		}
 	}
 
-	for (int i = 1; i <= 3; i++)
+	return count;
+}
+
+/* 트리 높이 */
+static int get_height(TreeNode* node) {
+	int height = 0;
+
+	if (node) 
+		height = 1 + max(get_height(node->left), get_height(node->right));
+
+	return height;
+}
+
+void Linked_Tree() {
+	TreeNode* root = makeTree();
+
+	printf("생성된 트리의 노드 개수: %d\n", node_count(root));
+	printf("생성된 트리의 단말 노드 개수:  %d\n", leaf_node_count(root));
+	printf("생성된 트리의 높이: %d\n", get_height(root));
+
+	for (int i = 1; i <= 4; i++)
 		traversal(root, i);
 
-	lt_terminate(root);
+	traversal(root, 0);
 }

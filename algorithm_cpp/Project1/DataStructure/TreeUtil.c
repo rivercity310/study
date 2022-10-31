@@ -1,5 +1,41 @@
 #include <stdio.h>
+#include <stdlib.h>
 
+/* Level order 구현을 위한 큐 구현 */
+#define MAX_QUEUE_SIZE 100
+
+typedef struct tn TreeNode;
+
+typedef struct {
+	TreeNode* data[MAX_QUEUE_SIZE];
+	int front;
+	int rear;
+} QueueType;
+
+static void init_queue(QueueType* q) {
+	q->front = q->rear = 0;
+}
+
+static int is_empty(QueueType* q) {
+	return q->front == q->rear;
+}
+
+static void enqueue(QueueType* q, TreeNode* data) {
+	q->rear = (q->rear + 1) % MAX_QUEUE_SIZE;
+	q->data[q->rear] = data;
+}
+
+static TreeNode* dequeue(QueueType* q) {
+	if (is_empty(q)) {
+		puts("Queue Empty!");
+		exit(1);
+	}
+
+	q->front = (q->front + 1) % MAX_QUEUE_SIZE;
+	return q->data[q->front];
+}
+
+/* -------------------------------------------------------------------------- */
 
 typedef struct tn {
 	struct tn* left;
@@ -7,7 +43,7 @@ typedef struct tn {
 	struct tn* right;
 } TreeNode;
 
-void preorder(TreeNode* root) {
+static void preorder(TreeNode* root) {
 	if (root) {
 		printf("%d ", root->data);
 		preorder(root->left);
@@ -15,7 +51,7 @@ void preorder(TreeNode* root) {
 	}
 }
 
-void inorder(TreeNode* root) {
+static void inorder(TreeNode* root) {
 	if (root) {
 		inorder(root->left);
 		printf("%d ", root->data);
@@ -23,7 +59,7 @@ void inorder(TreeNode* root) {
 	}
 }
 
-void postorder(TreeNode* root) {
+static void postorder(TreeNode* root) {
 	if (root) {
 		postorder(root->left);
 		postorder(root->right);
@@ -31,41 +67,68 @@ void postorder(TreeNode* root) {
 	}
 }
 
-void traversal(TreeNode* root, int mode) {
-	switch (mode) {
-	case 1:
-	{
-		puts("[ Preorder Start ]");
-		preorder(root);
-		putchar('\n');
-		break;
-	}
+static void levelorder(TreeNode* node) {
+	QueueType q;
+	init_queue(&q);
 
-	case 2:
-	{
-		puts("[ Inorder Start ]");
-		inorder(root);
-		putchar('\n');
-		break;
-	}
-	case 3:
-	{
-		puts("[ Postorder Start ]");
-		postorder(root);
-		putchar('\n');
-		break;
-	}
-	default:
-		printf("일치하지 않는 번호\n");
-		return;
+	if (node == NULL) return;
+	
+	enqueue(&q, node);
+	while (!is_empty(&q)) {
+		node = dequeue(&q);
+		printf("%d ", node->data);
+
+		if (node->left) enqueue(&q, node->left);
+		if (node->right) enqueue(&q, node->right);
 	}
 }
 
-void lt_terminate(TreeNode* root) {
+static void lt_terminate(TreeNode* root) {
 	if (root) {
 		lt_terminate(root->left);
 		lt_terminate(root->right);
-		printf("%d 데이터 해제\n", root->data);
+		printf("%d ", root->data);
 		free(root);
+	}
+}
+
+
+extern void traversal(TreeNode* root, int mode) {
+	switch (mode) {
+	case 1:
+		puts("[ Preorder Start ]");
+		preorder(root);
+		puts("\n");
+		break;
+	
+	case 2:
+		puts("[ Inorder Start ]");
+		inorder(root);
+		puts("\n");
+		break;
+	
+	case 3:
+	
+		puts("[ Postorder Start ]");
+		postorder(root);
+		puts("\n");
+		break;
+
+	case 4:
+		puts("[ Levelorder Start ]");
+		levelorder(root);
+		puts("\n");
+		break;
+
+	case 0:
+		puts("[ Tree Terminate ]");
+		puts("메모리를 해제합니다...");
+		lt_terminate(root);
+		puts("\n");
+		break;
+
+	default:
+		printf("일치하지 않는 번호\n");
+		return;
 	}
 }

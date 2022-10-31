@@ -15,15 +15,15 @@ typedef struct {
 	QueueNode* rear;
 } LinkedQueueType;
 
-void lq_init(LinkedQueueType* q) {
+static void lq_init(LinkedQueueType* q) {
 	q->front = q->rear = NULL;
 }
 
-int lq_isempty(LinkedQueueType* q) {
+static int lq_isempty(LinkedQueueType* q) {
 	return q->rear == NULL;
 }
 
-void lq_enqueue(LinkedQueueType* q, int data) {
+static void lq_enqueue(LinkedQueueType* q, int data) {
 	QueueNode* tmp;
 	if ((tmp = (QueueNode*)malloc(sizeof(QueueNode)))) {
 		tmp->data = data;
@@ -40,7 +40,7 @@ void lq_enqueue(LinkedQueueType* q, int data) {
 	}
 }
 
-int lq_dequeue(LinkedQueueType* q) {
+static int lq_dequeue(LinkedQueueType* q) {
 	QueueNode* tmp = q->front;
 	
 	if (lq_isempty(q)) {
@@ -57,13 +57,13 @@ int lq_dequeue(LinkedQueueType* q) {
 	return data;
 }
 
-void lq_print(LinkedQueueType* q) {
+static void lq_print(LinkedQueueType* q) {
 	for (QueueNode* tmp = q->front; tmp; tmp = tmp->next)
 		printf("%d->", tmp->data);
 	printf("NULL\n");
 }
 
-void lq_terminate(LinkedQueueType* q) {
+static void lq_terminate(LinkedQueueType* q) {
 	while (q->rear) {
 		int x = lq_dequeue(q);
 		printf("데이터 해제: %d\n", x);

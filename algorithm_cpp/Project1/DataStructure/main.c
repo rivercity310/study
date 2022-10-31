@@ -1,6 +1,6 @@
-#define MAIN
-#define QUEUE
-#define LIST
+// #define MAIN
+// #define QUEUE
+// #define LIST
 #define TREE
 
 #ifdef MAIN
@@ -26,8 +26,10 @@ extern void Linked_Queue();
 
 #ifdef TREE
 extern void Linked_Tree();
+extern void Thread_Binary_Tree();
+extern void Binary_Search_Tree();
 #endif
 
 int main() {
-	Multi_Linked_Queue_Test();
+	Binary_Search_Tree();
 }

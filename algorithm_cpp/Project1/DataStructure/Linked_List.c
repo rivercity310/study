@@ -14,11 +14,11 @@ typedef struct {
 	Node* tail;
 } LinkedList;
 
-void ll_init(LinkedList* lst) {
+static void ll_init(LinkedList* lst) {
 	lst->head = lst->tail = NULL;
 }
 
-void ll_add_node(LinkedList* lst, int x) {
+static void ll_add_node(LinkedList* lst, int x) {
 	Node* p;
 	if ((p = (Node*)malloc(sizeof(Node)))) {
 		p->data = x;
@@ -35,7 +35,7 @@ void ll_add_node(LinkedList* lst, int x) {
 	}
 }
 
-void ll_delete(LinkedList* lst) {
+static void ll_delete(LinkedList* lst) {
 	Node* pre = lst->head;
 
 	while (pre->next->next)
@@ -46,7 +46,7 @@ void ll_delete(LinkedList* lst) {
 	lst->tail->next = NULL;
 }
 
-void ll_terminate(LinkedList* lst) {
+static void ll_terminate(LinkedList* lst) {
 	Node* p = lst->head;
 	while (p) {
 		lst->head = lst->head->next;
@@ -57,7 +57,7 @@ void ll_terminate(LinkedList* lst) {
 	lst->tail = lst->head;
 }
 
-void ll_print(LinkedList* lst) {
+static void ll_print(LinkedList* lst) {
 	int sum = 0;
 	for (Node* p = lst->head; p != NULL; p = p->next) {
 		printf("%d", p->data);

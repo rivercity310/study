@@ -6,7 +6,7 @@ typedef struct node {
 	struct node* next;
 } Node;
 
-void dp_add(Node** pp_head, Node** pp_tail, int x) {
+static void dp_add(Node** pp_head, Node** pp_tail, int x) {
 	if (*pp_head) {
 		(*pp_tail)->next = (Node*)malloc(sizeof(Node));
 		*pp_tail = (*pp_tail)->next;
@@ -22,7 +22,7 @@ void dp_add(Node** pp_head, Node** pp_tail, int x) {
 	}
 }
 
-void dp_terminate(Node* p) {
+static void dp_terminate(Node* p) {
 	Node* tmp = p;
 	
 	while (tmp) {

@@ -15,13 +15,13 @@ typedef struct dnode {
 } DNODE;
 
 /* 이중 연결리스트 초기화 */
-void dll_init(DNODE* phead) {
+static void dll_init(DNODE* phead) {
 	phead->left = phead;
 	phead->right = phead;
 }
 
 /* before 노드 오른쪽에 새 노드 삽입 */
-void dll_insert(DNODE* before, int data) {
+static void dll_insert(DNODE* before, int data) {
 	DNODE* tmp;
 	if ((tmp = (DNODE*)malloc(sizeof(DNODE)))) {
 		tmp->data = data;
@@ -34,7 +34,7 @@ void dll_insert(DNODE* before, int data) {
 }
 
 /* removed 노드 삭제 */
-void dll_delete(DNODE* head, DNODE* removed) {
+static void dll_delete(DNODE* head, DNODE* removed) {
 	if (removed == head) return;
 
 	removed->left->right = removed->right;
@@ -42,7 +42,7 @@ void dll_delete(DNODE* head, DNODE* removed) {
 	free(removed);
 }
 
-void dll_print(DNODE* phead) {
+static void dll_print(DNODE* phead) {
 	for (DNODE* p = phead->right; p != phead; p = p->right)
 		printf("  <-| %d |->  ", p->data);
 	putchar('\n');

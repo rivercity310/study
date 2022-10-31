@@ -10,13 +10,13 @@ typedef struct {
 } QueueType;
 
 /* 오류 함수 */
-void error(const char* msg) {
+extern void error(const char* msg) {
 	fprintf(stderr, "%s\n", msg);
 	exit(1);
 }
 
 /* 초기화 함수 */
-void queue_init(QueueType* q) {
+static void queue_init(QueueType* q) {
 	q->rear = -1;
 	q->front = -1;
 	
@@ -28,7 +28,7 @@ void queue_init(QueueType* q) {
 }
 
 /* 프린트 함수 */
-void queue_print(QueueType* q) {
+static void queue_print(QueueType* q) {
 	for (int i = 0; i < MAX_QUEUE_SIZE; i++) {
 		if (i <= q->front || i > q->rear)
 			printf("   | ");
@@ -40,16 +40,16 @@ void queue_print(QueueType* q) {
 }
 
 /* 조건 검사 */
-int queue_is_full(QueueType* q) {
+static int queue_is_full(QueueType* q) {
 	return q->rear == MAX_QUEUE_SIZE - 1;
 }
 
-int queue_is_empty(QueueType* q) {
+static int queue_is_empty(QueueType* q) {
 	return q->front == q->rear;
 }
 
 /* 인큐 */
-void queue_Enqueue(QueueType* q, int data) {
+static void queue_Enqueue(QueueType* q, int data) {
 	if (queue_is_full(q)) {
 		error("Queue Full!");
 		return;
@@ -59,7 +59,7 @@ void queue_Enqueue(QueueType* q, int data) {
 }
 
 /* 디큐 */
-int queue_Dequeue(QueueType* q) {
+static int queue_Dequeue(QueueType* q) {
 	if (queue_is_empty(q)) {
 		error("Queue Empty!");
 		return -1;

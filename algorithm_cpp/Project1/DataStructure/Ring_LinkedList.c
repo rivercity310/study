@@ -15,7 +15,7 @@ typedef struct node {
 	struct node* next;
 } Node;
 
-Node* rll_insert_first(Node* head, int x) {
+static Node* rll_insert_first(Node* head, int x) {
 	Node* tmp;
 	if ((tmp = (Node*)malloc(sizeof(Node)))) {
 		tmp->data = x;
@@ -40,7 +40,7 @@ Node* rll_insert_first(Node* head, int x) {
 	return head;
 }
 
-Node* rll_insert_last(Node* head, int x) {
+static Node* rll_insert_last(Node* head, int x) {
 	Node* tmp;
 	if ((tmp = (Node*)malloc(sizeof(Node)))) {
 		tmp->data = x;
@@ -67,7 +67,7 @@ Node* rll_insert_last(Node* head, int x) {
 	return head;
 }
 
-void rll_print(Node* head) {
+static void rll_print(Node* head) {
 	if (head == NULL) return;
 
 	for (Node* p = head; p->next != head; p = p->next)
@@ -75,7 +75,7 @@ void rll_print(Node* head) {
 	putchar('\n');
 }
 
-void rll_terminate(Node* head) {
+static void rll_terminate(Node* head) {
 	Node* p = head;
 	while (p->next != head) {
 		Node* tmp = p->next;
