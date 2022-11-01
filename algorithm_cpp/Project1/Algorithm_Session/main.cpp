@@ -1,12 +1,13 @@
 #define MAIN
-#define FAST_IO ios::sync_with_stdio(0); cin.tie(0); cout.tie(0)
 
 #define WEEK1
 #define WEEK2
 
 #ifdef MAIN
 #include <iostream>
-#include <stack>
+#include <vector>
+#include <algorithm>
+#define FAST_IO ios::sync_with_stdio(0); cin.tie(0); cout.tie(0)
 using namespace std;
 #endif
 
@@ -19,10 +20,18 @@ extern void boj_1541();			// 잃어버린 괄호
 
 #ifdef WEEK2
 extern void boj_1874();			// 스택 수열
-extern void boj_11866();        // 요세푸스 문제
+extern void boj_11866();        // 요세푸스 문제 (반복)
+extern void boj_11866_2();		// 요세푸스 문제 (재귀)
 extern void boj_4949();         // 균형잡힌 세상 (스택)  * 미해결
+extern void boj_10816();        // 숫자 카드2
+extern void boj_2587();			// 대표값
 #endif
 
 int main() {
-	boj_4949();
+	FAST_IO;
+
+	int n, m;
+	cin >> n >> m;
+
+
 }

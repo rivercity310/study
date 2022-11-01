@@ -1,27 +1,8 @@
-import sys
+from itertools import permutations
 
-input = sys.stdin.readline
+n, m = map(int, input().split())
 
-# [ 입력 예시 ] => 20+55-40+35-30+25
-# 답이 최소가 되려면 => 20+55-(40+35)-(30+25)
+ans = list(permutations(range(1, n + 1), m))
 
-s = input().split('-')
-
-# ["20+55", "40+35", "30+25"]
-
-
-# 문자열에 -가 없으면 s[0]는 식 그대로 => 식 자체에 묶을게 없음, 다 더해주면 됨
-# 있으면 s[1:]에 있는 값들을 인트 변환후 모두 빼주기 => 괄호로 묶인 영역
-
-ans = 0
-
-for a in s[0].split('+'):            # ["20", "55"] => ans = 75
-    ans += int(a)
-
-for a in s[1:]:
-    for b in a.split('+'):
-        # i = 0) b <= ["40", "35"]
-        # i = 1) b <= ["30", "25"]
-        ans -= int(b)                # 75 - 40 - 35 - 30 - 25 = -55
-
-print(ans)
+for v in ans:
+    print(*v)
