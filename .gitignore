@@ -13,6 +13,12 @@ Spring/hello-spring/*.gradle
 Spring/hello-spring/gradlew
 Spring/hello-spring/gradlew.bat
 Spring/hello-spring/settings.gradle
+Spring/demo/build.gradle
+Spring/demo/gradle/
+Spring/demo/*.gradle
+Spring/demo/gradlew
+Spring/demo/gradlew.bat
+Spring/demo/settings.gradle
 
 algorithm_python/tempCodeRunnerFile.py
 algorithm_java/.idea/
