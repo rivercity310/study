@@ -27,9 +27,11 @@ extern void boj_10816();        // 숫자 카드2
 extern void boj_2587();			// 대표값
 extern void boj_4195();			
 extern void boj_24060();		// 재귀를 이용한 병합정렬 * 미해결
-
+extern void boj_15828();		// Deque을 이용한 Router 문제
+extern void boj_1966();			// 프린터 큐	* 미해결
+extern void boj_1004();			// 어린 왕자
 #endif
 
 int main() {
-	boj_24060();
+	boj_1004();
 }
