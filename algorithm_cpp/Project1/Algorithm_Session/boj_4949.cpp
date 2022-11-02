@@ -1,51 +1,50 @@
 #include <iostream>
-#include <sstream>
 #include <string>
 #include <stack>
 
 using namespace std;
 
 void boj_4949() {
-	string ans = "";
+	ios::sync_with_stdio(0);
+	cin.tie(0);
+	cout.tie(0);
 
 	while (true) {
 		string s;
 		getline(cin, s);
-
-		if (s == ".")
-			break;
-
-		istringstream iss(s);
-
-		string buf;
-		char delim = '.';
-		while (getline(iss, buf, delim)) {
-			stack<char> stk;
-
-			for (char c : buf) {
-				if (isalpha(c) || c == ' ')
-					continue;
-
-				if (c == '(' || c == '[') 
-					stk.push(c);
 		
-				else if (!stk.empty()) {
-					char top = stk.top();
+		if (s == ".") break;
 
-					if (top == '(' && c == ')') {
-						stk.pop();
-						continue;
-					}
+		stack<char> stk;
+		bool flag = true;
 
-					if (top == '[' && c == ']')
-						stk.pop();
+		for (char c : s) {
+			if (c == '(' || c == '[')
+				stk.push(c);
+
+			else if (c == ')') {
+				if (stk.empty() || stk.top() == '[') {
+					flag = false;
+					break;
 				}
+
+				else if (stk.top() == '(')
+					stk.pop();
 			}
 
-			if (stk.empty()) ans += "yes\n";
-			else ans += "no\n";
-		}
-	}
+			else if (c == ']') {
+				if (stk.empty() || stk.top() == '(') {
+					flag = false;
+					break;
+				}
 
-	cout << ans;
+				else if (stk.top() == '[')
+					stk.pop();
+			}
+		}
+
+		if (stk.empty() && flag) cout << "yes";
+		else cout << "no";
+		cout << endl;
+	}
 }
