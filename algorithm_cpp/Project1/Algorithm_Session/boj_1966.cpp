@@ -1,6 +1,8 @@
 #include <iostream>
 #include <queue>
 #include <algorithm>
+#include <vector>
+#include <cmath>
 
 using namespace std;
 
@@ -12,53 +14,57 @@ void boj_1966() {
 		int n, m;
 		cin >> n >> m;
 
-		// n개의 문서, 현재 큐에 m번째 놓인 문서가 몇번째로 출력되는가 
-		queue<int> printer;
-		priority_queue<int> max_pq;
-		priority_queue<int> min_pq;
+		queue<int> q;
+		deque<int> dq;
 
-		int f = -1;
+		int max_val = -1;
+		int min_val = 10;
 
 		for (int i = 0; i < n; i++) {
 			int x;
 			cin >> x;
 
-			if (i == m)
-				f = x;
+			if (x > max_val) max_val = x;
+			if (x < min_val) min_val = x;
 
-			printer.push(x);
-			max_pq.push(x);
-			min_pq.push(-x);
-		}
+			q.push(x);
 
-		int out = 0;
-		while (!max_pq.empty()) {
-			int x = max_pq.top();
-			max_pq.pop();
+			if (dq.size() == 0)
+				dq.push_back(x);
+			else if (x > dq.back())
+				dq.push_back(x);
+			else
+				dq.push_front(x);
+		}	
 
-			int rk = printer.front();
-
-			while (x != rk) {
-
-				int tmp = printer.front();
-				printer.push(tmp);
-				printer.pop();
-				rk = tmp;
+		int cnt = 0;
+		while (!q.empty()) {
+			if (q.front() != dq.front()) {
+				q.push(q.front());
+				q.pop();
 			}
 
-			printer.pop();
-			out++;
+			else {
+				dq.pop_front();
+				int rk = q.front();
+				q.pop();
+				cnt++;
 
-			if (rk == f) {
-				int max_val = max_pq.top();
-				int min_val = -min_pq.top();
+				// 남은 원소가 모두 같은 경우
+				if (max_val == min_val) {
+					// 1 1 1 (-1) 1
+					cnt = 0;
 
-				if (max_val != min_val) cout << out;
-				else cout << printer.size() + m;
+					/*
+					while (q.front() != f) {
+						q.pop();
+						cnt++;
+					}
+					*/
+				}
 
-				cout << endl;
-				break;
+				cout << cnt << endl;
 			}
 		}
-	}	
+	}
 }

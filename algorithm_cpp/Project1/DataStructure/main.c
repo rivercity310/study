@@ -1,7 +1,8 @@
 // #define MAIN
 // #define QUEUE
 // #define LIST
-#define TREE
+// #define TREE
+#define HEAP
 
 #ifdef MAIN
 #include <stdio.h>
@@ -30,6 +31,11 @@ extern void Thread_Binary_Tree();
 extern void Binary_Search_Tree();
 #endif
 
+#ifdef HEAP
+extern void array_heap();
+extern void sorting_with_heap();
+#endif
+
 int main() {
-	Binary_Search_Tree();
+	sorting_with_heap();
 }

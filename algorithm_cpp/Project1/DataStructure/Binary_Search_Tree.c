@@ -154,5 +154,4 @@ void Binary_Search_Tree() {
 		inorder(root);
 		puts("\n");
 	}
-	
 }

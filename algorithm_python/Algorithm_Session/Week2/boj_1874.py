@@ -23,7 +23,7 @@ while n:
     if q[-1] != k:
         flag = False
         break
-
+ 
     q.pop()
     s += "-\n";
     n -= 1

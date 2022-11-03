@@ -34,7 +34,7 @@ def dijkstra(start):
             continue
 
         for end_vertex, weight in graph[now]:
-            cost = dist + weight
+            cost = distance[now] + weight
 
             # 현재 노드를 거쳐서 다른 노드로 이동하는 거리가 더 짧은 경우
             if cost < distance[end_vertex]:

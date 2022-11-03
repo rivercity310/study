@@ -33,5 +33,5 @@ extern void boj_1004();			// ¾î¸° ¿ÕÀÚ
 #endif
 
 int main() {
-	boj_1004();
+	boj_1966();
 }
