@@ -3,6 +3,45 @@
 
 #define MAX 50
 
+/*
+[ BFS 구현을 위한 큐 정의 ] 
+*/
+
+typedef struct q {
+	int arr[MAX + 1];
+	int front;
+} Queue;
+
+static void init_queue(Queue* q) {
+	q->front = -1;
+}
+
+static int Empty(Queue* q) {
+	return q->front < 0;
+}
+
+static void Enqueue(Queue* q, int data) {
+	if (q->front > MAX) {
+		fprintf(stderr, "Queue Full\n");
+		return;
+	}
+
+	q->front++;
+	q->arr[q->front] = data;
+}
+
+static int Dequeue(Queue* q) {
+	if (q->front < 0) {
+		fprintf(stderr, "Queue Empty\n");
+		return;
+	}
+
+	return q->arr[q->front--];
+}
+
+
+// ------------------------------------------------------------------------------------------------
+
 typedef struct gNode {
 	int vertex;
 	struct gNode* next;
@@ -122,6 +161,30 @@ static void dfs_list(GraphType* g, int v, int visited[]) {
 			dfs_list(g, tmp->vertex, visited);
 }
 
+static void bfs_list(GraphType* g, int v, int visited[]) {
+	Queue* q = (Queue*)malloc(sizeof(Queue));
+	init_queue(q);
+
+	Enqueue(q, v);
+	visited[v] = 1;
+
+	while (!Empty(q)) {
+		int vt = Dequeue(q);
+
+		printf("%d -> ", vt);
+
+		GraphNode* tmp = g->adj_list[vt];
+		while (tmp) {
+			if (!visited[tmp->vertex]) {
+				Enqueue(q, tmp->vertex);
+				visited[tmp->vertex] = 1;
+			}
+
+			tmp = tmp->next;
+		}
+	}
+}
+
 void adj_list_test() {
 	GraphType* g = (GraphType*)malloc(sizeof(GraphType));
 	init_graph(g);
@@ -141,8 +204,20 @@ void adj_list_test() {
 	print_graph(g);
 	puts("\n");
 
-	int visited[MAX] = { 0, };
-	dfs_list(g, 0, visited);
+	for (int i = 0; i < 2; i++) {
+		int visited[MAX] = { 0, };
+		if (i == 0) {
+			puts("[ Depth First Search ]");
+			dfs_list(g, 0, visited);
+		}
+		else {
+			puts("[ Breath First Search ]");
+			bfs_list(g, 0, visited);
+		}
+
+		putchar('\n');
+	}
+
 	puts("\n");
 
 	terminate_graph(g);
