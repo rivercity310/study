@@ -11,6 +11,14 @@
     <context:component-scan base-package="com.springbook.biz"></context:component-scan>
 
     <!--
+    <bean id="userService" class="com.springbook.biz.user.impl.UserServiceImpl">
+        <property name="userDAO" ref="userDAO"/>
+    </bean>
+
+    <bean id="userDAO" class="com.springbook.biz.user.impl.UserDAO"/>
+    !-->
+
+    <!--
     [ p namespace ]
     beans 태그에 xmlns:p="http://www.springframework.org/schema/p" 추가
     !-->
