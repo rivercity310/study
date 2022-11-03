@@ -2,7 +2,8 @@
 // #define QUEUE
 // #define LIST
 // #define TREE
-#define HEAP
+// #define HEAP
+#define GRAPH
 
 #ifdef MAIN
 #include <stdio.h>
@@ -36,6 +37,11 @@ extern void array_heap();
 extern void sorting_with_heap();
 #endif
 
+#ifdef GRAPH
+extern void adj_matrix_test();
+extern void adj_list_test();
+#endif
+
 int main() {
-	sorting_with_heap();
+	adj_list_test();
 }
