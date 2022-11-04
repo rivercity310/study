@@ -52,7 +52,7 @@ typedef struct gType {
 	GraphNode* adj_list[MAX];
 } GraphType;
 
-static void init_graph(GraphType* g) {
+void init_graph(GraphType* g) {
 	g->n = 0;
 
 	for (int v = 0; v < MAX; v++)
@@ -60,7 +60,7 @@ static void init_graph(GraphType* g) {
 }
 
 /* Á¤Á¡ »ðÀÔ */
-static void insert_vertex(GraphType* g, int v) {
+void insert_vertex(GraphType* g, int v) {
 	if ((g->n) + 1 > MAX) {
 		fprintf(stderr, "Graph: Exceeds Vertex Size");
 		return;
@@ -70,7 +70,7 @@ static void insert_vertex(GraphType* g, int v) {
 }
 
 /* °£¼± »ðÀÔ */
-static void insert_edge(GraphType* g, int u, int v) {
+void insert_edge(GraphType* g, int u, int v) {
 	if (u >= g->n || v >= g->n) {
 		fprintf(stderr, "Graph: Vertex Number Error");
 		return;
@@ -128,7 +128,7 @@ static void print_graph(GraphType* g) {
 	}
 }
 
-static void terminate_graph(GraphType* g) {
+void terminate_graph(GraphType* g) {
 	int size = g->n;
 
 	for (int i = 0; i < size; i++) {

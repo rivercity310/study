@@ -40,8 +40,13 @@ extern void sorting_with_heap();
 #ifdef GRAPH
 extern void adj_matrix_test();
 extern void adj_list_test();
+extern void kruskal_mst_test();
+extern void prim_mst_test();
+extern void dijkstra_test();
+extern void floyd_test();
+extern void topology_test();
 #endif
 
 int main() {
-	adj_list_test();
+	topology_test();
 }
