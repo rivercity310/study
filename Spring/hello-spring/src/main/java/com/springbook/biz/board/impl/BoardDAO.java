@@ -23,7 +23,7 @@ public class BoardDAO {
     private final String BOARD_LIST = "SELECT * FROM BOARD ORDER BY seq DESC";
 
     // CRUE 기능 메소드 구현
-    public void insertBoard(BoardVO vo) throws SQLException {
+    public void insertBoard(BoardVO vo) {
         System.out.println("===> JDBC로 insert() 기능 처리");
 
         try {
@@ -35,15 +35,23 @@ public class BoardDAO {
 
             stmt.executeUpdate();
         }
+
         catch (Exception e) {
             e.printStackTrace();
         }
+
         finally {
-            JDBCUtil.close(stmt, conn);
+            try {
+                JDBCUtil.close(stmt, conn);
+            }
+
+            catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
     }
 
-    public void updateBoard(BoardVO vo) throws SQLException {
+    public void updateBoard(BoardVO vo) {
         System.out.println("===> JDBC로 update() 기능 처리");
 
         try {
@@ -55,12 +63,23 @@ public class BoardDAO {
 
             stmt.executeUpdate();
         }
+
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
         finally {
-            JDBCUtil.close(stmt, conn);
+            try {
+                JDBCUtil.close(stmt, conn);
+            }
+
+            catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
     }
 
-    public void deleteBoard(BoardVO vo) throws SQLException {
+    public void deleteBoard(BoardVO vo) {
         System.out.println("===> JDBC로 delete() 기능 처리");
 
         try {
@@ -71,13 +90,24 @@ public class BoardDAO {
             stmt.executeUpdate();
 
         }
+
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
         finally {
-            JDBCUtil.close(stmt, conn);
+            try {
+                JDBCUtil.close(stmt, conn);
+            }
+
+            catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
     }
 
     // 글 상세 조회
-    public BoardVO getBoard(BoardVO vo) throws SQLException {
+    public BoardVO getBoard(BoardVO vo) {
         System.out.println("===> JDBC로 getBoard() 기능 처리");
         BoardVO board = null;
 
@@ -97,16 +127,27 @@ public class BoardDAO {
                 board.setRegDate(rs.getDate("REGDATE"));
                 board.setCnt(rs.getInt("CNT"));
             }
+        }
 
-            return board;
+        catch (Exception e) {
+            e.printStackTrace();
         }
+
         finally {
-            JDBCUtil.close(rs, stmt, conn);
+            try {
+                JDBCUtil.close(rs, stmt, conn);
+            }
+
+            catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
+
+        return board;
     }
 
     // 글 목록 조회
-    public List<BoardVO> getBoardList(BoardVO vo) throws SQLException {
+    public List<BoardVO> getBoardList(BoardVO vo) {
         System.out.println("===> JDBC로 getBoardList 기능 처리");
         List<BoardVO> boardList = new ArrayList<BoardVO>();
 
@@ -127,11 +168,22 @@ public class BoardDAO {
 
                 boardList.add(board);
             }
+        }
 
-            return boardList;
+        catch (Exception e) {
+            e.printStackTrace();
         }
+
         finally {
-            JDBCUtil.close(rs, stmt, conn);
+            try {
+                JDBCUtil.close(rs, stmt, conn);
+            }
+
+            catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
+
+        return boardList;
     }
 }

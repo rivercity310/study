@@ -10,26 +10,30 @@ import java.util.List;
 
 @Service("boardService")
 public class BoardServiceImpl implements BoardService {
-    @Autowired
-    private BoardDAO boardDAO;
+    private final BoardDAO boardDAO;
 
-    public void insertBoard(BoardVO vo) throws SQLException {
+    @Autowired
+    public BoardServiceImpl(BoardDAO boardDAO) {
+        this.boardDAO = boardDAO;
+    }
+
+    public void insertBoard(BoardVO vo) {
         boardDAO.insertBoard(vo);
     }
 
-    public void updateBoard(BoardVO vo) throws SQLException {
+    public void updateBoard(BoardVO vo) {
         boardDAO.updateBoard(vo);
     }
 
-    public void deleteBoard(BoardVO vo) throws SQLException {
+    public void deleteBoard(BoardVO vo) {
         boardDAO.deleteBoard(vo);
     }
 
-    public BoardVO getBoard(BoardVO vo) throws SQLException {
+    public BoardVO getBoard(BoardVO vo) {
         return boardDAO.getBoard(vo);
     }
 
-    public List<BoardVO> getBoardList(BoardVO vo) throws SQLException {
+    public List<BoardVO> getBoardList(BoardVO vo) {
         return boardDAO.getBoardList(vo);
     }
 }

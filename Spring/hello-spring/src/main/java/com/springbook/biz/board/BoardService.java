@@ -4,9 +4,9 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface BoardService {
-    void insertBoard(BoardVO vo) throws SQLException;
-    void updateBoard(BoardVO vo) throws SQLException;
-    void deleteBoard(BoardVO vo) throws SQLException;
-    BoardVO getBoard(BoardVO vo) throws SQLException;
-    List<BoardVO> getBoardList(BoardVO vo) throws SQLException;
+    void insertBoard(BoardVO vo);
+    void updateBoard(BoardVO vo);
+    void deleteBoard(BoardVO vo);
+    BoardVO getBoard(BoardVO vo);
+    List<BoardVO> getBoardList(BoardVO vo);
 }

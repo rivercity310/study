@@ -1,9 +1,9 @@
 // #define MAIN
 // #define QUEUE
 // #define LIST
-// #define TREE
+#define TREE
 // #define HEAP
-#define GRAPH
+// #define GRAPH
 
 #ifdef MAIN
 #include <stdio.h>
@@ -30,6 +30,7 @@ extern void Linked_Queue();
 extern void Linked_Tree();
 extern void Thread_Binary_Tree();
 extern void Binary_Search_Tree();
+extern void tree_Ex();
 #endif
 
 #ifdef HEAP
@@ -48,5 +49,5 @@ extern void topology_test();
 #endif
 
 int main() {
-	topology_test();
+	tree_Ex();
 }
