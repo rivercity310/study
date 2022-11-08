@@ -2,7 +2,8 @@
 
 // #define WEEK1
 // #define WEEK2
-#define WEEK3
+// #define WEEK3
+#define WEEK4
 
 #ifdef MAIN
 #include <iostream>
@@ -38,6 +39,10 @@ extern void boj_11279();		// 최대힙
 extern void boj_11000();		// 강의실 배정
 #endif
 
+#ifdef WEEK4
+extern void boj_1012();			// 유기농 배추
+#endif
+
 int main() {
-	boj_11000();
+	boj_1012();
 }

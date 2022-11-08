@@ -48,6 +48,8 @@ extern void floyd_test();
 extern void topology_test();
 #endif
 
+extern void graph_sch();
+
 int main() {
-	tree_Ex();
+	graph_sch();
 }
