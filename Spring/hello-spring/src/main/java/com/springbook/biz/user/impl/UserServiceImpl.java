@@ -14,13 +14,6 @@ public class UserServiceImpl implements UserService {
         this.userDAO = userDAO;
     }
 
-    /*
-    // Setter Injection 처리를 위한 Setter Method
-    public void setUserDAO(UserDAO userDAO) {
-        this.userDAO = userDAO;
-    }
-    */
-
     public UserVO getUser(UserVO vo) {
         return userDAO.getUser(vo);
     }

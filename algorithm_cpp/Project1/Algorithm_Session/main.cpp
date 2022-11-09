@@ -41,8 +41,10 @@ extern void boj_11000();		// 강의실 배정
 
 #ifdef WEEK4
 extern void boj_1012();			// 유기농 배추
+extern void boj_1920();			// 수 찾기 (이분 탐색)
+extern void pc_test();
 #endif
 
 int main() {
-	boj_1012();
+	boj_1920();
 }

@@ -10,7 +10,7 @@ public class boj_1012 {
     private static int[][] graph;
     private final static BufferedReader br =
             new BufferedReader(new InputStreamReader(System.in));
-    
+
     private static boolean dfs(int x, int y) {
         if (x < 0 || y < 0 || x >= graph.length || y >= graph[x].length)
             return false;

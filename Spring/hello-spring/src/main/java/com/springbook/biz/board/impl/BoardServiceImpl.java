@@ -2,19 +2,21 @@ package com.springbook.biz.board.impl;
 
 import com.springbook.biz.board.BoardService;
 import com.springbook.biz.board.BoardVO;
+import com.springbook.biz.common.LogAdvice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.sql.SQLException;
 import java.util.List;
 
 @Service("boardService")
 public class BoardServiceImpl implements BoardService {
-    private final BoardDAO boardDAO;
+    private BoardDAO boardDAO;
+    // private LogAdvice log;               OOP 방식으로는 핵심 관심(BoardServiceImpl)에서 횡단 관심(LogAdvice)를 완벽하게 분리할 수 없음
 
     @Autowired
     public BoardServiceImpl(BoardDAO boardDAO) {
         this.boardDAO = boardDAO;
+        // this.log = log;
     }
 
     public void insertBoard(BoardVO vo) {
