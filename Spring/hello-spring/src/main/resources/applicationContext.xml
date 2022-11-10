@@ -11,15 +11,15 @@
        http://www.springframework.org/schema/aop
        https://www.springframework.org/schema/aop/spring-aop.xsd" >
 
-    <context:component-scan base-package="com.springbook.biz"></context:component-scan>
+    <context:component-scan base-package="com.springbook.biz" />
 
-    <bean id="before" class="com.springbook.biz.common.BeforeAdvice"/>
+    <bean id="afterReturning" class="com.springbook.biz.common.AfterReturningAdvice"/>
     <aop:config>
         <aop:pointcut id="allPointcut"
                       expression="execution(* com.springbook.biz..*Impl.*(..))"/>
 
-        <aop:aspect ref="before">
-            <aop:before pointcut-ref="allPointcut" method="beforeLog"/>
+        <aop:aspect ref="afterReturning">
+            <aop:after-returning pointcut-ref="allPointcut" method="afterLog" returning="returnObj"/>
         </aop:aspect>
     </aop:config>
 
