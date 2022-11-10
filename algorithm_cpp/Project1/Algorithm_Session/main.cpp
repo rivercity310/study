@@ -45,9 +45,11 @@ extern void boj_1920();			// 수 찾기 (이분 탐색)
 extern void boj_11051();		// 이항계수2	     * 미해결
 extern void boj_1010();			// 다리놓기
 extern void boj_9375();			// 패션왕 신해빈	 * 미해결
+extern void boj_2667();			// 단지번호 붙이기 (그래프)
+extern void boj_2178();			// 미로탐색 (그래프)
 extern void pc_test();
 #endif
 
 int main() {
-	boj_1010();
+	boj_2178();
 }
