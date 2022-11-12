@@ -29,7 +29,7 @@ static void permutation(int depth) {
 	}
 }
 
-int dpArr[R];
+static int dpArr[R];
 
 static void duplicatePermutation(int depth) {
 	if (depth == R) {
@@ -45,7 +45,7 @@ static void duplicatePermutation(int depth) {
 	}
 }
 
-int cArr[R];
+static int cArr[R];
 
 /* 반복문의 시작 값은 (이전에 선택한 값 + 1) */
 static void combination(int depth, int next) {
@@ -62,7 +62,7 @@ static void combination(int depth, int next) {
 	}
 }
 
-int dcArr[R] = { 0, };
+static int dcArr[R] = { 0, };
 
 /* 반복문의 시작 값은 이전에 선택한 값이 된다 */
 static void duplicateCombination(int depth, int next)

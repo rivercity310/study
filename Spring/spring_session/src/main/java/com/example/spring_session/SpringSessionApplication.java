@@ -1,11 +1,13 @@
-package com.springsession.spring_session;
+package com.example.spring_session;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class SpringSessionApplication {
+
 	public static void main(String[] args) {
 		SpringApplication.run(SpringSessionApplication.class, args);
 	}
+
 }

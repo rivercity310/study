@@ -1,4 +1,4 @@
-package com.springsession.spring_session;
+package com.example.spring_session;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

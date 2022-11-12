@@ -1,4 +1,4 @@
-package com.springsession.spring_session.entity;
+package com.example.spring_session.entity;
 
 import lombok.Data;
 
@@ -11,7 +11,7 @@ import javax.persistence.Id;
 @Data
 public class Board {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String title;
     private String content;

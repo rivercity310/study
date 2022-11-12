@@ -1,13 +1,13 @@
-package com.springsession.spring_session.service;
+package com.example.spring_session.service;
 
-import com.springsession.spring_session.entity.Board;
-import com.springsession.spring_session.repository.BoardRepository;
+import com.example.spring_session.entity.Board;
+import com.example.spring_session.repository.BoardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class BoardService {
-    private BoardRepository boardRepository;
+    private final BoardRepository boardRepository;
 
     @Autowired
     public BoardService(BoardRepository boardRepository) {

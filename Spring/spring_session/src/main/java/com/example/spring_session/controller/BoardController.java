@@ -1,17 +1,15 @@
-package com.springsession.spring_session.controller;
+package com.example.spring_session.controller;
 
-import com.springsession.spring_session.entity.Board;
-import com.springsession.spring_session.service.BoardService;
+import com.example.spring_session.entity.Board;
+import com.example.spring_session.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class BoardController {
-
-    private BoardService boardService;
+    private final BoardService boardService;
 
     @Autowired
     public BoardController(BoardService boardService) {

@@ -1,11 +1,18 @@
 package com.springbook.biz.common;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.AfterThrowing;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.stereotype.Service;
 
+@Service
+@Aspect
 public class AfterThrowingAdvice {
+    @AfterThrowing(pointcut = "PointcutCommon.allPointcut()", throwing = "exceptObj")
     public void exceptionLog(JoinPoint jp, Exception exceptObj) {
         String methodName = jp.getSignature().getName();
-        System.out.println("[예외 처리] " + methodName + ", 메소드 수행중 발생된 예외 메세지: " + exceptObj.getMessage());
+        System.out.println("[After Throwing] " + methodName + ", 메소드 수행중 발생된 예외 메세지: " + exceptObj.getMessage());
 
         if (exceptObj instanceof IllegalArgumentException)
             System.out.println("부적합한 값 입력");
