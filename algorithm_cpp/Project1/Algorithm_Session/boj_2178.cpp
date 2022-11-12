@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <queue>
+#include <stack>
 
 using namespace std;
 
@@ -40,6 +41,32 @@ static void bfs(int i, int j) {
 	}
 }
 
+static void dfs(int r, int c) {
+	stack<pair<int, int>> stk;
+	stk.push({ r, c });
+
+	while (!stk.empty()) {
+		auto tmp = stk.top();
+		stk.pop();
+
+		int curR = tmp.first;
+		int curC = tmp.second;
+
+		for (int i = 0; i < 4; i++) {
+			int nextR = rows[i] + curR;
+			int nextC = cols[i] + curC;
+
+			if (nextR < 0 || nextC < 0 || nextR >= arr.size() || nextC >= arr[nextR].size())
+				continue;
+
+			if (arr[nextR][nextC] == 1) {
+				arr[nextR][nextC] = arr[curR][curC] + 1;
+				stk.push({ nextR, nextC });
+			}
+		}
+	}
+}
+
 void boj_2178() {
 	ios::sync_with_stdio(0);
 	cin.tie(0);
@@ -49,11 +76,25 @@ void boj_2178() {
 	cin >> n >> m;
 
 	arr = vector<vector<int>>(n, vector<int>(m));
+	for (int i = 0; i < n; i++) {
+		string str;
+		cin >> str;
 
-	for (int i = 0; i < n; i++)
+		const char* chars = str.c_str();
+		
 		for (int j = 0; j < m; j++)
-			scanf_s("%1d", &arr[i][j]);
+			arr[i][j] = chars[j] - '0';
+	}
+	
 
 	bfs(0, 0);
+	
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < m; j++)
+			printf("%-5d", arr[i][j]);
+		cout << "\n";
+	}
+
+	cout << "\n";
 	cout << arr[n - 1][m - 1];
 }
