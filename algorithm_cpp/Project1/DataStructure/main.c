@@ -1,7 +1,7 @@
 // #define MAIN
 // #define QUEUE
 // #define LIST
-#define TREE
+// #define TREE
 // #define HEAP
 // #define GRAPH
 
@@ -48,8 +48,9 @@ extern void floyd_test();
 extern void topology_test();
 #endif
 
-extern void graph_sch();
+extern void graph_assignment();
+extern void graph_assignment2();
 
 int main() {
-	graph_sch();
+	graph_assignment2();
 }

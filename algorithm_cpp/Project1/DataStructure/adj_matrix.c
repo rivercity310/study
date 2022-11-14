@@ -19,7 +19,7 @@ static void init_graph(GraphType* g) {
 static void insert_vertex(GraphType* g, int v) {
 	if ((g->n) + 1 > MAX) {
 		fprintf(stderr, "Graph: Exceeds Vertex Size");
-		return;
+		exit(1);
 	}
 
 	g->n++;

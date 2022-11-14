@@ -13,7 +13,7 @@ typedef struct q {
 } Queue;
 
 static void init_queue(Queue* q) {
-	q->front = -1;
+	q->front = 0;
 }
 
 static int Empty(Queue* q) {
@@ -26,8 +26,7 @@ static void Enqueue(Queue* q, int data) {
 		return;
 	}
 
-	q->front++;
-	q->arr[q->front] = data;
+	q->arr[q->front++] = data;
 }
 
 static int Dequeue(Queue* q) {
@@ -52,7 +51,7 @@ typedef struct gType {
 	GraphNode* adj_list[MAX];
 } GraphType;
 
-void init_graph(GraphType* g) {
+static void init_graph(GraphType* g) {
 	g->n = 0;
 
 	for (int v = 0; v < MAX; v++)
@@ -60,7 +59,7 @@ void init_graph(GraphType* g) {
 }
 
 /* Á¤Á¡ »ðÀÔ */
-void insert_vertex(GraphType* g, int v) {
+static void insert_vertex(GraphType* g, int v) {
 	if ((g->n) + 1 > MAX) {
 		fprintf(stderr, "Graph: Exceeds Vertex Size");
 		return;
@@ -70,7 +69,7 @@ void insert_vertex(GraphType* g, int v) {
 }
 
 /* °£¼± »ðÀÔ */
-void insert_edge(GraphType* g, int u, int v) {
+static void insert_edge(GraphType* g, int u, int v) {
 	if (u >= g->n || v >= g->n) {
 		fprintf(stderr, "Graph: Vertex Number Error");
 		return;
@@ -128,7 +127,7 @@ static void print_graph(GraphType* g) {
 	}
 }
 
-void terminate_graph(GraphType* g) {
+static void terminate_graph(GraphType* g) {
 	int size = g->n;
 
 	for (int i = 0; i < size; i++) {
