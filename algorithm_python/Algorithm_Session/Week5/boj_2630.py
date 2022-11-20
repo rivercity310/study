@@ -10,45 +10,51 @@ m = []
 
 for _ in range(n):
     m.append(list(map(int, input().split())))
-
+    
 # 모두 같으면 true
-def check_area(arr):
-    if max(arr) == min(arr):
-        if max(arr) == 1:
-            return 1
-        else:
-            return 0
-    return -1
+def check_area(arr, n):
+    chk = arr[0][0]
+
+    for i in range(1, n):
+        for j in range(n):
+            if arr[i][j] != chk:
+                return False
+    
+    return True
     
 
 cnt = [0, 0]
 
-def cutting(n):
+def cutting(arr, n):
     if n == 1:
+        cnt[arr[0][0]] += 1
         return
 
-    tmp = int(n/2)
+    tmp = n // 2
 
-    lt = m[0:tmp][0:tmp]
-    lb = m[0:tmp][tmp:n]
-    rt = m[tmp:n][0:tmp]
-    rb = m[tmp:n][tmp:n]
+    arrs = [[], [], [], []]
+    for i in range(tmp):
+        arrs[0].append(arr[i][0:tmp])
+    
+    for i in range(tmp):
+        arrs[1].append(arr[i][tmp:n])
+    
+    for i in range(tmp):
+        arrs[2].append(arr[0:tmp][i])
 
-    arrs = [lt, lb, rt, rb]
+    for i in range(tmp):
+        arrs[3].append(arr[tmp:n][i])
 
     for arr in arrs:
-        print(f"arr : {arr}")
+        chk = check_area(arr, tmp)
 
-    for arr in arrs:
-        if check_area(arr) == 1:
-            cnt[1] += 1
-        elif check_area(arr) == 0:
-            cnt[0] += 1
+        if chk:
+            cnt[arr[0][0]] += 1
         else:
-            cutting(tmp)
+            cutting(arr, tmp)
 
 
 
-cutting(n)
+cutting(m, n)
 print(cnt[0])
 print(cnt[1])

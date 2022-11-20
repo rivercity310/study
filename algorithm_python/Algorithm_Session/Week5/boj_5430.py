@@ -7,44 +7,46 @@ input = sys.stdin.readline
 
 t = int(input())
 
-while t:
+for _ in range(t):
+    
     func_list = list(input().rstrip())
     n = int(input())
     
-    raw_arr = input().rstrip().split(",")
-    raw_arr[0] = raw_arr[0].removeprefix("[")
-    raw_arr[-1] = raw_arr[-1].removesuffix("]")
+    # arr = deque(input().rstrip().removesuffix("]").removeprefix("[").split(","))
+    arr = deque(input().rstrip()[1:-1].split(","))
 
-    if raw_arr[0] == '':
+    if arr[0] == '':
         print("error")
         continue
-
-    arr = deque(raw_arr)
-    flag = True
+    
+    isError = False
+    rvs = False
 
     for func in func_list:
         if func == 'R':
-            arr.reverse()
-        
+            rvs = not rvs
+
         elif func == 'D':
             if len(arr) == 0:
-                flag = False
+                isError = True
                 break
+            
+            if rvs:
+                arr.pop()
+            else:
+                arr.popleft()            
 
-            arr.popleft()
-
-
+      
     # 에러가 발생한 경우
-    if not flag:
+    if isError:
         print("error")
     else:
-        ans = "["
-        for i in range(len(arr)):
-            ans += arr[i]
-            if i != len(arr) -1:
-                ans += ","
-        ans += "]"
+        if rvs:
+            arr.reverse()
 
-        print(ans)
-
-    t -= 1
+        print("[", end="")
+        for i, val in enumerate(arr):
+            print(val, end="")
+            if i < len(arr) - 1:
+                print(",", end="")
+        print("]", end="")

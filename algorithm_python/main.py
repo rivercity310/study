@@ -1,38 +1,24 @@
-import heapq
+import random
 
-N = 6
+N = 10000000
 
-graph = [
-    [],
-    [(2, 2), (3, 5), (4, 1)],
-    [(3, 3), (4, 2)],
-    [(2, 3), (6, 5)],
-    [(3, 3), (5, 1)],
-    [(3, 1), (6, 2)],
-    [],
-]
+a = 0
+b = 0
+c = 0
 
-INF = int(1e9)
-distance = [INF] * (N + 1)
+for i in range(N):
+    k = random.randint(1, 3)
 
-def dijkstra(start):
-    pq = []
+    if k == 1:
+        a += 1
+    elif k == 2:
+        b += 1
+    else:
+        c += 1
 
-    distance[start] = 0
-    heapq.heappush(pq, (0, start))
+s = a + b + c
 
-    while pq:
-        dist, now = heapq.heappop(pq)
-
-        if distance[now] < dist:
-            continue
-
-        for end_vertex, weight in graph[now]:
-            cost = distance[now] + weight
-
-            if distance[end_vertex] > cost:
-                distance[end_vertex] = cost
-                heapq.heappush(pq, (cost, end_vertex))
-
-dijkstra(1)
-print(distance[1:])
+print(f"[ 가위바위보 {format(N, ',d')}번 테스트 결과 ]" )
+print(f" -> 가위 : {format(a, ',d')}회 ({(a / s) * 100}%)")
+print(f" -> 바위 : {format(b, ',d')}회 ({(b / s) * 100}%)")
+print(f" -> 보 :   {format(c, ',d')}회 ({(c / s) * 100}%)")
