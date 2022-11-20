@@ -1,0 +1,318 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "Algorithm_Session"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable"
+		],
+		"files" : 
+		[
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 6,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g"
+				},
+				{
+					"fragment" : "-std=gnu++14"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					1
+				],
+				"standard" : "14"
+			},
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21,
+				22,
+				23,
+				24,
+				25,
+				26,
+				27
+			]
+		}
+	],
+	"id" : "Algorithm_Session::@6890427a1f51a3e7e1df",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "-g",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "",
+				"role" : "flags"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "Algorithm_Session",
+	"nameOnDisk" : "Algorithm_Session",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21,
+				22,
+				23,
+				24,
+				25,
+				26,
+				27
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "boj_1004.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "boj_1010.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "boj_1012.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "boj_10816.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "boj_11000.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "boj_11051.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "boj_11279.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "boj_11866.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "boj_11866_2.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "boj_1541.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "boj_15649.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "boj_15650.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "boj_15828.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "boj_1620.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "boj_1874.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "boj_1920.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "boj_1966.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "boj_2178.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "boj_24060.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "boj_2504.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "boj_2587.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "boj_2667.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "boj_4195.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "boj_4949.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "boj_9012.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "boj_9375.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "main.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "permutation_combination.cpp",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "EXECUTABLE"
+}

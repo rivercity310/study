@@ -1,0 +1,758 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "prj"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"include_directories"
+		],
+		"files" : 
+		[
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 8,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 6,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g"
+				},
+				{
+					"fragment" : "-std=gnu++14"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 2,
+					"path" : "/home/seungsu/h970126/study/algorithm_cpp/prj/."
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					1
+				],
+				"standard" : "14"
+			},
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21,
+				22,
+				23,
+				24,
+				25,
+				26,
+				27,
+				28,
+				29,
+				30,
+				31,
+				32,
+				33,
+				34,
+				35,
+				36,
+				37,
+				38,
+				39,
+				40,
+				41,
+				50,
+				52,
+				53,
+				54,
+				55,
+				57,
+				60,
+				61,
+				62,
+				63,
+				64,
+				65,
+				67,
+				68,
+				69,
+				71,
+				72,
+				73,
+				74,
+				75,
+				76,
+				77,
+				78,
+				79,
+				80,
+				81,
+				82,
+				83
+			]
+		}
+	],
+	"id" : "prj::@6890427a1f51a3e7e1df",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "-g",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "",
+				"role" : "flags"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "prj",
+	"nameOnDisk" : "prj",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21,
+				22,
+				23,
+				24,
+				25,
+				26,
+				27,
+				28,
+				29,
+				30,
+				31,
+				32,
+				33,
+				34,
+				35,
+				36,
+				37,
+				38,
+				39,
+				40,
+				41,
+				50,
+				52,
+				53,
+				54,
+				55,
+				57,
+				60,
+				61,
+				62,
+				63,
+				64,
+				65,
+				67,
+				68,
+				69,
+				71,
+				72,
+				73,
+				74,
+				75,
+				76,
+				77,
+				78,
+				79,
+				80,
+				81,
+				82,
+				83
+			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				42,
+				43,
+				44,
+				45,
+				46,
+				47,
+				48,
+				49,
+				51,
+				56,
+				58,
+				59,
+				66,
+				70
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "01_subset_sum_bf.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "02_subset_sum_bt.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "03_subset_sum_memo.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "04_subset_sum_tabulation.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "big_number.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "bitset_.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "bstEx.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "chap1_01_std_array.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "chap1_01_std_array_ex1.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "chap1_01_std_array_ex2.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "chap1_02_std_vector.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "chap1_03_std_forward_list.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "chap1_03_std_forward_list_ex1.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "chap1_04_iterator_ex1.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "chap1_04_iterator_usercontainer.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "chap1_05_std_list.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "chap1_06_std_deque.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "chap2_01_tree.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "chap2_02_BST.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "chap2_03_heap.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "chap2_04_adj_list_graph.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "chap2_04_adj_matrix_graph.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "chap3_01_1_Hash.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "chap3_01_2_chaining.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "chap3_01_3_cuckoo_hashing.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "chap3_02_STL_hash.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "chap3_03_bloom_filter.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "chap4_01_bin_search.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "chap4_02_merge_sorting.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "chap4_03_quick_sorting.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "chap4_04_Linear_time_selection.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "chap4_05_map_reduce.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "chap5_01_shortest_scheduling.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "chap5_02_fractional_knapsack_problem.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "chap5_03_kruskal_minimum_spanning_tree.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "chap5_04_graph_coloring.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "chap5_ex_welsh-powell.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "chap6_01_1_BFS.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "chap6_01_2_DFS.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "chap6_02_prim.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "chap6_03_dijkstra.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "chap7_01_bellman_ford.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "chapter1.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "chapter2.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "chapter3.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "chapter4.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "chapter5.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "chapter6.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "chapter7.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "chapter8.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "copy_constructor.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "data_structure.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "dijkstra_ex1.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "dijkstra_ex2.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "dijl_to_fw.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "disjoint_set.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "disjoint_set.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "double_linkedlist.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "ds.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Ex.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "ex1.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "ex2.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "ex3.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "ex4.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Floyd_warshall.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "friendEx.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "graph_and_edge.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "grp.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "IO.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "kruskal_mst.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Label.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "linked_list.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Linked_Stack.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "list0.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "list1.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "list2.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "list3.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "main.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "operator_overloading.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "operator_overloading2.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "rand_int_chrono.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "ringbuffer.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "set_.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "treeEx.cpp",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "EXECUTABLE"
+}
