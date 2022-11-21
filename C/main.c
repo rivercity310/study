@@ -3,6 +3,12 @@
 #define QUEUE
 #define TREE
 #define GRAPH
+#define SORTING
+
+#ifdef SORTING
+extern void selection_sort_test();
+extern void quick_sort_test();
+#endif
 
 #ifdef LINKED_LIST
 extern void double_linkedlist();
@@ -43,8 +49,6 @@ extern void kruskal_mst_test();
 extern void prim_mst_test();
 #endif
 
-#include <stdio.h>
-
 int main() {
-    printf("hi");
+    quick_sort_test();
 }
