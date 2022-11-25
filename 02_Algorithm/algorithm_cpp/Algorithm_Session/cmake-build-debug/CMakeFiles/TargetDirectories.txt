@@ -1,3 +1,0 @@
-/home/seungsu/h970126/study/algorithm_cpp/Algorithm_Session/cmake-build-debug/CMakeFiles/Algorithm_Session.dir
-/home/seungsu/h970126/study/algorithm_cpp/Algorithm_Session/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/seungsu/h970126/study/algorithm_cpp/Algorithm_Session/cmake-build-debug/CMakeFiles/rebuild_cache.dir

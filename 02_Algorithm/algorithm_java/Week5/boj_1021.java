@@ -24,6 +24,7 @@ public class boj_1021 {
             arr[idx++] = Integer.parseInt(st.nextToken());
 
         // 3 4 5 6 7 8  7 6 5
-
+        for (int k : arr)
+            System.out.print(k + " ");
     }
 }

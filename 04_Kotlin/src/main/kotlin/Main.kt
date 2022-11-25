@@ -1,11 +1,7 @@
+import a_StartKotlin.*
+import b_KotilnBasic.*
+
 fun main(args: Array<String>) {
-    val solutionClass = Solution()
-    val answer = solutionClass.solution("Hello Algorithm")
-    println(answer)
+    println(getMnemonic(Color.RED))
 }
 
-class Solution {
-    fun solution(string: String): String {
-        return string
-    }
-}
