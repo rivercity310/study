@@ -1,4 +1,4 @@
-package a_StartKotlin
+package chapter1
 
 // [ 1. Kotlin 맛보기 ]
 

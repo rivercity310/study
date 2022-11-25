@@ -1,4 +1,4 @@
-package b_KotilnBasic
+package chapter2
 
 import java.util.Random
 

@@ -1,7 +1,8 @@
-import a_StartKotlin.*
-import b_KotilnBasic.*
+import chapter2.*
+import java.io.BufferedReader
+import java.io.InputStreamReader
 
 fun main(args: Array<String>) {
-    println(getMnemonic(Color.RED))
+    readNumber(BufferedReader(InputStreamReader(System.`in`)))
 }
 
