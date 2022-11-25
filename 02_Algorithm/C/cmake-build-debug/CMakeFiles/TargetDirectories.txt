@@ -1,0 +1,3 @@
+/home/seungsu/seungsu/workspace/study/C/cmake-build-debug/CMakeFiles/C.dir
+/home/seungsu/seungsu/workspace/study/C/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/seungsu/seungsu/workspace/study/C/cmake-build-debug/CMakeFiles/rebuild_cache.dir
