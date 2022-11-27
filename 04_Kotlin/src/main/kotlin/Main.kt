@@ -1,8 +1,8 @@
-import chapter2.*
-import java.io.BufferedReader
-import java.io.InputStreamReader
+import chapter1.boj
+import chapter1.dijkstra
+import chapter3.*
 
 fun main(args: Array<String>) {
-    readNumber(BufferedReader(InputStreamReader(System.`in`)))
+    collection4()
 }
 

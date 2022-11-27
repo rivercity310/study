@@ -36,7 +36,7 @@ fun mix(color1: Color, color2: Color) = when(setOf(color1, color2)) {       // w
     else -> throw Exception("Dirty Color")
 }
 
-// 인자 없는 when 사용 -> mix 함수의 불필요한 Set 가비지 객체가 늘어나는 것 방지
+// 인자 없는 when 사용 -> mix 함수에서 불필요한 Set 가비지 객체가 늘어나는 것 방지
 fun mix2(color1: Color, color2: Color) = when {
     (color1 == Color.RED && color2 == Color.YELLOW) || (color1 == Color.YELLOW && color2 == Color.RED) -> "ORANGE"
     else -> throw Exception("Dirty color")

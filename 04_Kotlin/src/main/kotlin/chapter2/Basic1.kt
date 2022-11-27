@@ -10,6 +10,7 @@ fun test1(args: Array<String>) {
 }
 
 /* 리턴값이 있을 땐 반환형을 다음과 같이 선언 -> Kotlin의 if는 statement(문)가 아닌 expression(식) */
+// 블럭이 있으면 return 키워드 사용해야함
 fun max(a: Int, b: Int): Int {
     return if (a > b) a else b
 }
@@ -21,7 +22,7 @@ fun max2(a: Int, b: Int) = if (a > b) a else b
 /*
 Kotlin의 타입 추론 기능으로 변수를 선언할 때는 타입 지정을 생략하는 경우가 흔하다.
 
-- val : 값을 뜻하는 value에서 따옴, immutable(변경 불가능) 참조를 저장하는 변수 (final) -> 함수형 코드를 위해 필요한 경우에만 var를 사용
+- val : 값을 뜻하는 value에서 따옴, immutable(변경 불가능) 참조를 저장하는 변수 (final) -> 함수형 코드(불변성)를 위해 필요한 경우에만 var를 사용
 - var : 변수를 뜻하는 variable에서 따옴, mutable(변경 가능) 참조
 * */
 
@@ -58,7 +59,7 @@ println(person.isMarried)
 - 클라이언트가 프로퍼티에 접근할 때마다 게터가 프로퍼티 값을 매번 다시 계산
 */
 
-class Rectangle(private val height: Int, private val width: Int) {      // 클래스가 매개변수를 받는다..
+class Rectangle(private val height: Int, private val width: Int) {
     val isSquare: Boolean
         get() {
             return height == width
