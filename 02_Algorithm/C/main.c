@@ -8,6 +8,7 @@
 #ifdef SORTING
 extern void selection_sort_test();
 extern void quick_sort_test();
+extern void merge_sort_test();
 #endif
 
 #ifdef LINKED_LIST
@@ -35,6 +36,9 @@ extern void sorting_with_heap();
 extern void Linked_Tree();
 extern void Thread_Binary_Tree();
 extern void tree_Ex();
+extern void kruskal_mst_test();
+extern void prim_mst_test();
+extern void mst_assignment();
 #endif
 
 #ifdef GRAPH
@@ -45,10 +49,8 @@ extern void floyd_test();
 extern void graph_assignment();
 extern void graph_assignment2();
 extern void graph_sch();
-extern void kruskal_mst_test();
-extern void prim_mst_test();
 #endif
 
 int main() {
-    quick_sort_test();
+    mst_assignment();
 }

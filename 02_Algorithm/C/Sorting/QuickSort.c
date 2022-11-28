@@ -17,7 +17,7 @@ static void quick_sort(int* arr, int start, int end) {
     if (start >= end)
         return;
 
-    int pivot = start;
+    int pivot = (start + end) / 2;
     int left = start + 1;
     int right = end;
 

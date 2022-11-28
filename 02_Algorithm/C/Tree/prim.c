@@ -40,22 +40,23 @@ static void prim(GraphType* g, int start) {
 
 	distance[start] = 0;
 
-	for (i = 0; i < g->n; i++)
-		u = get_min_vertex(g->n);
+	for (i = 0; i < g->n; i++) {
+        u = get_min_vertex(g->n);
 
-	selected[u] = TRUE;
+        selected[u] = TRUE;
 
-	if (distance[u] == INF)
-		return;
+        if (distance[u] == INF)
+            return;
 
-	for (i = 0; i < g->n; i++)
-		printf(" [%d] %2d %d", i, distance[i], selected[i]);
-	putchar('\n');
+        for (i = 0; i < g->n; i++)
+            printf(" [%d] %2d %d", i, distance[i], selected[i]);
+        putchar('\n');
 
-	for (v = 0; v < g->n; v++) 
-		if (g->weight[u][v] != INF) 
-			if (!selected[v] && g->weight[u][v] < distance[v])
-				distance[v] = g->weight[u][v];
+        for (v = 0; v < g->n; v++)
+            if (g->weight[u][v] != INF)
+                if (!selected[v] && g->weight[u][v] < distance[v])
+                    distance[v] = g->weight[u][v];
+    }
 }
 
 void prim_mst_test() {
