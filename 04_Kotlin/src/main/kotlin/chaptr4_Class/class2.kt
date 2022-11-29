@@ -68,3 +68,55 @@ class FacebookUser(val accountId: Int): User3 {                 // - 프로퍼�
 }
 
 fun getFacebookName(accountId: Int): String = "Hi"
+
+// SubscribingUser와 FacebookUser의 nickname 구현 차이!!
+// - SubscribingUser: 매번 호출될 때마다 커스텀 게터가 호출되어 nickname이 계산됨
+// - FacebookUser: 객체 초기화 시 한번만 계산하여 필드에 저장
+
+
+
+
+
+
+
+// 3. 게터와 세터에서 뒷받침하는 필드에 접근
+// - 위에서 "값을 저장하는 프로퍼티"와 커스텀 접근자에서 "매번 값을 계산하는 프로퍼티"에 대해 살펴보았다.
+// - 두 유형을 조합해서 어떤 값을 저장하되 그 값을 변경하거나 읽을 때마다 정해진 로직을 실행하는 유형의 프로퍼티를 만들 수 있다
+
+// ex) 프로퍼티에 저장된 값의 변경 이력을 로그에 남기는 경우, 세터에서 뒷받침하는 필드 접근
+class User4(val name: String) {
+    var address: String = "unspecified"
+        set(value: String) {                        // field라는 특별한 식별자를 통해 뒷받침하는 필드에 접근할 수 있다.
+            println("Address was changed for $name: $field -> $value".trimIndent())
+            field = value
+        }
+}
+
+fun class2_test1() {
+    val user = User4("Alice")
+    user.address = "Elsenheimerstrasse 47"      // address의 setter 자동 호출
+    user.address = "Rivercity 310-1502"
+
+    /*
+    [ 실행 결과 ]
+    Address was changed for Alice: unspecified -> Elsenheimerstrasse 47
+    Address was changed for Alice: Elsenheimerstrasse 47 -> Rivercity 310-1502
+    */
+}
+
+
+
+
+
+// 4. 원한다면 접근자의 가시성도 변경할 수 있다.
+
+// ex) 비공개 세터가 있는 프로퍼티 선언하기: 프로퍼티를 외부에 공개하되(public),
+// 외부 코드에서 변경하지 못하도록 세터의 가시성을 private으로 변경
+class LengthCounter {
+    var counter: Int = 0        // 이 클래스 밖에서 이 프로퍼티의 값을 변경할 수 없다
+        private set
+
+    fun addWord(word: String) {
+        counter += word.length
+    }
+}
