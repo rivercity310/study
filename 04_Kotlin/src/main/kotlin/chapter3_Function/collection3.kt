@@ -1,4 +1,4 @@
-package chapter3
+package chapter3_Function
 
 /* 컬렉션 처리 : 가변 길이 인자, 중위 함수 호출, 라이브러리 지원 */
 

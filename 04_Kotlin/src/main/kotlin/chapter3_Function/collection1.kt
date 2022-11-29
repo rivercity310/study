@@ -1,4 +1,4 @@
-package chapter3
+package chapter3_Function
 
 /* 코틀린에서 컬렉션 만들기 */
 // 코틀린은 자체 컬렉션을 제공하지 않고, 기존 자바 컬렉션을 활용한다

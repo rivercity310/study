@@ -1,4 +1,4 @@
-package chapter3
+package chapter3_Function
 
 // 메서드를 다른 클래스에 추가
 

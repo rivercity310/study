@@ -1,4 +1,4 @@
-package chapter3
+package chapter3_Function
 
 // 1. 문자열과 정규식 다루기
 // 자바 String의 split 메서드는 regex를 인자로 받아 String 배열을 반환한다.

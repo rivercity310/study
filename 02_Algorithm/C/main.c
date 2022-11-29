@@ -52,5 +52,5 @@ extern void graph_sch();
 #endif
 
 int main() {
-    mst_assignment();
+    dijkstra_test();
 }

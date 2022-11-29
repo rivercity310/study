@@ -1,8 +1,7 @@
-import chapter1.boj
-import chapter1.dijkstra
-import chapter3.*
+import chapter3_Function.*
+import chaptr4_Class.*
 
 fun main(args: Array<String>) {
-    collection4()
+    class1_test1()
 }
 

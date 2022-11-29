@@ -53,7 +53,6 @@ static void print_status(GraphType* g) {
 static void shortest_path(GraphType* g, int start) {
 	int i, u, w;
 
-	/* �ʱ�ȭ */
 	for (i = 0; i < g->n; i++) {
 		distance[i] = g->weight[start][i];
 		visited[i] = FALSE;

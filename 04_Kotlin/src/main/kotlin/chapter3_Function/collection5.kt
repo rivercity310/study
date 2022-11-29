@@ -1,4 +1,4 @@
-package chapter3
+package chapter3_Function
 
 // 코드 다듬기: 로컬 함수와 확장
 
