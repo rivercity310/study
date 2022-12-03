@@ -1,7 +1,6 @@
-package chaptr4_Class
+package chapter4_Class
 
 import javax.naming.Context
-import javax.swing.text.AttributeSet
 
 // 1. 코틀린의 생성자
 

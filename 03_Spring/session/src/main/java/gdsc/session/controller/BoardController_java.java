@@ -1,3 +1,4 @@
+/*
 package gdsc.session.controller;
 
 import gdsc.session.service.*;
@@ -8,13 +9,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
 @Controller
-public class BoardController {
+public class BoardController_java {
     private final BoardService boardService;
 
     @Autowired
-    public BoardController(BoardService boardService) {
+    public BoardController_java(BoardService boardService) {
         this.boardService = boardService;
     }
 
@@ -63,3 +63,4 @@ public class BoardController {
         return "redirect:/board/list";
     }
 }
+*/

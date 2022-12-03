@@ -1,4 +1,4 @@
-package chaptr4_Class
+package chapter4_Class
 
 /* [ 모든 클래스가 정의해야 하는 메서드: toString, equals, hashCode ] */
 // - 코틀린에서는 이런 메서드 구현을 자동으로 생성해주지만 오버라이드해서 기본 구현을 바꿀 수 있다.

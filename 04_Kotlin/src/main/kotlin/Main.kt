@@ -1,7 +1,7 @@
-import chapter3_Function.*
-import chaptr4_Class.*
+import chapter4_Class.*
+import chapter5_Lambda.*
 
 fun main(args: Array<String>) {
-    class4_test3()
+    lambda_test2()
 }
 

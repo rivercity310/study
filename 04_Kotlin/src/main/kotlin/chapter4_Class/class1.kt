@@ -1,4 +1,4 @@
-package chaptr4_Class
+package chapter4_Class
 
 import java.io.Serializable
 
