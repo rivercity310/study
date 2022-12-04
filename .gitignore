@@ -1,0 +1,15 @@
+.idea/*
+
+java_spring/gradle/*
+java_spring/.gitignore
+java_spring/build.gradle
+java_spring/gradlew
+java_spring/gradlew.bat
+java_spring/settings.gradle
+
+kotlin_spring/gradle/*
+kotlin_spring/.gitignore
+kotlin_spring/build.gradle
+kotlin_spring/gradlew
+kotlin_spring/gradlew.bat
+kotlin_spring/settings.gradle
