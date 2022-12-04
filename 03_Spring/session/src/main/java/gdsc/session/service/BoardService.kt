@@ -11,5 +11,4 @@ class BoardService(@Autowired val boardRepository: BoardRepository) {
     fun boardList(): List<Board> = boardRepository.findAll()
     fun boardView(id: Int) = boardRepository.findById(id).get()
     fun boardDelete(id: Int) = boardRepository.deleteById(id)
-
 }

@@ -20,7 +20,7 @@ class BoardController(@Autowired val boardService: BoardService) {
         boardService.write(board)
         return ""
     }
-    @GetMapping("/board/view")      // http://localhost:8080/board/view?id=1
+    @GetMapping("/board/view")      // http://localhost:8080/board/view?id=1  -> 쿼리스트링의 id가 파라미터로 전달됨
     fun boardView(model: Model, id: Int): String {
         model.addAttribute("board", boardService.boardView(id));
         return "boardView";
