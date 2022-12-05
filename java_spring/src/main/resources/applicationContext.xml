@@ -9,7 +9,7 @@
 
     <!-- [ 2. component-scan 설정: 클래스 패스 내 @Component가 설정된 클래스들을 자동으로 객체 생성 ] -->
     <context:component-scan base-package="com.example.java_spring.polymorphism"></context:component-scan>
-    <bean class="com.example.java_spring.polymorphism.speaker.SonySpeaker" />       <!-- 변경 가능성이 있는 객체만 bean 등록, 나머지는 스캔 -->
+    <bean id="sony" class="com.example.java_spring.polymorphism.speaker.SonySpeaker" />       <!-- 변경 가능성이 있는 객체만 bean 등록, 나머지는 스캔 -->
 
 
     <!-- [ 1. component-scan 없이 직접 bean 등록하기 ] -->
