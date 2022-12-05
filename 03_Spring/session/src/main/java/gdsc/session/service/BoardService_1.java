@@ -1,15 +1,16 @@
 /*
+
 package gdsc.session.service;
 
 
 import gdsc.session.entity.Board_java;
 import gdsc.session.repository.BoardRepository_java;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
 public class BoardService_1 {
     private final BoardRepository_java boardRepository;
 
@@ -22,8 +23,8 @@ public class BoardService_1 {
         boardRepository.save(board);
     }
 
-    public List<Board_java> boardList() {
-        return boardRepository.findAll();
+    public Pageable<Board_java> boardList(Pageable pageable) {
+        return boardRepository.findAll(pageable);
     }
 
     public Board_java boardView(Integer id) {
@@ -35,4 +36,5 @@ public class BoardService_1 {
         boardRepository.deleteById(id);
     }
 }
+
 */

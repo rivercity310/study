@@ -59,7 +59,7 @@ open class RichButton: Clickable {  // 이 클래스는 열려있다. 다른 클
 }
 
 
-// - 추상 클래스는 하위 클래스에서 오버라이드 해야하기 때문에 당연히 추상 멤버는 항상 open이다
+// - 추상 클래스는 하위 클래스에서 오버라이드 해야하기 때문에 당연히 추상 멤버는 항상 open
 
 abstract class Animated {           // 이 클래스는 추상클래스다. 이 클래스의 인스턴스 생성 불가
     abstract fun animate()          // 이 함수는 추상 함수로 구현이 없다. 하위 클래스에서 반드시 오버라이드해야 한다.
@@ -76,16 +76,16 @@ abstract class Animated {           // 이 클래스는 추상클래스다. 이 
 
 // 3. 가시성 변경자: 기본적으로 공개
 // - 코틀린에서 디폴트 가시성은 public, 자바의 디폴트인 패키지 전용 가시성은 코틀린에 존재하지 않는다. 코틀린에서 패키지는 오직 네임스페이스를 관리하기 위한 용도이다.
-
-// - public : 모든 곳에서 볼 수 있음, internal : 같은 모듈 안에서만 볼 수 있음
+// - public : 모든 곳에서 볼 수 있음, internal : 같은 모듈(함꼐 컴파일되는 코틀린 파일들) 안에서만 볼 수 있음
 // - protected : 하위 클래스 안에서만 볼 수 있음, private : 같은 클래스 안에서만 볼 수 있음
 
-internal open class TalkativeButton: Focusable {
+open class TalkativeButton: Focusable {
     private fun yell() = println("hello")
     protected fun whisper() = println("let's talk")
 }
 
-
+// - 클래스를 확장한 함수는 private, protected 멤버에 접근할 수 없음
+// fun TalkativeButton.test() = whisper()
 
 
 
