@@ -1,6 +1,4 @@
-package com.example.java_spring.polymorphism.speaker;
-
-import org.springframework.stereotype.Component;
+package com.springbook.biz.polymorphism.speaker;
 
 public class AppleSpeaker implements Speaker {
     public AppleSpeaker() {

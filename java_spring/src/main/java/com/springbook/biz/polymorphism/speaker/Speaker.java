@@ -1,4 +1,4 @@
-package com.example.java_spring.polymorphism.speaker;
+package com.springbook.biz.polymorphism.speaker;
 
 public interface Speaker {
     void volumeUp();

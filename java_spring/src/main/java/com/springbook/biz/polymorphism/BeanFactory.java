@@ -1,7 +1,4 @@
-package com.example.java_spring.polymorphism;
-
-import com.example.java_spring.polymorphism.tv.LgTV;
-import com.example.java_spring.polymorphism.tv.SamsungTV;
+package com.springbook.biz.polymorphism;
 
 /* ex) 결합도를 낮추기 위한 Factory 디자인 패턴 */
 /*

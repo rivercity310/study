@@ -1,10 +1,11 @@
-package com.example.java_spring.polymorphism;
+package com.springbook.biz.polymorphism;
 
-import com.example.java_spring.polymorphism.tv.TV;
+import com.springbook.biz.polymorphism.tv.TV;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
 public class TVUser {
+   /* *//*
     public static void main(String[] args) {
         /*
         // Factory 패턴 + 명령행 인자를 통해 클라이언트 소스를 수정하지 않고 실행되는 객체 변경 가능
@@ -14,9 +15,9 @@ public class TVUser {
         tv.volumeUp();
         tv.volumeDown();
         tv.powerOff();
-        */
+        *//*
 
-        /* 스프링 IoC : 일련의 작업들을 컨테이너로 처리 (객체 생성, 메서드 호출 등..) */
+        *//* 스프링 IoC : 일련의 작업들을 컨테이너로 처리 (객체 생성, 메서드 호출 등..) *//*
         AbstractApplicationContext factory =
                 new GenericXmlApplicationContext("applicationContext.xml");
 
@@ -28,5 +29,6 @@ public class TVUser {
         tv1.volumeUp();
 
         factory.close();
-    }
+    }*/
+
 }

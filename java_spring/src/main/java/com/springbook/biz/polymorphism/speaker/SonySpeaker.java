@@ -1,4 +1,4 @@
-package com.example.java_spring.polymorphism.speaker;
+package com.springbook.biz.polymorphism.speaker;
 
 public class SonySpeaker implements Speaker {
     public SonySpeaker() {

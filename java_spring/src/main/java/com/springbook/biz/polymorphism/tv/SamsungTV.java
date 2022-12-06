@@ -1,14 +1,11 @@
-package com.example.java_spring.polymorphism.tv;
+package com.springbook.biz.polymorphism.tv;
 
-import com.example.java_spring.polymorphism.speaker.Speaker;
+import com.springbook.biz.polymorphism.speaker.Speaker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.Resource;
-
 @Component
 public class SamsungTV implements TV {
-    @Autowired
     private Speaker speaker;
     private int price;
 
