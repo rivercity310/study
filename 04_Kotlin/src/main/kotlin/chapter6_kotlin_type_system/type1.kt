@@ -21,7 +21,7 @@ int strlen(String s) {
 // nullable type은 메서드를 직접 호출할 수도, 널이 될 수 있는 타입의 변수에 직접 대입할 수도, 널이 될수 없는 타입의 파라미터를 받는 함수에 전달할 수도 없다.
 // if 검사를 통해 널 가능성을 다룰 수 있다 (컴파일러가 null과 비교한 사실을 기억하고 null이 아님이 확실한 영역에서는 해당 값을 널이 될 수 없는 타입의 값처럼 사용한다)
 fun strLenSafe(s: String?): Int =
-    if (s != null) s.length else 0
+    if (s != null) s.length else 0      // s?.length ?: 0
 
 
 
