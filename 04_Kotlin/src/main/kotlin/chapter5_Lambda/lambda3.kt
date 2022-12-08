@@ -19,7 +19,7 @@ fun lambda3_test1() {
     val people = listOf(People("Bob", 31), People("seungsu", 26), People("suyeoun", 23), People("sungjin", 27))
 
     val rst = people.asSequence()               // 원본 컬렉션을 시퀀스로 변환
-        .map(People::name)                      // 시퀀스도 컬렉션과 똑같은 API를 제공
+        .map { it.name }                        // 시퀀스도 컬렉션과 똑같은 API를 제공
         .filter { it.startsWith("s") }
         .toList()                               // 결과 시퀀스를 다시 리스트로 변환
 
@@ -28,8 +28,8 @@ fun lambda3_test1() {
     // 즉시 계산은 전체 컬렉션에 연산을 적용하지만, 지연 계산은 원소를 한번에 하나씩 처리한다.
     // 다음 두 예제는 동일한 4를 출력하지만 시퀀스를 통한 지연 계산 방식과 즉시 계산 방식의 차이가 존재한다.
     // 즉시 계산 방식은 모든 원소에 대해 map 연산을 적용한 뒤에 find의 술어를 만족하는 원소를 찾는 반면, 지연 계산 방식은 원소 하나마다 처리된다. 즉 연산 순서가 다르다.
-    println(listOf(1, 2, 3, 4).asSequence().map { it * it }.find { it > 3 })
-    println(listOf(1, 2, 3, 4).map { it * it }.find { it > 3 })
+    println(listOf(1, 2, 3, 4).asSequence().map { it * it }.find { it > 3 })        // 지연 계산 방식
+    println(listOf(1, 2, 3, 4).map { it * it }.find { it > 3 })                     // 즉시 계산 방식
 
     // 컬렉션에 대해 수행하는 연산의 순서도 성능에 영향을 끼친다.
     // filter를 map보다 먼저 적용하자. (map은 모든 원소에 대해 적용되는 함수이므로 filter로 먼저 원소 개수를 줄이는 것이 효율적이다.)
