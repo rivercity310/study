@@ -4,6 +4,6 @@ import chapter6_kotlin_type_system.*
 import chapter7_operator_overloading.*
 
 fun main(args: Array<String>) {
-    overload3_test3()
+    overload4_test1()
 }
 
