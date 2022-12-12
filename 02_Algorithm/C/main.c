@@ -49,8 +49,9 @@ extern void floyd_test();
 extern void graph_assignment();
 extern void graph_assignment2();
 extern void graph_sch();
+extern void boj_2252();
 #endif
 
 int main() {
-    sorting_with_heap();
+    boj_2252();
 }

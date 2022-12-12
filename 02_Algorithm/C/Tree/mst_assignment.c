@@ -7,7 +7,7 @@
 
 #define MAX 10
 
-int parent[MAX];
+static int parent[MAX];
 
 typedef struct node {
     int src;

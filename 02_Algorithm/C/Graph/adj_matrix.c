@@ -38,10 +38,8 @@ static void print_graph(GraphType* g) {
 	int size = g->n;
 
 	for (int row = 0; row < size; row++) {
-		for (int col = 0; col < size; col++) {
+		for (int col = 0; col < size; col++)
 			printf("%-5d", g->adj_mat[row][col]);
-		}
-
 		putchar('\n');
 	}
 }
