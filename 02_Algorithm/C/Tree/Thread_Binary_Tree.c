@@ -12,7 +12,7 @@ typedef struct tr {
 static ThreadTree* find_successor(ThreadTree* p) {
 	ThreadTree* q = p->right;
 
-	if (q == NULL || p->is_thread)
+	if (!q || p->is_thread)
 		return q;
 
 	while (q->left) q = q->left;

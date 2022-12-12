@@ -82,7 +82,7 @@ void sorting_with_heap() {
 		int x = rand() % 100;
 		insert_heap(heap, x);
 
-		printf("%-5d", x);
+		printf("%d ", x);
 	}
 
 	puts("\n\n");
@@ -92,8 +92,8 @@ void sorting_with_heap() {
 	for (int i = MAX - 1; i >= 0; i--) 
 		arr[i] = delete_heap(heap);
 
-	for (int i = 0; i < MAX - 1; i++)
-		printf("%-5d", arr[i]);
+	for (int i = 0; i <= MAX - 1; i++)
+		printf("%d ", arr[i]);
 			
 	free(heap);
 

@@ -31,7 +31,7 @@ extern void ring_buffer();
 #endif
 
 #ifdef TREE
-extern void Binary_Search_Tree();
+extern void binary_search_tree();
 extern void sorting_with_heap();
 extern void Linked_Tree();
 extern void Thread_Binary_Tree();
@@ -52,5 +52,5 @@ extern void graph_sch();
 #endif
 
 int main() {
-    dijkstra_test();
+    sorting_with_heap();
 }
