@@ -69,7 +69,7 @@ fun class4_test2() {
 // - 동반 객체는 클래스 안에 정의된 일반 객체다. 따라서 이름을 붙이거나 인터페이스를 상속하거나 확장 함수와 프로퍼티를 정의할 수 있다
 // - 동반 객체의 이름을 따로 지정하지 않으면 객체 이름은 자동으로 Companion이 된다. 자바 쪽에서도 이 이름으로 동반 객체의 참조에 접근한다
 
-interface JSONFactory<T> {
+private interface JSONFactory<T> {
     fun fromJSON(jsonText: String): T
 }
 
