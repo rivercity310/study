@@ -16,7 +16,7 @@ public class EmailAddressTests {
                 new EmailAddress_kt("h970126", "gmail.com"),
                 EmailAddress_kt.parse("h970126@gmail.com")
         );
-    }
+   }
 
     @Test
     public void parsingFailures() {
