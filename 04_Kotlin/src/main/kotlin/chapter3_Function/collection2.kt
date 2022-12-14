@@ -3,10 +3,10 @@ package chapter3_Function
 // 메서드를 다른 클래스에 추가
 
 // 확장 함수 : 어떤 클래스의 멤버 메서드인 것처럼 호출할 수 있지만 그 클래스 밖에 선언된 함수, 하지만 클래스 내 private, protected 멤버 사용 불가
-fun String.lastChar(): Char = this[this.length - 1]       // 수신 객체 타입 뒤에 .(메서드 이름)
+private fun String.lastChar(): Char = this[this.length - 1]       // 수신 객체 타입 뒤에 .(메서드 이름)
 
 // 확장 함수로 유틸리티 함수 정의
-fun <T> Collection<T>.joinToString(separator: String = ", ", prefix: String = "", postfix: String = ""): String {
+private fun <T> Collection<T>.joinToString(separator: String = ", ", prefix: String = "", postfix: String = ""): String {
     val result = StringBuilder(prefix)
 
     for ((index, element) in this.withIndex()) {
