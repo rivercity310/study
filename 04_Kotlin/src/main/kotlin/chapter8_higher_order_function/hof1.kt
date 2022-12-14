@@ -72,7 +72,7 @@ processTheAnswer(
 
 
 // 3. 디폴트 값을 지정한 함수 타입 파라미터
-private fun <T> Collection<T>.joinToString(
+private fun <T> Collection<T>.joinToString2(
     separator: String = ", ", prefix: String = "", postfix: String = "", transform: (T) -> String = { it.toString() }): String
 {
     val result = StringBuilder(prefix)
@@ -88,8 +88,8 @@ private fun <T> Collection<T>.joinToString(
 fun hof1_ex4() {
     val letters = listOf("Alpha", "Beta")
     // println(letters.joinToString())     // 디폴트 변환 함수(toString) 사용
-    println(letters.joinToString { it.lowercase(Locale.getDefault()) })     // 람다를 인자로 전달
-    println(letters.joinToString(separator = "!", postfix="!", transform = { it.uppercase(Locale.getDefault()) }))   // 이름붙인 인자
+    println(letters.joinToString2 { it.lowercase(Locale.getDefault()) })     // 람다를 인자로 전달
+    println(letters.joinToString2(separator = "!", postfix="!", transform = { it.uppercase(Locale.getDefault()) }))   // 이름2붙인 인자
 }
 
 
