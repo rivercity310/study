@@ -90,12 +90,14 @@ fun hof1_ex4() {
     // println(letters.joinToString())     // 디폴트 변환 함수(toString) 사용
     println(letters.joinToString2 { it.lowercase(Locale.getDefault()) })     // 람다를 인자로 전달
     println(letters.joinToString2(separator = "!", postfix="!", transform = { it.uppercase(Locale.getDefault()) }))   // 이름2붙인 인자
+    println(letters.joinToString("!") { it.lowercase(Locale.getDefault()) })     // 람다를 인자로 전달
+    println(letters.joinToString(separator = "!", postfix="!", transform = { it.uppercase(Locale.getDefault()) }))   // 이름붙인 인자
 }
 
 
 
 // 4. nullable 함수 타입
-// nullable 함수 타입은 직접 호출할 수 없다
+/* nullable 함수 타입은 직접 호출할 수 없다
 private fun <T> Collection<T>.joinToString(
     separator: String = ", ", prefix: String = "", postfix: String = "", transform: ((T) -> String)? = null): String
 {
@@ -109,3 +111,5 @@ private fun <T> Collection<T>.joinToString(
     result.append(postfix)
     return result.toString()
 }
+}
+*/
