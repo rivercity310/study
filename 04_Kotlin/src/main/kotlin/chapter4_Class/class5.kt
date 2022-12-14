@@ -121,7 +121,3 @@ private class Test5 {
             is Expr.Sum -> eval(e.left) + eval(e.right)
         }
 }
-
-private class Test6 {
-    
-}
