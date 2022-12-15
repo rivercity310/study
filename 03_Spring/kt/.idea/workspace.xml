@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4faaa4ba-70d7-490f-9ea6-a9127a7edae3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Ktn/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ktn/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ktn/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ktn/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ktn/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ktn/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ktn/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ktn/src/main/java/com/example/ktn/KtnApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ktn/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ktn/src/test/java/com/example/ktn/KtnApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin_spring/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin_spring/.idea/kotlinc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin_spring/.idea/libraries/KotlinJavaRuntime.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin_spring/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin_spring/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin_spring/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_Kotlin/04_Kotlin1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_spring/kotlin_spring.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../kotlin_spring/kotlin_spring.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../04_Kotlin/.idea/libraries/KotlinJavaRuntime.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../04_Kotlin/.idea/libraries/KotlinJavaRuntime.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../04_Kotlin/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../04_Kotlin/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../04_Kotlin/src/main/kotlin/chapter4_Class/class5.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../04_Kotlin/src/main/kotlin/chapter4_Class/class5.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../05_Refactoring/refactor/out/production/refactor/travelator/EmailAddress_java.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../05_Refactoring/refactor/out/production/refactor/travelator/EmailAddress_java.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../05_Refactoring/refactor/out/production/refactor/travelator/EmailAddress_kt$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../05_Refactoring/refactor/out/production/refactor/travelator/EmailAddress_kt$Companion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../05_Refactoring/refactor/out/production/refactor/travelator/EmailAddress_kt.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../05_Refactoring/refactor/out/production/refactor/travelator/EmailAddress_kt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../05_Refactoring/refactor/out/production/refactor/travelator/Money_java.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../05_Refactoring/refactor/out/production/refactor/travelator/Money_java.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="2IwNJvPeG81gxiJQBfbJmMlPfCS" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/seungsu/workspace/study/03_Spring/kt",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="kt" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="kt" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4faaa4ba-70d7-490f-9ea6-a9127a7edae3" name="Changes" comment="" />
+      <created>1671088617234</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1671088617234</updated>
+      <workItem from="1671088618350" duration="139000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
