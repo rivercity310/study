@@ -10,7 +10,6 @@ import java.util.List;
 @Service("boardService")
 public class BoardServiceImpl implements BoardService {
     private BoardDAO boardDAO;
-
     @Autowired
     public BoardServiceImpl(BoardDAO boardDAO) {
         this.boardDAO = boardDAO;

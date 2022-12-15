@@ -23,11 +23,11 @@ public class BoardDAO {
     private PreparedStatement stmt = null;
     private ResultSet rs = null;
 
-    private final String BOARD_INSERT = "INSERT INTO Board(title, writer, content) VALUES(?, ?, ?)";
-    private final String BOARD_UPDATE = "UPDATE Board SET title=?, content=?, WHERE SEQ=?";
-    private final String BOARD_DELETE = "DELETE Board WHERE SEQ=?";
-    private final String BOARD_GET = "SELECT * FROM Board WHERE SEQ=?";
-    private final String BOARD_LIST = "SELECT * FROM Board ORDER BY SEQ DESC";
+    private final String BOARD_INSERT = "INSERT INTO Board(Title, Writer, Content) VALUES(?, ?, ?)";
+    private final String BOARD_UPDATE = "UPDATE Board SET Title=?, Content=?, WHERE Seq=?";
+    private final String BOARD_DELETE = "DELETE Board WHERE Seq=?";
+    private final String BOARD_GET = "SELECT * FROM Board WHERE Seq=?";
+    private final String BOARD_LIST = "SELECT * FROM Board ORDER BY Seq DESC";
 
 
     class BoardRowMapper implements RowMapper<BoardVO> {
@@ -35,12 +35,12 @@ public class BoardDAO {
         public BoardVO mapRow(ResultSet rs, int rowNum) throws SQLException {
             BoardVO board = new BoardVO();
 
-            board.setSeq(rs.getInt("SEQ"));
+            board.setSeq(rs.getInt("Seq"));
             board.setTitle(rs.getString("Title"));
             board.setWriter(rs.getString("Writer"));
             board.setContent(rs.getString("Content"));
-            board.setRegDate(rs.getDate("REGDATE"));
-            board.setCnt(rs.getInt("CNT"));
+            board.setRegDate(rs.getDate("Regdate"));
+            board.setCnt(rs.getInt("Cnt"));
 
             return board;
         }
@@ -49,9 +49,9 @@ public class BoardDAO {
 
     public void insertBoard(BoardVO vo) {
         System.out.println("===> JDBC로 insertBoard 기능 처리");
-        // jdbcTemplate.update(BOARD_INSERT, vo.getTitle(), vo.getWriter(), vo.getContent());
+        jdbcTemplate.update(BOARD_INSERT, vo.getTitle(), vo.getWriter(), vo.getContent());
 
-
+        /*
         try {
             conn = JDBCUtil.getConnection();
 
@@ -64,8 +64,7 @@ public class BoardDAO {
         }
         catch (Exception e) { e.printStackTrace(); }
         finally { JDBCUtil.close(stmt, conn); }
-
-
+        */
     }
 
     public void updateBoard(BoardVO vo) {
