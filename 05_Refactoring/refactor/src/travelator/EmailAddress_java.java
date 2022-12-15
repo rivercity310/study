@@ -12,6 +12,25 @@ public class EmailAddress_java {
         this.domain = domain;
     }
 
+    // Java의 가변 인자 함수 (...)
+    public static void test(int... a) {
+        for (int i = 0; i < a.length; i++) System.out.print(a[i] + " ");
+        System.out.println();
+    }
+
+    // Java의 split 메서드 인자는 Regex
+    public static void test2() {
+        String a = "12.345-6.A";
+        String[] rst = a.split("\\.|-");
+
+        for (String s : rst) System.out.println(s);
+    }
+
+    public static void main(String[] args) {
+        test(1, 2, 3, 4, 5, 6, 7);
+        test2();
+    }
+
     // 문자열을 파싱해 EmailAddress를 만드는 정적 팩터리 메서드 -> 주 생성자를 호출
     public static EmailAddress_java parse(String value) {
         var atIndex = value.lastIndexOf('@');

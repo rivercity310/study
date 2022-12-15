@@ -68,7 +68,7 @@ private class DelegatingCollection<T>: Collection<T> {
 
 // - 코틀린에서는 위와 같은 위임을 언어가 제공하는 일급 시민 기능으로 지원한다
 // - 다음은 앞의 예제를 위임을 사용해 재작성한 것이다.
-class DelegatingCollection2<T>(private val innerList: Collection<T> = ArrayList<T>()): Collection<T> by innerList { }
+private class DelegatingCollection2<T>(private val innerList: Collection<T> = ArrayList<T>()): Collection<T> by innerList { }
 
 
 // - 위 기법을 이용하여 원소를 추가하려고 시도한 횟수를 기록하는 컬렉션을 구현해보자

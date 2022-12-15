@@ -1,5 +1,7 @@
 package chapter3_Function
 
+import java.lang.NullPointerException
+
 // 1. 문자열과 정규식 다루기
 // 자바 String의 split 메서드는 regex를 인자로 받아 String 배열을 반환한다.
 // 코틀린에서는 regex와 일반 구분 문자열 둘다 문자열을 분해할 수 있다.
@@ -17,13 +19,10 @@ fun parsePath(path: String) {
 }
 
 fun parsePathWithRegex(path: String) {
-    val regex = """(.+)/(.+)\.(.+)""".toRegex()         // 3중 따옴표 -> 어떤 문자도 이스케이프할 필요 없음
-    val matchResult = regex.matchEntire(path)
-
-    if (matchResult != null) {
-        val (directory, filename, extension) = matchResult.destructured
-        println("Dir: $directory, name: $filename, ext: $extension")
-    }
+    val regex: Regex = """(.+)/(.+)\.(.+)""".toRegex()         // 3중 따옴표 -> 어떤 문자도 이스케이프할 필요 없음
+    val matchResult: MatchResult? = regex.matchEntire(path)
+    val (directory, filename, extension) = matchResult?.destructured ?: throw NullPointerException()
+    println("Dir: $directory, name: $filename, ext: $extension")
 }
 
 fun collection4() {
