@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b2aff576-be97-4eac-8efe-b40bc08ece4a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../05_Refactoring/refactor/src/travelator/chap2/Leg_java.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../05_Refactoring/refactor/src/travelator/chap2/Leg_kt.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../05_Refactoring/refactor/test/travelator/chap2/LongestLegOverTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ktn/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ktn/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ktn/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ktn/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ktn/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ktn/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ktn/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ktn/src/main/java/com/example/ktn/KtnApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ktn/src/main/java/com/example/polymorphism/TVUser.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ktn/src/main/java/com/example/polymorphism/speaker/AppleSpeaker.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ktn/src/main/java/com/example/polymorphism/speaker/SonySpeaker.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ktn/src/main/java/com/example/polymorphism/speaker/Speaker.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ktn/src/main/java/com/example/polymorphism/tv/LgTV.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ktn/src/main/java/com/example/polymorphism/tv/SamsungTV.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ktn/src/main/java/com/example/polymorphism/tv/TV.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ktn/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ktn/src/main/resources/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ktn/src/test/java/com/example/ktn/KtnApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kt/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../05_Refactoring/refactor/out/production/refactor/travelator/EmailAddress_java.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../05_Refactoring/refactor/out/production/refactor/travelator/EmailAddress_kt$Companion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../05_Refactoring/refactor/out/production/refactor/travelator/EmailAddress_kt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../05_Refactoring/refactor/out/production/refactor/travelator/Marketing_java.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../05_Refactoring/refactor/out/production/refactor/travelator/Marketing_kt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../05_Refactoring/refactor/out/production/refactor/travelator/Money_java.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../05_Refactoring/refactor/out/production/refactor/travelator/Money_kt$Companion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../05_Refactoring/refactor/out/production/refactor/travelator/Money_kt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../05_Refactoring/refactor/out/test/refactor/travelator/EmailAddressTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../05_Refactoring/refactor/out/test/refactor/travelator/EmailAddressTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../05_Refactoring/refactor/src/travelator/EmailAddress_java.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../05_Refactoring/refactor/src/travelator/chap1/EmailAddress_java.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../05_Refactoring/refactor/src/travelator/EmailAddress_kt.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../05_Refactoring/refactor/src/travelator/chap1/EmailAddress_kt.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../05_Refactoring/refactor/src/travelator/Marketing_java.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../05_Refactoring/refactor/src/travelator/chap1/Marketing_java.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../05_Refactoring/refactor/src/travelator/Marketing_kt.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../05_Refactoring/refactor/src/travelator/chap1/Marketing_kt.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../05_Refactoring/refactor/src/travelator/Money_java.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../05_Refactoring/refactor/src/travelator/chap1/Money_java.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../05_Refactoring/refactor/src/travelator/Money_kt.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../05_Refactoring/refactor/src/travelator/chap1/Money_kt.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../05_Refactoring/refactor/test/travelator/EmailAddressTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../05_Refactoring/refactor/test/travelator/chap1/EmailAddressTests.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="2Ix0mXuDyGJdPVxvJfaecPGecYX" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/seungsu/workspace/study/03_Spring/java_spring",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="java_spring" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="java_spring" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b2aff576-be97-4eac-8efe-b40bc08ece4a" name="Changes" comment="" />
+      <created>1671108086545</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1671108086545</updated>
+      <workItem from="1671108087610" duration="12000" />
+      <workItem from="1671108118096" duration="449000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

@@ -66,7 +66,7 @@ private class FacebookUser(val accountId: Int): User3 {                 // - 프
     override val nickname = getFacebookName(accountId)
 }
 
-fun getFacebookName(accountId: Int): String = "Hi"
+internal fun getFacebookName(accountId: Int): String = "Hi"
 
 // SubscribingUser와 FacebookUser의 nickname 구현 차이!!
 // - SubscribingUser: 매번 호출될 때마다 커스텀 게터가 호출되어 nickname이 계산됨
