@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <div style="text-align: center;">
+    <center>
         <h1>로그인</h1>
         <hr/>
         <form action="login_proc.jsp" method="post">
@@ -29,6 +29,10 @@
                 </tr>
             </table>
         </form>
-    </div>
+    </center>
+
+    <center>
+        <h3><a href="signIn.jsp">회원가입</a></h3>
+    </center>
 </body>
 </html>

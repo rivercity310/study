@@ -21,6 +21,7 @@ public class UserDAO {
     private JdbcTemplate jdbcTemplate;
 
     private final String USER_GET = "select * from Users where id=? and password=?";
+    private final String USER_INSERT = "INSERT INTO Users VALUES(?, ?, ?, ?)";
 
     class UserRowMapper implements RowMapper<UserVO> {
         @Override
@@ -54,11 +55,31 @@ public class UserDAO {
                 user.setPassword(rs.getString("Password"));
                 user.setName(rs.getString("Name"));
                 user.setRole(rs.getString("Role"));
+
+                return user;
             }
         }
         catch (Exception e) { e.printStackTrace(); }
         finally { JDBCUtil.close(rs, stmt, conn); }
 
-        return user;
+        return null;
+    }
+
+    public void insertUser(UserVO vo) {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+
+        try {
+            conn = JDBCUtil.getConnection();
+            stmt = conn.prepareStatement(USER_INSERT);
+            stmt.setString(1, vo.getId());
+            stmt.setString(2, vo.getPassword());
+            stmt.setString(3, vo.getName());
+            stmt.setString(4, "User");
+
+            stmt.executeUpdate();
+        }
+        catch (Exception e) { e.printStackTrace(); }
+        finally { JDBCUtil.close(stmt, conn); }
     }
 }
