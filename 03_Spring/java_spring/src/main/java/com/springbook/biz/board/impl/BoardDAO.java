@@ -19,18 +19,14 @@ public class BoardDAO {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    private Connection conn = null;
-    private PreparedStatement stmt = null;
-    private ResultSet rs = null;
-
+    // private final String BOARD_INSERT_TEST = "INSERT INTO Board(Seq, Title, Writer, Content) VALUES(?, ?, ?, ?)";
     private final String BOARD_INSERT = "INSERT INTO Board(Title, Writer, Content) VALUES(?, ?, ?)";
     private final String BOARD_UPDATE = "UPDATE Board SET Title=?, Content=?, WHERE Seq=?";
     private final String BOARD_DELETE = "DELETE Board WHERE Seq=?";
     private final String BOARD_GET = "SELECT * FROM Board WHERE Seq=?";
     private final String BOARD_LIST = "SELECT * FROM Board ORDER BY Seq DESC";
 
-
-    class BoardRowMapper implements RowMapper<BoardVO> {
+    static class BoardRowMapper implements RowMapper<BoardVO> {
         @Override
         public BoardVO mapRow(ResultSet rs, int rowNum) throws SQLException {
             BoardVO board = new BoardVO();
@@ -46,9 +42,10 @@ public class BoardDAO {
         }
     }
 
-
     public void insertBoard(BoardVO vo) {
         System.out.println("===> JDBC로 insertBoard 기능 처리");
+        // Object[] args = { vo.getSeq(), vo.getTitle(), vo.getWriter(), vo.getContent() };
+        // jdbcTemplate.update(BOARD_INSERT_TEST, args);
         jdbcTemplate.update(BOARD_INSERT, vo.getTitle(), vo.getWriter(), vo.getContent());
 
         /*

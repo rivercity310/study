@@ -17,13 +17,12 @@ public class BoardServiceImpl implements BoardService {
 
     @Override
     public void insertBoard(BoardVO vo) {
-        boardDAO.insertBoard(vo);
+        boardDAO.insertBoard(vo);       // 100번 글 등록 성공
+        // boardDAO.insertBoard(vo);       // Exception 발생 지점
     }
 
     @Override
-    public void updateBoard(BoardVO vo) {
-        boardDAO.updateBoard(vo);
-    }
+    public void updateBoard(BoardVO vo) { boardDAO.updateBoard(vo); }
 
     @Override
     public void deleteBoard(BoardVO vo) {
