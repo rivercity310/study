@@ -21,8 +21,8 @@ public class BoardDAO {
 
     // private final String BOARD_INSERT_TEST = "INSERT INTO Board(Seq, Title, Writer, Content) VALUES(?, ?, ?, ?)";
     private final String BOARD_INSERT = "INSERT INTO Board(Title, Writer, Content) VALUES(?, ?, ?)";
-    private final String BOARD_UPDATE = "UPDATE Board SET Title=?, Content=?, WHERE Seq=?";
-    private final String BOARD_DELETE = "DELETE Board WHERE Seq=?";
+    private final String BOARD_UPDATE = "UPDATE Board SET Title=?, Content=? WHERE Seq=?";
+    private final String BOARD_DELETE = "DELETE FROM Board WHERE Seq=?";
     private final String BOARD_GET = "SELECT * FROM Board WHERE Seq=?";
     private final String BOARD_LIST = "SELECT * FROM Board ORDER BY Seq DESC";
 
@@ -42,13 +42,14 @@ public class BoardDAO {
         }
     }
 
-    public void insertBoard(BoardVO vo) {
-        System.out.println("===> JDBC로 insertBoard 기능 처리");
-        // Object[] args = { vo.getSeq(), vo.getTitle(), vo.getWriter(), vo.getContent() };
-        // jdbcTemplate.update(BOARD_INSERT_TEST, args);
-        jdbcTemplate.update(BOARD_INSERT, vo.getTitle(), vo.getWriter(), vo.getContent());
+    private Connection conn = null;
+    private PreparedStatement stmt = null;
+    private ResultSet rs = null;
 
-        /*
+    public void insertBoard(BoardVO vo) {
+        // System.out.println("===> JDBC로 insertBoard 기능 처리");
+        // jdbcTemplate.update(BOARD_INSERT, vo.getTitle(), vo.getWriter(), vo.getContent());
+
         try {
             conn = JDBCUtil.getConnection();
 
@@ -61,14 +62,12 @@ public class BoardDAO {
         }
         catch (Exception e) { e.printStackTrace(); }
         finally { JDBCUtil.close(stmt, conn); }
-        */
     }
 
     public void updateBoard(BoardVO vo) {
-        System.out.println("===> JDBC로 updateBoard 기능 처리");
-        jdbcTemplate.update(BOARD_UPDATE, vo.getTitle(), vo.getContent(), vo.getSeq());
+        // System.out.println("===> JDBC로 updateBoard 기능 처리");
+        // jdbcTemplate.update(BOARD_UPDATE, vo.getTitle(), vo.getContent(), vo.getSeq());
 
-        /*
         try {
             conn = JDBCUtil.getConnection();
 
@@ -81,14 +80,12 @@ public class BoardDAO {
         }
         catch (Exception e) { e.printStackTrace(); }
         finally { JDBCUtil.close(stmt, conn); }
-         */
     }
 
     public void deleteBoard(BoardVO vo) {
-        System.out.println("===> JDBC로 deleteBoard 기능 처리");
-        jdbcTemplate.update(BOARD_DELETE, vo.getSeq());
+        // System.out.println("===> JDBC로 deleteBoard 기능 처리");
+        // jdbcTemplate.update(BOARD_DELETE, vo.getSeq());
 
-        /*
         try {
             conn = JDBCUtil.getConnection();
 
@@ -98,16 +95,15 @@ public class BoardDAO {
         }
         catch (Exception e) { e.printStackTrace(); }
         finally { JDBCUtil.close(stmt, conn); }
-         */
     }
 
     public BoardVO getBoard(BoardVO vo) {
-        System.out.println("===> JDBC로 getBoard 기능 처리");
-        Object[] args = { vo.getSeq() };
-        return jdbcTemplate.queryForObject(BOARD_GET, args, new BoardRowMapper());
+        // System.out.println("===> JDBC로 getBoard 기능 처리");
+        // Object[] args = { vo.getSeq() };
+        // return jdbcTemplate.queryForObject(BOARD_GET, args, new BoardRowMapper());
 
-        /*
-        BoardVO board = null;
+
+        BoardVO board = new BoardVO();
 
         try {
             conn = JDBCUtil.getConnection();
@@ -117,11 +113,11 @@ public class BoardDAO {
             rs = stmt.executeQuery();
 
             if (rs.next()) {
-                board.setSeq(rs.getInt("SEQ"));
+                board.setSeq(rs.getInt("Seq"));
                 board.setTitle(rs.getString("Title"));
                 board.setContent(rs.getString("Content"));
                 board.setWriter(rs.getString("Writer"));
-                board.setRegDate(rs.getDate("REGDATE"));
+                board.setRegDate(rs.getDate("Regdate"));
                 board.setCnt(rs.getInt("CNT"));
             }
         }
@@ -129,14 +125,12 @@ public class BoardDAO {
         finally { JDBCUtil.close(rs, stmt, conn); }
 
         return board;
-         */
     }
 
     public List<BoardVO> getBoardList() {
-        System.out.println("===> JDBC로 getBoardList 기능 처리");
-        return jdbcTemplate.query(BOARD_LIST, new BoardRowMapper());
+//        System.out.println("===> JDBC로 getBoardList 기능 처리");
+//        return jdbcTemplate.query(BOARD_LIST, new BoardRowMapper());
 
-        /*
         List<BoardVO> boardList = new ArrayList<>();
 
         try {
@@ -162,7 +156,5 @@ public class BoardDAO {
         finally { JDBCUtil.close(rs, stmt, conn); }
 
         return boardList;
-
-         */
     }
 }

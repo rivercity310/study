@@ -5,7 +5,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
     // DB 연동 처리
-    BoardVO vo = new BoardVO();
     BoardDAO boardDAO = new BoardDAO();
     List<BoardVO> boardList = boardDAO.getBoardList();
 %>

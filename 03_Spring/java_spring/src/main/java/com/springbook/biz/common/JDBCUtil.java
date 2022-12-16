@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 public class JDBCUtil {
-    /*public static Connection getConnection() {
+    public static Connection getConnection() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             return DriverManager.getConnection("jdbc:mysql://localhost/spring", "root", "8452994ash!");
@@ -41,5 +41,5 @@ public class JDBCUtil {
         }
 
         JDBCUtil.close(stmt, conn);
-    }*/
+    }
 }

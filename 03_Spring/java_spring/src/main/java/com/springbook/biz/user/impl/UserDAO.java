@@ -36,8 +36,29 @@ public class UserDAO {
     }
 
     public UserVO getUser(UserVO vo) {
-        System.out.println("===> Spring JDBC로 getUser() 기능 처리 ");
-        Object[] args = { vo.getId(), vo.getPassword() };
-        return jdbcTemplate.queryForObject(USER_GET, args, new UserRowMapper());
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        UserVO user = new UserVO();
+
+        try {
+            conn = JDBCUtil.getConnection();
+            stmt = conn.prepareStatement(USER_GET);
+            stmt.setString(1, vo.getId());
+            stmt.setString(2, vo.getPassword());
+
+            rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                user.setId(rs.getString("Id"));
+                user.setPassword(rs.getString("Password"));
+                user.setName(rs.getString("Name"));
+                user.setRole(rs.getString("Role"));
+            }
+        }
+        catch (Exception e) { e.printStackTrace(); }
+        finally { JDBCUtil.close(rs, stmt, conn); }
+
+        return user;
     }
 }

@@ -5,33 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92ba7503-a01e-4511-a9f1-397be64b59a7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/controller/MvcConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/controller/MyController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/getBoardList.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login_proc.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../session/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../session/.idea/kotlinc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../session/.idea/libraries/KotlinJavaRuntime.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../session/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../session/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../session/.idea/session.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../session/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../session/src/main/main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../session/src/test/test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/deleteBoard_proc.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/getBoard.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/insertBoard.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/insertBoard_proc.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/logout_proc.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/updateBoard_proc.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/board/BoardServiceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/board/BoardServiceClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/board/impl/BoardDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/board/impl/BoardDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/board/impl/BoardServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/board/impl/BoardServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/common/JDBCUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/common/JDBCUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/user/impl/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/user/impl/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/user/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/user/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config/database.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../readMe.md" beforeDir="false" afterPath="$PROJECT_DIR$/../readMe.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/getBoardList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/getBoardList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login_proc.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login_proc.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,10 +77,10 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
       <recent name="$PROJECT_DIR$/src/main/webapp/views" />
-      <recent name="$PROJECT_DIR$/src/main/webapp" />
       <recent name="$PROJECT_DIR$/src/main/webapp/jsp" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -128,7 +114,7 @@
       <workItem from="1671209504924" duration="2278000" />
       <workItem from="1671211801373" duration="570000" />
       <workItem from="1671212473517" duration="353000" />
-      <workItem from="1671212843443" duration="3204000" />
+      <workItem from="1671212843443" duration="7092000" />
     </task>
     <servers />
   </component>
