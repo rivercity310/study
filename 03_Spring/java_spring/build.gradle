@@ -18,7 +18,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation group: 'org.aspectj', name: 'aspectjweaver', version: '1.9.9.1'
 	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'mysql:mysql-connector-java'
 	implementation 'org.apache.commons:commons-dbcp2:2.9.0'
 }

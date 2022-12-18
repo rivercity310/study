@@ -1,3 +1,4 @@
+/*
 package com.springbook.biz.controller;
 
 import org.springframework.context.annotation.Bean;
@@ -19,4 +20,4 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter {
         resolver.setSuffix(".jsp");
         return resolver;
     }
-}
+}*/

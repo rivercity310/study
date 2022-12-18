@@ -5,10 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92ba7503-a01e-4511-a9f1-397be64b59a7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/signIn.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/signIn_proc.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/springbook/view/controller/DispatcherServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/user/impl/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/user/impl/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/controller/MvcConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/controller/MvcConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/controller/MyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/controller/MyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/table.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/getBoard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/getBoard.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/getBoardList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/getBoardList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/insertBoard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/insertBoard.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,6 +50,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="HTML File" />
+        <option value="spring-beans.schema" />
       </list>
     </option>
   </component>
@@ -62,6 +72,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -70,27 +81,30 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/seungsu/seungsu/workspace/study/03_Spring/java_spring/build.gradle",
+    "last_opened_file_path": "/home/seungsu/workspace/study/03_Spring/java_spring/src/main/webapp/WEB-INF/views",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
-    "spring.configuration.checksum": "83411d1374b1010b840c2008845c58e9",
+    "spring.configuration.checksum": "680bd532d44f32ce9986e326a394e1fb",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/webapp" />
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/views" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/jsp" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/web" />
+      <recent name="$PROJECT_DIR$/src/main/webapp" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
@@ -126,6 +140,9 @@
       <workItem from="1671212843443" duration="7092000" />
       <workItem from="1671220375206" duration="69000" />
       <workItem from="1671220458902" duration="1259000" />
+      <workItem from="1671370258530" duration="2332000" />
+      <workItem from="1671372601537" duration="2116000" />
+      <workItem from="1671374733378" duration="297000" />
     </task>
     <servers />
   </component>

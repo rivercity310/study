@@ -3,14 +3,16 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
-    String seq = request.getParameter("seq");
+    /*String seq = request.getParameter("seq");
 
     // DB 연동 처리
     BoardVO vo = new BoardVO();
     vo.setSeq(Integer.parseInt(seq));
 
     BoardDAO boardDAO = new BoardDAO();
-    BoardVO board = boardDAO.getBoard(vo);
+    BoardVO board = boardDAO.getBoard(vo);*/
+
+    BoardVO board = (BoardVO) session.getAttribute("board");
 %>
 
 <!DOCTYPE html>
@@ -23,9 +25,9 @@
 <body>
 <center>
     <h1>글 상세</h1>
-    <a href="logout_proc.jsp">Logout</a>
+    <a href="logout.do">Logout</a>
 
-    <form action="updateBoard_proc.jsp" method="post">
+    <form action="updateBoard.do" method="post">
         <input type="hidden" name="seq" value="<%= board.getSeq() %>" />
 
         <table border="1" cellspacing="0" cellpadding="0">
@@ -69,8 +71,8 @@
     <hr/>
 
     <a href="insertBoard.jsp">글등록</a>&nbsp;&nbsp;&nbsp;
-    <a href="deleteBoard_proc.jsp?seq=<%= board.getSeq() %>">글삭제</a>&nbsp;&nbsp;&nbsp;
-    <a href="getBoardList.jsp">글목록</a>
+    <a href="deleteBoard.do?seq=<%= board.getSeq() %>">글삭제</a>&nbsp;&nbsp;&nbsp;
+    <a href="getBoardList.do">글목록</a>
 </center>
 </body>
 </html>
