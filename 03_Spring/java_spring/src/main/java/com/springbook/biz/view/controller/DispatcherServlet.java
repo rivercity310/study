@@ -1,20 +1,29 @@
-package com.springbook.view.controller;
+package com.springbook.biz.view.controller;
 
 import com.springbook.biz.board.BoardVO;
 import com.springbook.biz.board.impl.BoardDAO;
 import com.springbook.biz.user.UserVO;
 import com.springbook.biz.user.impl.UserDAO;
-import org.springframework.stereotype.Controller;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
-
-@WebServlet(name = "DispatcherServlet", urlPatterns = "*.do")
+/*
 public class DispatcherServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
+    private HandlerMapping handlerMapping;
+    private ViewResolver viewResolver;
+
+    @Override
+    public void init() throws ServletException {
+        System.out.println("init 호출");
+        handlerMapping = new HandlerMapping();
+        viewResolver = new ViewResolver();
+        viewResolver.setPrefix("./");
+        viewResolver.setSuffix(".jsp");
+    }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -29,6 +38,21 @@ public class DispatcherServlet extends HttpServlet {
         process(request, response);
     }
 
+    private void process(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String uri = request.getRequestURI();
+        String path = uri.substring(uri.lastIndexOf("/"));
+
+        Controller ctr = handlerMapping.getController(path);
+        String viewName = ctr.handleRequest(request, response);
+
+        String view = null;
+        if (!viewName.contains("do")) view = viewResolver.getView(viewName);
+        else view = viewName;
+
+        response.sendRedirect(view);
+    }
+
+    /*
     private void process(HttpServletRequest request, HttpServletResponse response) throws IOException {
         // 1. 클라이언트 요청 path 정보 추출
         String uri = request.getRequestURI();
@@ -132,4 +156,5 @@ public class DispatcherServlet extends HttpServlet {
             response.sendRedirect("getBoardList.jsp");
         }
     }
-}
+    */
+//}

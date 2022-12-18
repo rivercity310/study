@@ -1,15 +1,5 @@
-<%@ page import="com.springbook.biz.board.BoardVO" %>
-<%@ page import="com.springbook.biz.board.impl.BoardDAO" %>
-<%@ page import="java.util.List" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%
-    // DB 연동 처리
-    // BoardDAO boardDAO = new BoardDAO();
-    // List<BoardVO> boardList = boardDAO.getBoardList();
-
-    List<BoardVO> boardList = (List) session.getAttribute("boardList");
-%>
 
 <!DOCTYPE html>
 <html>
@@ -21,7 +11,7 @@
 <body>
 <center>
     <h1>글 목록</h1>
-    <h3>테스트님 환영합니다..<a href="logout.do">Logout</a></h3>
+    <h3>${userName}님 환영합니다..<a href="logout.do">Logout</a></h3>
 
     <!-- 검색 시작 -->
     <form action="getBoardList.jsp" method="post">
@@ -48,15 +38,15 @@
             <th bgcolor="orange" width="100">조회수</th>
         </tr>
 
-        <% for (BoardVO board : boardList) { %>
-        <tr>
-            <td><%= board.getSeq() %></td>
-            <td align="left"><a href="getBoard.do?seq=<%= board.getSeq() %>" ><%= board.getTitle() %></a></td>
-            <td><%= board.getWriter() %></td>
-            <td><%= board.getRegDate() %></td>
-            <td><%= board.getCnt() %></td>
-        </tr>
-        <% } %>
+        <c:forEach items="${ boardList }" var="board">
+            <tr>
+                <td>${ board.getSeq() }</td>
+                <td align="left"><a href="getBoard.do?seq=${ board.getSeq() }">${ board.getTitle() }</a></td>
+                <td>${ board.getWriter() }</td>
+                <td>${ board.getRegDate() }</td>
+                <td>${ board.getCnt() }</td>
+            </tr>
+        </c:forEach>
     </table>
 
     <br/>
