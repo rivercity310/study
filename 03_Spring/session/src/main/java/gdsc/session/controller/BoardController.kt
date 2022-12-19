@@ -3,7 +3,6 @@ package gdsc.session.controller
 import gdsc.session.entity.Board
 import gdsc.session.service.BoardService
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import org.springframework.data.domain.Sort
 import org.springframework.data.web.PageableDefault
@@ -15,7 +14,6 @@ import org.springframework.web.bind.annotation.PostMapping
 
 @Controller
 class BoardController(@Autowired val boardService: BoardService) {
-
     @GetMapping("/board/write")
     fun main(): String = "boardWrite"
 

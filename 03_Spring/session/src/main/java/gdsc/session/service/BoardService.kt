@@ -12,7 +12,6 @@ class BoardService(@Autowired val boardRepository: BoardRepository) {
     fun write(board: Board): Board = boardRepository.save(board)
     fun boardList(pageable: Pageable): Page<Board> = boardRepository.findAll(pageable)
     fun boardView(id: Int) = boardRepository.findById(id).get()
-
     fun boardSearchList(searchKeyword: String, pageable: Pageable): Page<Board> =
         boardRepository.findByTitleContaining(searchKeyword, pageable)
     fun boardDelete(id: Int) = boardRepository.deleteById(id)
