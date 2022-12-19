@@ -70,7 +70,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/seungsu/seungsu/workspace/study/03_Spring/session",
+    "last_opened_file_path": "/home/seungsu/workspace/study/04_Kotlin",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -80,7 +80,7 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
-    "spring.configuration.checksum": "83411d1374b1010b840c2008845c58e9",
+    "spring.configuration.checksum": "eb4e92028930ab9ef510fce4e9020e23",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -140,6 +140,8 @@
       <workItem from="1671399240539" duration="479000" />
       <workItem from="1671422069832" duration="30000" />
       <workItem from="1671428629460" duration="211000" />
+      <workItem from="1671441116197" duration="702000" />
+      <workItem from="1671443474609" duration="15000" />
     </task>
     <servers />
   </component>
