@@ -1,6 +1,6 @@
-package com.springbook.biz.board.impl;
+package com.springbook.biz.mvc.board.impl;
 
-import com.springbook.biz.board.BoardVO;
+import com.springbook.biz.mvc.board.BoardVO;
 import com.springbook.biz.common.JDBCUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -25,6 +25,8 @@ public class BoardDAO {
     private final String BOARD_DELETE = "DELETE FROM Board WHERE Seq=?";
     private final String BOARD_GET = "SELECT * FROM Board WHERE Seq=?";
     private final String BOARD_LIST = "SELECT * FROM Board ORDER BY Seq DESC";
+    private final String BOARD_LIST_T = "SELECT * FROM Board WHERE Title LIKE '%'||?||'%' ORDER BY Seq DESC";
+    private final String BOARD_LIST_C = "SELECT * FROM Board WHERE Content LIKE '%'||?||'%' ORDER BY Seq DESC";
 
     static class BoardRowMapper implements RowMapper<BoardVO> {
         @Override
@@ -127,21 +129,18 @@ public class BoardDAO {
         return board;
     }
 
-    public List<BoardVO> getBoardList() {
-//        System.out.println("===> JDBC로 getBoardList 기능 처리");
-//        return jdbcTemplate.query(BOARD_LIST, new BoardRowMapper());
-
+    public List<BoardVO> getBoardList(BoardVO vo) {
         List<BoardVO> boardList = new ArrayList<>();
 
         try {
             conn = JDBCUtil.getConnection();
-
-            stmt = conn.prepareStatement(BOARD_LIST);
+            if (vo.getSearchCondition().equals("TITLE")) stmt = conn.prepareStatement(BOARD_LIST_T);
+            else if (vo.getSearchCondition().equals("CONTENT")) stmt = conn.prepareStatement(BOARD_LIST_C);
+            stmt.setString(1, vo.getSearchKeyword());
             rs = stmt.executeQuery();
 
             while (rs.next()) {
                 BoardVO board = new BoardVO();
-
                 board.setSeq(rs.getInt("SEQ"));
                 board.setTitle(rs.getString("Title"));
                 board.setContent(rs.getString("Content"));

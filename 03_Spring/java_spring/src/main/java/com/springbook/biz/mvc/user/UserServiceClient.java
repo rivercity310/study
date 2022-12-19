@@ -1,4 +1,4 @@
-package com.springbook.biz.user;
+package com.springbook.biz.mvc.user;
 
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;

@@ -1,4 +1,4 @@
-package com.springbook.biz.view.controller;
+package com.springbook.biz.mvc.controller;
 
 /*
 public class HandlerMapping {

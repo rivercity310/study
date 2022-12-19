@@ -1,7 +1,7 @@
-package com.springbook.biz.user.impl;
+package com.springbook.biz.mvc.user.impl;
 
-import com.springbook.biz.user.UserService;
-import com.springbook.biz.user.UserVO;
+import com.springbook.biz.mvc.user.UserService;
+import com.springbook.biz.mvc.user.UserVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

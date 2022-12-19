@@ -1,5 +1,5 @@
-<%@ page import="com.springbook.biz.board.BoardVO" %>
-<%@ page import="com.springbook.biz.board.impl.BoardDAO" %>
+<%@ page import="com.springbook.biz.mvc.board.BoardVO" %>
+<%@ page import="com.springbook.biz.mvc.board.impl.BoardDAO" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
 
 <%

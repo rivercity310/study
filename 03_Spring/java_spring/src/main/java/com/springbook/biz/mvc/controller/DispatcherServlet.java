@@ -1,15 +1,5 @@
-package com.springbook.biz.view.controller;
+package com.springbook.biz.mvc.controller;
 
-import com.springbook.biz.board.BoardVO;
-import com.springbook.biz.board.impl.BoardDAO;
-import com.springbook.biz.user.UserVO;
-import com.springbook.biz.user.impl.UserDAO;
-
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
-import java.io.IOException;
-import java.util.List;
 /*
 public class DispatcherServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;

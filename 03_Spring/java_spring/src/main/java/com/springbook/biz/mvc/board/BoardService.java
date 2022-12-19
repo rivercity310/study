@@ -1,4 +1,4 @@
-package com.springbook.biz.board;
+package com.springbook.biz.mvc.board;
 
 import java.util.List;
 
@@ -7,5 +7,5 @@ public interface BoardService {
     void updateBoard(BoardVO vo);
     void deleteBoard(BoardVO vo);
     BoardVO getBoard(BoardVO vo);
-    List<BoardVO> getBoardList();
+    List<BoardVO> getBoardList(BoardVO vo);
 }

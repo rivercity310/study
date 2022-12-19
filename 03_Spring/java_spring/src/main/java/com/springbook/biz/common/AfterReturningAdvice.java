@@ -1,10 +1,9 @@
 package com.springbook.biz.common;
 
-import com.springbook.biz.user.UserVO;
+import com.springbook.biz.mvc.user.UserVO;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Service;
 
 @Service

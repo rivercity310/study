@@ -1,4 +1,4 @@
-package com.springbook.biz.board;
+package com.springbook.biz.mvc.board;
 
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
@@ -24,7 +24,7 @@ public class BoardServiceClient {
         boardService.insertBoard(vo);
 
         // 4. 글 목록 검색 기능 테스트
-        List<BoardVO> boardList = boardService.getBoardList();
+        List<BoardVO> boardList = boardService.getBoardList(vo);
         for (BoardVO board : boardList)
             System.out.println("---> " + board.toString());
 

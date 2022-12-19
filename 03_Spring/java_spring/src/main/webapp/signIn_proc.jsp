@@ -1,5 +1,5 @@
-<%@ page import="com.springbook.biz.user.UserVO" %>
-<%@ page import="com.springbook.biz.user.impl.UserDAO" %>
+<%@ page import="com.springbook.biz.mvc.user.UserVO" %>
+<%@ page import="com.springbook.biz.mvc.user.impl.UserDAO" %>
 <%
     request.setCharacterEncoding("UTF-8");
 

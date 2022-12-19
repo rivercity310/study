@@ -1,7 +1,6 @@
-package com.springbook.biz.view.user;
+package com.springbook.biz.mvc.user;
 
-import com.springbook.biz.user.UserVO;
-import com.springbook.biz.user.impl.UserDAO;
+import com.springbook.biz.mvc.user.impl.UserDAO;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 

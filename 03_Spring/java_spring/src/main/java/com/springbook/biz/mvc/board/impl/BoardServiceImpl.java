@@ -1,7 +1,7 @@
-package com.springbook.biz.board.impl;
+package com.springbook.biz.mvc.board.impl;
 
-import com.springbook.biz.board.BoardService;
-import com.springbook.biz.board.BoardVO;
+import com.springbook.biz.mvc.board.BoardService;
+import com.springbook.biz.mvc.board.BoardVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,7 +35,7 @@ public class BoardServiceImpl implements BoardService {
     }
 
     @Override
-    public List<BoardVO> getBoardList() {
-        return boardDAO.getBoardList();
+    public List<BoardVO> getBoardList(BoardVO vo) {
+        return boardDAO.getBoardList(vo);
     }
 }

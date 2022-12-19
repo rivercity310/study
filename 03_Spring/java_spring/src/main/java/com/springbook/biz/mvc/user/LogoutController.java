@@ -1,4 +1,4 @@
-package com.springbook.biz.view.user;
+package com.springbook.biz.mvc.user;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
