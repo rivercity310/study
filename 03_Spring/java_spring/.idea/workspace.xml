@@ -5,39 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92ba7503-a01e-4511-a9f1-397be64b59a7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/board/BoardController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/user/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/board/BoardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/board/BoardService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/board/BoardServiceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/board/BoardServiceClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/board/BoardVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/board/BoardVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/board/impl/BoardDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/board/impl/BoardDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/board/impl/BoardServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/board/impl/BoardServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/common/AfterReturningAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/common/AfterReturningAdvice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/controller/MvcConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/controller/MyController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/user/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/user/UserServiceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/user/UserServiceClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/user/UserVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/user/UserVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/user/impl/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/user/impl/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/user/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/user/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/view/board/BoardController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/view/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/view/controller/DispatcherServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/controller/DispatcherServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/view/controller/HandlerMapping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/controller/HandlerMapping.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/view/controller/ViewResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/controller/ViewResolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/view/user/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/user/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/view/user/LogoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/user/LogoutController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/view/user/SignInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/user/SignInController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/presentation-layer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/presentation-layer.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/deleteBoard_proc.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/deleteBoard_proc.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/getBoardList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/getBoardList.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/insertBoard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/insertBoard.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/insertBoard_proc.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/insertBoard_proc.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/login_proc.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login_proc.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/signIn_proc.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/signIn_proc.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/updateBoard_proc.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/updateBoard_proc.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/board/impl/BoardDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/board/impl/BoardDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/user/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/user/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/user/LogoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/user/LogoutController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/user/SignInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/user/SignInController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/user/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/user/impl/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/user/impl/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/user/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/user/impl/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,12 +30,7 @@
       <state>
         <projects_view>
           <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="jv_spring" type="f1a62948:ProjectNode" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </tree_state>
         </projects_view>
@@ -90,32 +61,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/seungsu/workspace/study/03_Spring/java_spring/src/main/resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
-    "spring.configuration.checksum": "eb4e92028930ab9ef510fce4e9020e23",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/seungsu/workspace/study/03_Spring/java_spring/src/main/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;eb4e92028930ab9ef510fce4e9020e23&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources" />

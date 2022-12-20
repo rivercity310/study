@@ -16,10 +16,10 @@ import java.util.List;
 
 @Repository("boardDAO")
 public class BoardDAO {
-    @Autowired
     private JdbcTemplate jdbcTemplate;
-
-    // private final String BOARD_INSERT_TEST = "INSERT INTO Board(Seq, Title, Writer, Content) VALUES(?, ?, ?, ?)";
+    private Connection conn = null;
+    private PreparedStatement stmt = null;
+    private ResultSet rs = null;
     private final String BOARD_INSERT = "INSERT INTO Board(Title, Writer, Content) VALUES(?, ?, ?)";
     private final String BOARD_UPDATE = "UPDATE Board SET Title=?, Content=? WHERE Seq=?";
     private final String BOARD_DELETE = "DELETE FROM Board WHERE Seq=?";
@@ -28,30 +28,16 @@ public class BoardDAO {
     private final String BOARD_LIST_T = "SELECT * FROM Board WHERE Title LIKE '%'||?||'%' ORDER BY Seq DESC";
     private final String BOARD_LIST_C = "SELECT * FROM Board WHERE Content LIKE '%'||?||'%' ORDER BY Seq DESC";
 
-    static class BoardRowMapper implements RowMapper<BoardVO> {
-        @Override
-        public BoardVO mapRow(ResultSet rs, int rowNum) throws SQLException {
-            BoardVO board = new BoardVO();
-
-            board.setSeq(rs.getInt("Seq"));
-            board.setTitle(rs.getString("Title"));
-            board.setWriter(rs.getString("Writer"));
-            board.setContent(rs.getString("Content"));
-            board.setRegDate(rs.getDate("Regdate"));
-            board.setCnt(rs.getInt("Cnt"));
-
-            return board;
-        }
+    @Autowired
+    public BoardDAO(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
     }
 
-    private Connection conn = null;
-    private PreparedStatement stmt = null;
-    private ResultSet rs = null;
-
     public void insertBoard(BoardVO vo) {
-        // System.out.println("===> JDBC로 insertBoard 기능 처리");
-        // jdbcTemplate.update(BOARD_INSERT, vo.getTitle(), vo.getWriter(), vo.getContent());
+        System.out.println("===> JDBC로 insertBoard 기능 처리");
+        jdbcTemplate.update(BOARD_INSERT, vo.getTitle(), vo.getWriter(), vo.getContent());
 
+        /*
         try {
             conn = JDBCUtil.getConnection();
 
@@ -64,12 +50,14 @@ public class BoardDAO {
         }
         catch (Exception e) { e.printStackTrace(); }
         finally { JDBCUtil.close(stmt, conn); }
+        */
     }
 
     public void updateBoard(BoardVO vo) {
-        // System.out.println("===> JDBC로 updateBoard 기능 처리");
-        // jdbcTemplate.update(BOARD_UPDATE, vo.getTitle(), vo.getContent(), vo.getSeq());
+        System.out.println("===> JDBC로 updateBoard 기능 처리");
+        jdbcTemplate.update(BOARD_UPDATE, vo.getTitle(), vo.getContent(), vo.getSeq());
 
+        /*
         try {
             conn = JDBCUtil.getConnection();
 
@@ -82,12 +70,14 @@ public class BoardDAO {
         }
         catch (Exception e) { e.printStackTrace(); }
         finally { JDBCUtil.close(stmt, conn); }
+        */
     }
 
     public void deleteBoard(BoardVO vo) {
-        // System.out.println("===> JDBC로 deleteBoard 기능 처리");
-        // jdbcTemplate.update(BOARD_DELETE, vo.getSeq());
+        System.out.println("===> JDBC로 deleteBoard 기능 처리");
+        jdbcTemplate.update(BOARD_DELETE, vo.getSeq());
 
+        /*
         try {
             conn = JDBCUtil.getConnection();
 
@@ -97,14 +87,15 @@ public class BoardDAO {
         }
         catch (Exception e) { e.printStackTrace(); }
         finally { JDBCUtil.close(stmt, conn); }
+        */
     }
 
     public BoardVO getBoard(BoardVO vo) {
-        // System.out.println("===> JDBC로 getBoard 기능 처리");
-        // Object[] args = { vo.getSeq() };
-        // return jdbcTemplate.queryForObject(BOARD_GET, args, new BoardRowMapper());
+        System.out.println("===> JDBC로 getBoard 기능 처리");
+        Object[] args = { vo.getSeq() };
+        return jdbcTemplate.queryForObject(BOARD_GET, args, new BoardRowMapper());
 
-
+        /*
         BoardVO board = new BoardVO();
 
         try {
@@ -127,6 +118,7 @@ public class BoardDAO {
         finally { JDBCUtil.close(rs, stmt, conn); }
 
         return board;
+        */
     }
 
     public List<BoardVO> getBoardList(BoardVO vo) {
@@ -155,5 +147,21 @@ public class BoardDAO {
         finally { JDBCUtil.close(rs, stmt, conn); }
 
         return boardList;
+    }
+
+    static class BoardRowMapper implements RowMapper<BoardVO> {
+        @Override
+        public BoardVO mapRow(ResultSet rs, int rowNum) throws SQLException {
+            BoardVO board = new BoardVO();
+
+            board.setSeq(rs.getInt("Seq"));
+            board.setTitle(rs.getString("Title"));
+            board.setWriter(rs.getString("Writer"));
+            board.setContent(rs.getString("Content"));
+            board.setRegDate(rs.getDate("Regdate"));
+            board.setCnt(rs.getInt("Cnt"));
+
+            return board;
+        }
     }
 }
