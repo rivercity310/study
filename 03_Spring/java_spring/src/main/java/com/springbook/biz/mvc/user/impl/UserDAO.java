@@ -1,14 +1,11 @@
 package com.springbook.biz.mvc.user.impl;
 
-import com.springbook.biz.common.JDBCUtil;
 import com.springbook.biz.mvc.user.UserVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 

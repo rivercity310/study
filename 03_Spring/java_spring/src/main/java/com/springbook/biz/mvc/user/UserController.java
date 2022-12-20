@@ -16,15 +16,17 @@ public class UserController {
     }
 
     @RequestMapping(value = "/login.do", method = RequestMethod.GET)
-    public String login(UserVO vo) {
-        System.out.println("로그인 화면으로 이동");
-        vo.setId("test111");
-        vo.setPassword("123111");
+    public String loginGet(UserVO vo) {
+        vo.setId("test");
+        vo.setPassword("123");
         return "login.jsp";
     }
 
     @RequestMapping(value = "/login.do", method = RequestMethod.POST)
-    public String login(UserVO vo, HttpSession session) {
+    public String loginPost(UserVO vo, HttpSession session) {
+        if (vo.getId() == null || vo.getId() == "")
+            throw new IllegalArgumentException("id 입력");
+
         UserVO user = userService.getUser(vo);
         if (user != null) {
             session.setAttribute("userName", user.getName());

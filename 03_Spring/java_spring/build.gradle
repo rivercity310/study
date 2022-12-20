@@ -20,7 +20,9 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'mysql:mysql-connector-java'
+	implementation group: 'commons-fileupload', name: 'commons-fileupload', version: '1.4'
 	implementation 'org.apache.commons:commons-dbcp2:2.9.0'
+	implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.14.1'
 }
 
 tasks.named('test') {

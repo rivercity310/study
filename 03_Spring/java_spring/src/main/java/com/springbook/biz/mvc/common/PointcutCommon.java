@@ -1,4 +1,4 @@
-package com.springbook.biz.common;
+package com.springbook.biz.mvc.common;
 
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;

@@ -1,4 +1,4 @@
-package com.springbook.biz.common;
+package com.springbook.biz.mvc.common;
 
 import com.springbook.biz.mvc.user.UserVO;
 import org.aspectj.lang.JoinPoint;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 @Aspect
 public class AfterReturningAdvice {
-    @AfterReturning(pointcut = "PointcutCommon.getPointcut()", returning = "returnObj")
+    @AfterReturning(pointcut = "com.springbook.biz.mvc.common.PointcutCommon.getPointcut()", returning = "returnObj")
     public void afterLog(JoinPoint jp, Object returnObj) {
         String method = jp.getSignature().getName();
 

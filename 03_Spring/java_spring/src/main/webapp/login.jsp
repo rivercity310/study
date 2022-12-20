@@ -10,7 +10,7 @@
 
 <body>
     <center>
-        <h1>로그인</h1>
+        <h1>Login</h1>
         <hr/>
         <form action="login.do" method="post">
             <table border="1" cellpadding="0" cellspacing="0">
@@ -24,7 +24,7 @@
                 </tr>
                 <tr>
                     <td colspan="2" align="center">
-                        <input type="submit" value="Submit"/>
+                        <input type="submit" value="제출"/>
                     </td>
                 </tr>
             </table>

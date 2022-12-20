@@ -5,10 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92ba7503-a01e-4511-a9f1-397be64b59a7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/common/CommonExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/message/messageSource_en.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/message/messageSource_ko.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/message/messageSource_kr.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mybatis-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/common/arithmeticError.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/common/error.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/common/nullPointerError.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/user/LoginController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/user/LogoutController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/user/SignInController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/common/AfterAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/common/AfterAdvice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/common/AfterReturningAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/common/AfterReturningAdvice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/common/AfterThrowingAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/common/AfterThrowingAdvice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/common/AroundAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/common/AroundAdvice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/common/BeforeAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/common/BeforeAdvice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/common/JDBCUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/common/JDBCUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/common/Log4jAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/common/Log4jAdvice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/common/LogAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/common/LogAdvice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/common/PointcutCommon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/common/PointcutCommon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/board/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/board/BoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/board/BoardVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/board/BoardVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/board/impl/BoardDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/board/impl/BoardDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/user/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/user/impl/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/user/impl/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,8 +60,8 @@
       <list>
         <option value="HTML File" />
         <option value="Interface" />
-        <option value="spring-beans.schema" />
         <option value="Class" />
+        <option value="spring-beans.schema" />
       </list>
     </option>
   </component>
@@ -68,7 +91,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/seungsu/workspace/study/03_Spring/java_spring/src/main/resources&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/seungsu/workspace/study/03_Spring/java_spring/build.gradle&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -88,11 +111,11 @@
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/common" />
       <recent name="$PROJECT_DIR$/src/main/webapp" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/main/resources/WEB-INF" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/board" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/config" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
@@ -142,6 +165,12 @@
       <workItem from="1671441116197" duration="702000" />
       <workItem from="1671443474609" duration="15000" />
       <workItem from="1671460411623" duration="5808000" />
+      <workItem from="1671537340949" duration="622000" />
+      <workItem from="1671544035915" duration="485000" />
+      <workItem from="1671544532257" duration="4175000" />
+      <workItem from="1671550836741" duration="540000" />
+      <workItem from="1671551389413" duration="471000" />
+      <workItem from="1671551874218" duration="1064000" />
     </task>
     <servers />
   </component>

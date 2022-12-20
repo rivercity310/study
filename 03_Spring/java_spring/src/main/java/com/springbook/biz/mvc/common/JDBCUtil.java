@@ -1,4 +1,4 @@
-package com.springbook.biz.common;
+package com.springbook.biz.mvc.common;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

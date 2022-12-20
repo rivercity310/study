@@ -1,4 +1,4 @@
-package com.springbook.biz.common;
+package com.springbook.biz.mvc.common;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -9,7 +9,7 @@ import org.springframework.util.StopWatch;
 @Service
 @Aspect
 public class AroundAdvice {
-    @Around("PointcutCommon.allPointcut()")
+    @Around("com.springbook.biz.mvc.common.PointcutCommon.allPointcut()")
     public Object aroundAdvLog(ProceedingJoinPoint pjp) throws Throwable {
         String method = pjp.getSignature().getName();
 

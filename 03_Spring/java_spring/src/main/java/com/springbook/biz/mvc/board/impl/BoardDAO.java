@@ -1,7 +1,7 @@
 package com.springbook.biz.mvc.board.impl;
 
 import com.springbook.biz.mvc.board.BoardVO;
-import com.springbook.biz.common.JDBCUtil;
+import com.springbook.biz.mvc.common.JDBCUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -34,7 +34,6 @@ public class BoardDAO {
     }
 
     public void insertBoard(BoardVO vo) {
-        System.out.println("===> JDBC로 insertBoard 기능 처리");
         jdbcTemplate.update(BOARD_INSERT, vo.getTitle(), vo.getWriter(), vo.getContent());
 
         /*

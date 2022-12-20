@@ -5,9 +5,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -49,7 +54,14 @@ public class BoardController {
     }
 
     @RequestMapping(value="/insertBoard.do")
-    public String insertBoard(BoardVO vo) {
+    public String insertBoard(BoardVO vo) throws IOException {
+        // 파일 업로드 처리
+        MultipartFile uploadFile = vo.getUploadFile();
+        if (!uploadFile.isEmpty()) {
+            String fileName = uploadFile.getOriginalFilename();
+            uploadFile.transferTo(new File("./workspace/study/03_Spring/files" + fileName));
+        }
+
         boardService.insertBoard(vo);
         return "getBoardList.do";
     }
@@ -58,5 +70,14 @@ public class BoardController {
     public String updateBoard(@ModelAttribute("board") BoardVO vo) {
         boardService.updateBoard(vo);
         return "getBoardList.do";
+    }
+
+    @RequestMapping("/dataTransform.do")
+    @ResponseBody
+    public List<BoardVO> dataTransform(BoardVO vo) {
+        vo.setSearchCondition("TITLE");
+        vo.setSearchKeyword("");
+        List<BoardVO> boardList = boardService.getBoardList(vo);
+        return boardList;
     }
 }
