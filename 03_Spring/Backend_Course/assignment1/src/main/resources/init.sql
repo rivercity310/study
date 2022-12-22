@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS assignment;
+
+use assignment;
+
+CREATE TABLE IF NOT EXISTS board (
+    seq INT PRIMARY KEY AUTO_INCREMENT,
+    id INT NOT NULL,
+    reward INT NOT NULL,
+    position VARCHAR(30) NOT NULL,
+    content VARCHAR(100) NOT NULL,
+    tech VARCHAR(30) NOT NULL
+);

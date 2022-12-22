@@ -59,7 +59,7 @@ public class BoardController {
         MultipartFile uploadFile = vo.getUploadFile();
         if (!uploadFile.isEmpty()) {
             String fileName = uploadFile.getOriginalFilename();
-            uploadFile.transferTo(new File("./workspace/study/03_Spring/files" + fileName));
+            uploadFile.transferTo(new File(fileName));
         }
 
         boardService.insertBoard(vo);

@@ -11,7 +11,7 @@ import java.sql.SQLException;
 
 @Repository("userDAO")
 public class UserDAO {
-    private JdbcTemplate jdbcTemplate;
+    private final JdbcTemplate jdbcTemplate;
 
     private final String USER_GET = "select * from Users where id=? and password=?";
     private final String USER_INSERT = "INSERT INTO Users VALUES(?, ?, ?, ?)";

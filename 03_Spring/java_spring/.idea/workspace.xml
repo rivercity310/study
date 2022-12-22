@@ -5,33 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92ba7503-a01e-4511-a9f1-397be64b59a7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/common/CommonExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/message/messageSource_en.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/message/messageSource_ko.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/message/messageSource_kr.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mybatis-config.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/common/arithmeticError.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/common/error.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/common/nullPointerError.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/common/AfterAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/common/AfterAdvice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/common/AfterReturningAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/common/AfterReturningAdvice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/common/AfterThrowingAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/common/AfterThrowingAdvice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/common/AroundAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/common/AroundAdvice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/common/BeforeAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/common/BeforeAdvice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/common/JDBCUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/common/JDBCUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/common/Log4jAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/common/Log4jAdvice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/common/LogAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/common/LogAdvice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/common/PointcutCommon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/common/PointcutCommon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/board/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/board/BoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/board/BoardVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/board/BoardVO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/board/impl/BoardDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/board/impl/BoardDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/user/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/user/impl/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springbook/biz/mvc/user/impl/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,32 +56,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/seungsu/workspace/study/03_Spring/java_spring/build.gradle&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;eb4e92028930ab9ef510fce4e9020e23&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/seungsu/workspace/study/03_Spring/java_spring/build.gradle",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "spring.configuration.checksum": "eb4e92028930ab9ef510fce4e9020e23",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources" />
@@ -171,6 +148,13 @@
       <workItem from="1671550836741" duration="540000" />
       <workItem from="1671551389413" duration="471000" />
       <workItem from="1671551874218" duration="1064000" />
+      <workItem from="1671688453916" duration="2427000" />
+      <workItem from="1671691933521" duration="183000" />
+      <workItem from="1671692132175" duration="653000" />
+      <workItem from="1671693476002" duration="3072000" />
+      <workItem from="1671696567491" duration="501000" />
+      <workItem from="1671697084352" duration="4997000" />
+      <workItem from="1671718567590" duration="4729000" />
     </task>
     <servers />
   </component>

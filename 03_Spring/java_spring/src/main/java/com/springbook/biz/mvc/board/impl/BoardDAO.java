@@ -25,8 +25,8 @@ public class BoardDAO {
     private final String BOARD_DELETE = "DELETE FROM Board WHERE Seq=?";
     private final String BOARD_GET = "SELECT * FROM Board WHERE Seq=?";
     private final String BOARD_LIST = "SELECT * FROM Board ORDER BY Seq DESC";
-    private final String BOARD_LIST_T = "SELECT * FROM Board WHERE Title LIKE '%'||?||'%' ORDER BY Seq DESC";
-    private final String BOARD_LIST_C = "SELECT * FROM Board WHERE Content LIKE '%'||?||'%' ORDER BY Seq DESC";
+    private final String BOARD_LIST_T = "SELECT * FROM Board WHERE Title LIKE ? ORDER BY Seq DESC";
+    private final String BOARD_LIST_C = "SELECT * FROM Board WHERE Content LIKE ? ORDER BY Seq DESC";
 
     @Autowired
     public BoardDAO(JdbcTemplate jdbcTemplate) {
@@ -121,6 +121,15 @@ public class BoardDAO {
     }
 
     public List<BoardVO> getBoardList(BoardVO vo) {
+        if (vo.getSearchCondition().equals("TITLE")) {
+            Object[] args = { '%' + vo.getSearchKeyword() + '%' };
+            return jdbcTemplate.query(BOARD_LIST_T, args, new BoardRowMapper());
+        }
+
+        Object[] args = { '%' + vo.getSearchKeyword() + '%' };
+        return jdbcTemplate.query(BOARD_LIST_C, args, new BoardRowMapper());
+
+        /*
         List<BoardVO> boardList = new ArrayList<>();
 
         try {
@@ -146,6 +155,7 @@ public class BoardDAO {
         finally { JDBCUtil.close(rs, stmt, conn); }
 
         return boardList;
+        */
     }
 
     static class BoardRowMapper implements RowMapper<BoardVO> {
