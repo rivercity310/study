@@ -23,7 +23,7 @@
             <th>기술</th>
         </tr>
 
-        <c:forEach items="<%= session.getAttribute(\"boardList\") %>" var="board">
+        <c:forEach items="${boardList}" var="board">
             <tr>
                 <td>${board.getId()}</td>
                 <td>${board.getName()}</td>

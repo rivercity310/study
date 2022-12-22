@@ -12,7 +12,7 @@
 <body>
 <center>
     <h1>상세공고</h1>
-    <a href="getBoardList.jsp">목록 가기</a>
+    <a href="getBoardList.do">목록 가기</a>
     <table>
         <tr>
             <td>회사ID</td>

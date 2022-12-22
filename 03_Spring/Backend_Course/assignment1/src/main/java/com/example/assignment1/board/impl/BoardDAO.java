@@ -9,18 +9,38 @@ import org.springframework.stereotype.Repository;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Objects;
+
 
 @Repository
 public class BoardDAO {
+    class BoardRowMapper implements RowMapper<BoardVO> {
+        @Override
+        public BoardVO mapRow(ResultSet rs, int rowNum) throws SQLException {
+            BoardVO vo = new BoardVO();
+            vo.setId(rs.getInt("id"));
+            vo.setSeq(rs.getInt("SEQ"));
+            vo.setReward(rs.getInt("reward"));
+            vo.setName(rs.getString("name"));
+            vo.setNation(rs.getString("nation"));
+            vo.setLocation(rs.getString("location"));
+            vo.setContent(rs.getString("content"));
+            vo.setPosition(rs.getString("position"));
+            vo.setTech(rs.getString("tech"));
+
+            return vo;
+        }
+    }
+
     private JdbcTemplate jdbcTemplate;
 
-    private String INSERT_BOARD = "INSERT INTO board(id, reward, position, content, tech, name, nation, location) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
-    private String UPDATE_BOARD = "UPDATE board SET position=?, reward=?, content=?, tech=? WHERE seq=?";
-    private String DELETE_BOARD = "DELETE FROM board WHERE seq=?";
-    private String BOARD_GET = "SELECT * FROM board WHERE seq=?";
-    private String BOARD_LIST = "SELECT * FROM board ORDER BY seq DESC";
-    private String BOARD_LIST_SEARCH = "SELECT * FROM board WHERE REGEXP_LIKE(CONCAT(name, tech, nation, location), ?) ORDER BY seq DESC";
-    private String BOARD_CONTENT_LIST = "SELECT * FROM board WHERE seq!=? AND name=?";
+    private final String INSERT_BOARD = "INSERT INTO board(id, reward, position, content, tech, name, nation, location) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+    private final String UPDATE_BOARD = "UPDATE board SET position=?, reward=?, content=?, tech=? WHERE seq=?";
+    private final String DELETE_BOARD = "DELETE FROM board WHERE seq=?";
+    private final String BOARD_GET = "SELECT * FROM board WHERE seq=?";
+    private final String BOARD_LIST = "SELECT * FROM board ORDER BY seq DESC";
+    private final String BOARD_LIST_SEARCH = "SELECT * FROM board WHERE REGEXP_LIKE(CONCAT(name, tech, nation, location, position), ?) ORDER BY seq DESC";
+    private final String BOARD_CONTENT_LIST = "SELECT * FROM board WHERE seq!=? AND name=?";
 
     @Autowired
     public BoardDAO(JdbcTemplate jdbcTemplate) {
@@ -38,7 +58,8 @@ public class BoardDAO {
     }
 
     public void deleteBoard(BoardVO vo) {
-        jdbcTemplate.update(DELETE_BOARD, vo.getSeq());
+        Object[] args = { vo.getSeq() };
+        jdbcTemplate.update(DELETE_BOARD, args);
     }
 
     public BoardVO getBoard(BoardVO vo) {
@@ -46,34 +67,14 @@ public class BoardDAO {
         return jdbcTemplate.queryForObject(BOARD_GET, args, new BoardRowMapper());
     }
 
+    public List<BoardVO> getBoardList(BoardVO vo) {
+        if (Objects.equals(vo.getSearchKeyword(), "") || vo.getSearchKeyword() == null) return jdbcTemplate.query(BOARD_LIST, new BoardRowMapper());
+        Object[] args = { vo.getSearchKeyword() };
+        return jdbcTemplate.query(BOARD_LIST_SEARCH, args, new BoardRowMapper());
+    }
+
     public List<BoardVO> getBoardContentList(BoardVO vo) {
         Object[] args = { vo.getSeq(), vo.getName() };
         return jdbcTemplate.query(BOARD_CONTENT_LIST, args, new BoardRowMapper());
-    }
-
-    public List<BoardVO> getBoardList(BoardVO vo) {
-        if (vo.getSearchKeyword() == null || vo.getSearchKeyword() == "") return jdbcTemplate.query(BOARD_LIST, new BoardRowMapper());
-
-        Object[] args = { vo.getSearchKeyword() };
-        List<BoardVO> searched = jdbcTemplate.query(BOARD_LIST_SEARCH, args, new BoardRowMapper());
-        return searched;
-    }
-
-    static class BoardRowMapper implements RowMapper<BoardVO> {
-        @Override
-        public BoardVO mapRow(ResultSet rs, int rowNum) throws SQLException {
-            BoardVO vo = new BoardVO();
-            vo.setSeq(rs.getInt("seq"));
-            vo.setId(rs.getInt("id"));
-            vo.setName(rs.getString("name"));
-            vo.setNation(rs.getString("nation"));
-            vo.setLocation(rs.getString("location"));
-            vo.setReward(rs.getInt("reward"));
-            vo.setPosition(rs.getString("position"));
-            vo.setContent(rs.getString("content"));
-            vo.setTech(rs.getString("tech"));
-
-            return vo;
-        }
     }
 }
