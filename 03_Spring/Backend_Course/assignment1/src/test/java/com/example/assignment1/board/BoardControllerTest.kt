@@ -1,5 +1,6 @@
 package com.example.assignment1.board
 
+import com.example.assignment1.board.impl.BoardDAO
 import org.junit.jupiter.api.Test
 
 import org.junit.jupiter.api.Assertions.*
@@ -10,7 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest
 class BoardControllerTest {
 
     @Autowired
-    private lateinit var boardController: BoardController
+    private lateinit var boardDAO: BoardDAO
 
     @Test
     fun insertBoard() {
@@ -24,26 +25,24 @@ class BoardControllerTest {
         vo.content = "백엔드 개발자 모십니다"
         vo.tech = "Java Spring"
 
-        assertEquals( "getBoardList.do", boardController.insertBoard(vo))
-    }
-
-    @Test
-    fun deleteBoard() {
+        assertEquals( Unit, boardDAO.insertBoard(vo))
     }
 
     @Test
     fun updateBoard() {
+        val vo = BoardVO()
+        vo.position = "Frontend Developer"
+        vo.reward = 2500000
+        vo.content = "프론트 개발자 모십니다"
+        vo.tech = "Javascript"
+        vo.seq = 51
+
+        boardDAO.updateBoard(vo)
+        assertEquals(51, boardDAO.getBoard(BoardVO(51)).seq)
     }
 
     @Test
-    fun getBoard() {
-    }
-
-    @Test
-    fun getBoardContent() {
-    }
-
-    @Test
-    fun getBoardList() {
+    fun deleteBoard() {
+        assertEquals(Unit, boardDAO.deleteBoard(BoardVO(48)))
     }
 }

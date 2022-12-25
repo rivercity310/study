@@ -26,7 +26,7 @@ open class BoardController(private val boardService: BoardService) {
 
     @RequestMapping("/getBoard.do")
     fun getBoard(vo: BoardVO, model: Model): String {
-        model.addAttribute(boardService.getBoard(vo))
+        model.addAttribute("board", boardService.getBoard(vo))
         return "getBoard.jsp"
     }
 
