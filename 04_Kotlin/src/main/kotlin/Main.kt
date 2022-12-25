@@ -7,6 +7,6 @@ import chapter7_operator_overloading.*
 import chapter8_higher_order_function.*
 
 fun main(args: Array<String>) {
-    Lambda_Test().lambda5_test4()
+    type5().test3()
 }
 

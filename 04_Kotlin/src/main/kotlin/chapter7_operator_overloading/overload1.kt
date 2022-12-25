@@ -88,7 +88,7 @@ private class Point2(val x: Int, val y: Int) {
     // equals 메서드는 Any에 정의된 메서드이므로 override 키워드 필요, Any에 정의된 equals에는 operator가 붙어있다.
     // 하지만 오버라이드하는 메서드 앞에는 operator 변경자를 붙이지 않아도 자동으로 상위 클래스의 operator 지정이 적용된다. (생략 가능)
     // - override operator fun equals(other: Any?): Boolean { .. }
-    override fun equals(other: Any?): Boolean {
+    override operator fun equals(other: Any?): Boolean {
         // 식별자 비교 연산자(===): 자바의 ==와 동일, 두 피연산자가 같은 객체를 가리키는지 비교 (원시 타입이라면 두 값이 같은지)
         if (other === this) return true             // ==로 비교하면 다시 equals를 호출하기 때문에 무한루프에 빠진다
         if (other !is Point2) return false          // 타입 검사
@@ -113,7 +113,7 @@ fun overload1_test5() {
 // - a >= b --> a.compareTo(b) >= 0 (두 객체를 비교하는 식은 compareTo의 결과를 0과 비교하는 코드로 컴파일된다)
 class Person(private val firstName: String, private val lastName: String): Comparable<Person> {
     // Comparable의 compareTo 메서드에도 operator 변경자가 붙어있으므로 하위 클래스에서 생략
-    override fun compareTo(other: Person): Int {
+    override operator fun compareTo(other: Person): Int {
         // compareValuesBy: 두 객체를 인자로 넘겨진 두 비교 함수를 통해 비교 (모든 함수가 0을 반환하면 0 반환)
         // 각 비교함수는 람다나 프로퍼티/메서드 참조일 수 있다.
         return compareValuesBy(this, other, Person::lastName, Person::firstName)
