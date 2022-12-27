@@ -60,13 +60,10 @@ build.gradle에 다음을 추가 후 리로딩하기 <br/>
 ### - Spring JSP 404 
 그냥 웬만하면 jsp 쓰지 말자... 
 
-<br/>
-
 
 #### jsp 파일 위치 <br/>
 src/main/webapp/WEB-INF/views   (없으면 폴더 생성)
 
-<br/>
 
 #### application.properties 설정
 ```xml
@@ -74,7 +71,6 @@ spring.mvc.view.prifix=/WEB-INF/views
 spring.mvc.view.suffix=.jsp
 ```
 
-<br/>
 
 #### ViewResolver
 ```java
@@ -91,8 +87,6 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter {
     }
 }
 ```
-
-<br/>
 
 #### 그래도 안된다면..
 메인 폴더에서 터미널 -> ./gradlew bootRun (터미널 직접 실행) <br/>
