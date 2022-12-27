@@ -97,10 +97,8 @@ fun hof1_ex4() {
 
 
 // 4. nullable 함수 타입
-/* nullable 함수 타입은 직접 호출할 수 없다
-private fun <T> Collection<T>.joinToString(
-    separator: String = ", ", prefix: String = "", postfix: String = "", transform: ((T) -> String)? = null): String
-{
+// nullable 함수 타입은 직접 호출할 수 없다
+private fun <T> Collection<T>.joinToString(separator: String = ", ", prefix: String = "", postfix: String = "", transform: ((T) -> String)? = null): String {
     val result = StringBuilder(prefix)
     for ((index, element) in withIndex()) {
         if (index > 0) result.append(separator)
@@ -111,5 +109,3 @@ private fun <T> Collection<T>.joinToString(
     result.append(postfix)
     return result.toString()
 }
-}
-*/

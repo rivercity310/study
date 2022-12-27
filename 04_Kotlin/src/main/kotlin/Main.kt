@@ -7,6 +7,6 @@ import chapter7_operator_overloading.*
 import chapter8_higher_order_function.*
 
 fun main(args: Array<String>) {
-    type5().test3()
+    Hof3().test2()
 }
 
