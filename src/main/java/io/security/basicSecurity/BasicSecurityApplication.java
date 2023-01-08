@@ -1,11 +1,11 @@
-package com.seungsu.zerock;
+package io.security.basicSecurity;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ZerockApplication {
+public class BasicSecurityApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(ZerockApplication.class, args);
+		SpringApplication.run(BasicSecurityApplication.class, args);
 	}
 }

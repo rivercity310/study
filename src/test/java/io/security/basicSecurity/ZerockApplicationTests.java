@@ -1,4 +1,4 @@
-package com.seungsu.zerock;
+package io.security.basicSecurity;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
