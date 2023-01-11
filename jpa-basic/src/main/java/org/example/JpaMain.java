@@ -7,60 +7,60 @@ import javax.persistence.Persistence;
 import java.util.List;
 
 public class JpaMain {
-    public static void main(String[] args) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("hello");
+    static EntityManagerFactory emf =
+            Persistence.createEntityManagerFactory("hello");
+
+    private static void insert() {
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
 
-        // 등록
         try {
             tx.begin();
 
             Member member = new Member();
             member.setId(1);
-            member.setName("Test");
+            member.setName("seungsu");
 
             em.persist(member);
+
             tx.commit();
         }
+
         catch (Exception e) {
             tx.rollback();
         }
 
-        // 수정
-        try {
-            tx.begin();
-
-            Member findMember = em.find(Member.class, 1);
-            System.out.println("찾은 Member: " + findMember.getName());
-
-            findMember.setName("Test2");
-            // em.persist(findMember) -> 불필요
-
-            tx.commit();
+        finally {
+            em.close();
         }
-        catch (Exception e) {
-            tx.rollback();
-        }
+    }
+
+    private static void update() {
+        EntityManager em = emf.createEntityManager();
+        EntityTransaction tx = em.getTransaction();
 
         try {
             tx.begin();
 
-            List<Member> result = em.createQuery("select m from Member as m", Member.class)
-                    .setFirstResult(0)      // limit
-                    .setMaxResults(5)       // offset
-                    .getResultList();
-
-            for (Member member : result)
-                System.out.println(member.getName());
+            Member member = em.find(Member.class, 1);
+            member.setName("sudang");
 
             tx.commit();
         }
+
         catch (Exception e) {
             tx.rollback();
         }
 
-        // 삭제
+        finally {
+            em.close();
+        }
+    }
+
+    private static void delete() {
+        EntityManager em = emf.createEntityManager();
+        EntityTransaction tx = em.getTransaction();
+
         try {
             tx.begin();
 
@@ -68,13 +68,47 @@ public class JpaMain {
 
             tx.commit();
         }
+
         catch (Exception e) {
             tx.rollback();
         }
+
         finally {
             em.close();
         }
+    }
 
-        emf.close();
+    private static void getList() {
+        EntityManager em = emf.createEntityManager();
+        EntityTransaction tx = em.getTransaction();
+
+        try {
+            tx.begin();
+
+            List<Member> result = em.createQuery("select m from Member as m")
+                    .setFirstResult(1)
+                    .setMaxResults(10)
+                    .getResultList();
+
+            for (Member member : result)
+                System.out.println(member.getName());
+
+            tx.commit();
+        }
+
+        catch (Exception e) {
+            tx.rollback();
+        }
+
+        finally {
+            em.close();
+        }
+    }
+
+    public static void main(String[] args) {
+        insert();
+        getList();
+        update();
+        //delete();
     }
 }
