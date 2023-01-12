@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.recruitBoard.repository.BoardMapperRepository">
+    <insert id="insertBoard" parameterType="com.example.recruitBoard.vo.BoardVO">
+        INSERT INTO board(id, position, reward, content, tech)
+        VALUES(#{id}, #{position}, #{reward}, #{content}, #{tech})
+    </insert>
+
+    <delete id="deleteBoard" parameterType="int">
+        DELETE FROM board WHERE seq=${seq}
+    </delete>
+
+    <update id="updateBoard" parameterType="com.example.recruitBoard.vo.BoardVO">
+        UPDATE board SET reward=#{reward}, position=#{position}, content=#{content}, tech=#{tech} WHERE seq=#{seq}
+    </update>
+
+    <select id="duplicateCheck" parameterType="hashmap" resultType="int">
+        SELECT COUNT(*) FROM user WHERE boardSeq=#{boardSeq} AND userId=#{userId}
+    </select>
+
+    <update id="applyBoard" parameterType="com.example.recruitBoard.vo.UserVO">
+        INSERT INTO user VALUES(#{seq}, #{userId}, #{userName}, #{userAge})
+    </update>
+
+    <select id="getBoard" resultType="com.example.recruitBoard.vo.BoardVO">
+        SELECT * FROM board
+        LEFT JOIN company ON board.id = company.companyId
+        WHERE seq=#{seq}
+    </select>
+
+    <select id="getCompany" resultType="com.example.recruitBoard.vo.CompanyVO">
+        SELECT * FROM company
+        WHERE companyId=#{id}
+    </select>
+
+    <select id="getApplicants" resultType="com.example.recruitBoard.vo.UserVO">
+        SELECT * FROM user
+        WHERE boardSeq=#{seq}
+    </select>
+
+    <select id="getOtherBoard" resultType="com.example.recruitBoard.vo.BoardVO">
+        SELECT * FROM board
+        LEFT JOIN company ON board.id = company.companyId
+        WHERE seq!=#{seq} AND id=#{id}
+    </select>
+
+    <select id="getBoardList" resultType="com.example.recruitBoard.vo.BoardVO">
+        SELECT seq, id, reward, position, tech, content FROM board
+    </select>
+</mapper>
