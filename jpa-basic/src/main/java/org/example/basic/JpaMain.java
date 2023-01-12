@@ -1,4 +1,4 @@
-package org.example;
+package org.example.basic;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -17,12 +17,20 @@ public class JpaMain {
         try {
             tx.begin();
 
-            Member member = new Member();
-            member.setId(1);
-            member.setName("seungsu");
+            Team team = new Team();
+            team.setName("TeamA");
+            em.persist(team);
 
+            Member member = new Member();
+            member.setUsername("member1");
+            member.changeTeam(team);
             em.persist(member);
 
+            Member findMember = em.find(Member.class, member.getId());      // 1차 캐시에서 가져옴
+            List<Member> members = findMember.getTeam().getMembers();
+            
+            for (Member mem : members) System.out.println("member.getUsername() = " + mem.getUsername());
+            
             tx.commit();
         }
 
@@ -43,7 +51,7 @@ public class JpaMain {
             tx.begin();
 
             Member member = em.find(Member.class, 1);
-            member.setName("sudang");
+            member.setUsername("sudang");
 
             tx.commit();
         }
@@ -90,9 +98,6 @@ public class JpaMain {
                     .setMaxResults(10)
                     .getResultList();
 
-            for (Member member : result)
-                System.out.println(member.getName());
-
             tx.commit();
         }
 
@@ -107,8 +112,5 @@ public class JpaMain {
 
     public static void main(String[] args) {
         insert();
-        getList();
-        update();
-        //delete();
     }
 }
