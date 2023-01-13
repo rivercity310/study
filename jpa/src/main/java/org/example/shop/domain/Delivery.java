@@ -1,31 +1,22 @@
 package org.example.shop.domain;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
-public class Customer {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "customer_id")
+public class Delivery {
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "delivery_id")
     private Long id;
 
-    @Column(name = "customer_name")
-    private String name;
+    @OneToOne(mappedBy = "delivery")
+    private Order order;
 
-    @Column(name = "customer_city")
     private String city;
-
-    @Column(name = "customer_street")
     private String street;
-
-    @Column(name = "customer_zipcode")
     private String zipcode;
 
-    @OneToMany(mappedBy = "customer")
-    private List<Order> orders = new ArrayList<>();
-
+    @Enumerated(EnumType.STRING)
+    private DeliveryStatus status;
 
     public Long getId() {
         return id;
@@ -35,12 +26,12 @@ public class Customer {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public Order getOrder() {
+        return order;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setOrder(Order order) {
+        this.order = order;
     }
 
     public String getCity() {
@@ -67,11 +58,11 @@ public class Customer {
         this.zipcode = zipcode;
     }
 
-    public List<Order> getOrders() {
-        return orders;
+    public DeliveryStatus getStatus() {
+        return status;
     }
 
-    public void setOrders(List<Order> orders) {
-        this.orders = orders;
+    public void setStatus(DeliveryStatus status) {
+        this.status = status;
     }
 }

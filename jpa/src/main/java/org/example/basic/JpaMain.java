@@ -1,5 +1,7 @@
 package org.example.basic;
 
+import org.example.shop.domain.Book;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -9,6 +11,37 @@ import java.util.List;
 public class JpaMain {
     static EntityManagerFactory emf =
             Persistence.createEntityManagerFactory("hello");
+
+    private static void mappedClassTest() {
+        EntityManager em = emf.createEntityManager();
+        EntityTransaction tx = em.getTransaction();
+
+        try {
+            tx.begin();
+
+            Book book = new Book();
+            book.setAuthor("황승수");
+            book.setIsbn("123123");
+
+            em.persist(book);
+
+            em.flush();
+            em.clear();
+
+            Book findBook = em.find(Book.class, book.getId());
+            System.out.println(findBook);
+
+            tx.commit();
+        }
+
+        catch (Exception e) {
+            tx.rollback();
+        }
+
+        finally {
+            em.close();
+        }
+    }
 
     private static void insert() {
         EntityManager em = emf.createEntityManager();
@@ -111,6 +144,6 @@ public class JpaMain {
     }
 
     public static void main(String[] args) {
-        insert();
+        mappedClassTest();
     }
 }
