@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -69,10 +70,12 @@ public class OrderServiceTest {
 
         // when
         Long orderId = orderService.order(member.getId(), item.getId(), orderCount);
-        orderS
+        orderService.cancelOrder(orderId);
 
         // then
-
+        Order getOrder = orderRepository.findOne(orderId);
+        assertEquals("주문 취소시 상태는 CANCEL", OrderStatus.CANCEL, getOrder.getStatus());
+        assertEquals("주문이 취소된 상품은 다시 재고가 복구되어야 함", 10, item.getStockQuantity());
     }
 
 
