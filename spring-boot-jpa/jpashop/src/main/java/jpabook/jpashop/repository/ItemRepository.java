@@ -14,7 +14,7 @@ public class ItemRepository {
 
     public void save(Item item) {
         if (item.getId() == null) em.persist(item);
-        else em.merge(item);        /* merge -> update와 비슷 */
+        // else em.merge(item);        /* merge: 준영속 상태 -> 영속 상태 */
     }
 
     public Item findOne(Long id) {

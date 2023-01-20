@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="30214055-78bb-4eed-81f7-60231536c9e2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-boot-jpa/jpashop/src/test/java/jpabook/jpashop/MemberRepositoryTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +22,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/seungsu/seungsu/workspace/backend_course/Week3/gameduo/build.gradle",
+    "last_opened_file_path": "/home/seungsu/workspace/spring-all/spring-boot-jpa/jpashop/build.gradle",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -35,6 +35,7 @@
       <option name="presentableId" value="Default" />
       <updated>1673931919721</updated>
       <workItem from="1673931920786" duration="204000" />
+      <workItem from="1674218423036" duration="34000" />
     </task>
     <servers />
   </component>

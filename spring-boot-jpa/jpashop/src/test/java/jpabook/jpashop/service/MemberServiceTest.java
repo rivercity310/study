@@ -24,6 +24,7 @@ public class MemberServiceTest {
     @Autowired EntityManager em;
 
     @Test
+    @Rollback(false)
     // @Rollback(value = false)  /* 롤백 안하고 commit 하도록 설정 */
     public void 회원가입() throws Exception {
         // given
