@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/restapi
+    username: postgres
+    password: 1111
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+    properties:
+      hibernate:
+        format_sql: true
+
+logging:
+  level:
+    org.hibernate:
+      SQL: debug
+      type: TRACE
+
