@@ -18,9 +18,9 @@ class MemberService(private val memberRepository: MemberRepository) {
 
     @Transactional(readOnly = false)
     internal fun update(id: Long, name: String): Unit {
-        /* 변경 감지 방식으로 업데이트 (em.merge 사용 X)
+        /** 변경 감지 방식으로 업데이트 (em.merge 사용 X)
         영속 상태 엔티티의 값을 변경하면 JPA가 자동으로 UPDATE 쿼리를 날림 (tx 커밋 시점)
-        */
+         */
         val member = memberRepository.findOne(id)
         member.name = name
     }

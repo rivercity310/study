@@ -11,10 +11,14 @@ plugins {
 /* Entity 프로퍼티와 함수를 open, no-arg constructor 자동 생성 플러그인 추가 */
 allOpen {
 	annotation("javax.persistence.Entity")
+	annotation("javax.persistence.MappedSuperclass")
+	annotation("javax.persistence.Embeddable")
 }
 
 noArg {
 	annotation("javax.persistence.Entity")
+	annotation("javax.persistence.MappedSuperclass")
+	annotation("javax.persistence.Embeddable")
 }
 
 group = "com.example"

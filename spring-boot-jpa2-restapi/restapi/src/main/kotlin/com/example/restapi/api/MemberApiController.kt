@@ -3,6 +3,8 @@ package com.example.restapi.api
 import com.example.restapi.domain.Address
 import com.example.restapi.domain.Member
 import com.example.restapi.service.MemberService
+import jakarta.persistence.EntityManager
+import jakarta.persistence.PersistenceContext
 import jakarta.validation.Valid
 import jakarta.validation.constraints.NotEmpty
 import org.springframework.web.bind.annotation.GetMapping
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 class MemberApiController(private val memberService: MemberService) {
+
     /* 등록 api V1: 엔티티를 외부에 노출하지 말것 -> DTO 사용 */
     @PostMapping("/api/v1/members")
     internal fun saveMemberV1(@RequestBody @Valid member: Member): CreateMemberResponse {
@@ -68,4 +71,7 @@ class MemberApiController(private val memberService: MemberService) {
 
     data class MemberDTO(val name: String)
     data class Result<T>(val count: Int, val data: T)
+
+
+
 }

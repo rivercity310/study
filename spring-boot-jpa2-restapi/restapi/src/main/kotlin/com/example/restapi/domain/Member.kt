@@ -14,7 +14,7 @@ import jakarta.validation.constraints.NotEmpty
 class Member(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "member_id")
-    var id: Long? = null,
+    val id: Long? = null,
 
     @Column(name = "member_name")
     @NotEmpty

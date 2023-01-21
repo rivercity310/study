@@ -7,7 +7,7 @@ import jakarta.persistence.*
 class OrderItem(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "order_item_id")
-    private var id: Long? = null,
+    val id: Long? = null,
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "order_id")
@@ -15,10 +15,10 @@ class OrderItem(
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "item_id")
-    private var item: Item? = null,
+    var item: Item? = null,
 
-    private var orderPrice: Int? = null,
-    private var count: Int? = null
+    var orderPrice: Int? = null,
+    var count: Int? = null
 )
 {
     /* 생성 메서드 */

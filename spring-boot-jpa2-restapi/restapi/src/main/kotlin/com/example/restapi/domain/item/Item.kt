@@ -9,8 +9,7 @@ import jakarta.persistence.*
 abstract class Item(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "item_id")
-    open var id: Long? = null,
-
+    open val id: Long? = null,
     open var name: String? = null,
     open var price: Int? = null,
     open var stockQuantity: Int? = null
@@ -18,7 +17,8 @@ abstract class Item(
 {
     /* Business Logic */
     internal fun addStock(quantity: Int): Unit {
-        this.stockQuantity = stockQuantity!! + quantity
+        if (stockQuantity != null)
+            this.stockQuantity = stockQuantity!! + quantity
     }
 
     internal fun removeStock(quantity: Int): Unit {
