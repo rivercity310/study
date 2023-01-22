@@ -1,6 +1,7 @@
 package com.example.restapi.repository
 
 import com.example.restapi.domain.Order
+import com.example.restapi.domain.OrderQueryDto
 import com.example.restapi.domain.OrderSearch
 import jakarta.persistence.EntityManager
 import org.springframework.stereotype.Repository
@@ -49,4 +50,21 @@ class OrderRepository(private val em: EntityManager) {
 
         return query.resultList
     }
+
+    internal fun findAllWithMemberDelivery(): List<Order> =
+        /* fetch join: LAZY 무시하고 프록시 아닌 진짜 MEMBER, DELIVERY 한방에 가져옴 */
+        em.createQuery(
+            "select o from Order o" +
+            " join fetch o.member m" +
+            " join fetch o.delivery d", Order::class.java)
+            .resultList
+
+    internal fun findOrderDTO(): List<OrderQueryDto> =
+        /* NEW 명령어를 사용하여 엔티티를 DTO로 즉시 변환해서 가져옴 */
+        em.createQuery(
+            "select new com.example.restapi.domain.OrderQueryDto(o.id, m.name, o.orderDate, o.status, d.address) " +
+                    " from Order o" +
+            " join o.member m" +
+            " join o.delivery d", OrderQueryDto::class.java)
+            .resultList
 }
