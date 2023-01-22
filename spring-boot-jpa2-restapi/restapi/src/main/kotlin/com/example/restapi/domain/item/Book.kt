@@ -5,9 +5,9 @@ import jakarta.persistence.Entity
 
 @Entity
 @DiscriminatorValue("book")
-open class Book(
-    open var author: String? = null,
-    open var isbn: String? = null
+class Book(
+    var author: String? = null,
+    var isbn: String? = null
 ): Item()
 {
     companion object {

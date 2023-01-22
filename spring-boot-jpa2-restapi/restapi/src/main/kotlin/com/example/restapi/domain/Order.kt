@@ -55,13 +55,13 @@ class Order(
         orderItem.order = this
     }
 
-    internal fun setDelivery(delivery: Delivery) {
+    internal fun setDelivery(delivery: Delivery): Unit {
         this.delivery = delivery
         delivery.order = this
     }
 
     /* 비즈니스 로직 */
-    internal fun cancel() {
+    internal fun cancel(): Unit {
         if (delivery?.status == DeliveryStatus.COMP)
             throw IllegalStateException("이미 배송중")
 
@@ -70,6 +70,6 @@ class Order(
     }
 
     /* 조회 로직 */
-    internal fun getTotalPrice() =
+    internal fun getTotalPrice(): Int =
         orderItems.map(OrderItem::getTotalPrice).sum()
 }

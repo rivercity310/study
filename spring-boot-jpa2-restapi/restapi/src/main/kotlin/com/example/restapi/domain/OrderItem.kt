@@ -36,8 +36,8 @@ class OrderItem(
     }
 
     /* 비즈니스 로직 */
-    internal fun cancel(): Unit? =
-        item?.addStock(count!!)
+    internal fun cancel(): Unit =
+        item!!.addStock(count!!)
 
     internal fun getTotalPrice(): Int =
         orderPrice!! * count!!
