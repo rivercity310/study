@@ -72,7 +72,7 @@ class OrderSimpleApiController(private val orderRepository: OrderRepository) {
             -> V3 쓰는 것 추천
     */
     @GetMapping("/api/v4/simple-orders")
-    internal fun orderV3(): Result<List<OrderQueryDto>> {
+    internal fun orderV3(): Result<List<OrderDTO>> {
         val orders = orderRepository.findOrderDTO()
         return Result(
             count = orders.size,

@@ -1,7 +1,7 @@
 package com.example.restapi.repository
 
 import com.example.restapi.domain.Order
-import com.example.restapi.domain.OrderQueryDto
+import com.example.restapi.domain.OrderDTO
 import com.example.restapi.domain.OrderSearch
 import jakarta.persistence.EntityManager
 import org.springframework.stereotype.Repository
@@ -59,12 +59,12 @@ class OrderRepository(private val em: EntityManager) {
             " join fetch o.delivery d", Order::class.java)
             .resultList
 
-    internal fun findOrderDTO(): List<OrderQueryDto> =
+    internal fun findOrderDTO(): List<OrderDTO> =
         /* NEW 명령어를 사용하여 엔티티를 DTO로 즉시 변환해서 가져옴 */
         em.createQuery(
             "select new com.example.restapi.domain.OrderQueryDto(o.id, m.name, o.orderDate, o.status, d.address) " +
                     " from Order o" +
             " join o.member m" +
-            " join o.delivery d", OrderQueryDto::class.java)
+            " join o.delivery d", OrderDTO::class.java)
             .resultList
 }

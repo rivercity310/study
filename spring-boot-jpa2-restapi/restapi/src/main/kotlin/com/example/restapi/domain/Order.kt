@@ -15,10 +15,10 @@ class Order(
     @JoinColumn(name = "member_id")
     var member: Member? = null,
 
-    @OneToMany(mappedBy = "order")
+    @OneToMany(mappedBy = "order", cascade = [CascadeType.ALL])
     var orderItems: List<OrderItem> = arrayListOf(),
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY, cascade = [CascadeType.ALL])
     @JoinColumn(name = "delivery_id")
     var delivery: Delivery? = null,
 

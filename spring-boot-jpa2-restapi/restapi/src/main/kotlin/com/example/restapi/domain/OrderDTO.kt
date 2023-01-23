@@ -2,7 +2,7 @@ package com.example.restapi.domain
 
 import java.time.LocalDateTime
 
-data class OrderQueryDto(
+data class OrderDTO(
     val orderId: Long? = null,
     val name: String? = null,
     val orderDate: LocalDateTime? = null,
