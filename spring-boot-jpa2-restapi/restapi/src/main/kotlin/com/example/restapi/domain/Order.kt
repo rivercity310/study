@@ -1,6 +1,7 @@
 package com.example.restapi.domain
 
 import jakarta.persistence.*
+import org.hibernate.annotations.BatchSize
 import java.lang.IllegalStateException
 import java.time.LocalDateTime
 
@@ -15,6 +16,7 @@ class Order(
     @JoinColumn(name = "member_id")
     var member: Member? = null,
 
+    @BatchSize(size = 100)
     @OneToMany(mappedBy = "order", cascade = [CascadeType.ALL])
     var orderItems: List<OrderItem> = arrayListOf(),
 

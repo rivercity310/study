@@ -2,10 +2,12 @@ package com.example.restapi.domain.item
 
 import com.example.restapi.exception.NotEnoughStockException
 import jakarta.persistence.*
+import org.hibernate.annotations.BatchSize
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "dtype")
+// @BatchSize(size = 100) 개별 적용시
 abstract class Item(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "item_id")

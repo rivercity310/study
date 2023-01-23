@@ -3,11 +3,12 @@ package com.example.restapi.api
 import com.example.restapi.domain.*
 import com.example.restapi.repository.OrderRepository
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 import java.time.LocalDateTime
 
 /**
- * xToMany 관계에서 컬렉션 조회 최적화하기
+ * 1대다(xToMany) 관계에서 컬렉션 조회 최적화하기
  */
 @RestController
 class OrderApiController2(private val orderRepository: OrderRepository) {
@@ -53,6 +54,43 @@ class OrderApiController2(private val orderRepository: OrderRepository) {
     internal fun ordersV1(): Result<List<OrderDTO>> {
         /* 프록시 강제 초기화 후 DTO 변환 */
         val orders: List<OrderDTO> = orderRepository.findAllByString(OrderSearch())
+            .map { OrderDTO(it) }
+
+        return Result(
+            count = orders.size,
+            data = orders
+        )
+    }
+
+    /* V2: fetch join과 distinct를 통해 중복을 제거하고 한번에 가져오기
+     *      -> join시 Order가 뻥튀기되는 중복 문제(1대다 조인) 해결
+     *      -> 쿼리 1번으로 축소
+     *      -x-> 1대다를 fetch join하는 경우 페이징이 애플리케이션에서 처리된다는 치명적인 단점이 있다. (OutOfMemory 위험성)
+     *      -x-> DB에서 중복을 거르지 못하고 전체를 가져오기 때문에 데이터 전송량이 많다
+    */
+    @GetMapping("/api/v2/orders")
+    internal fun ordersV2(): Result<List<OrderDTO>> {
+        val orders: List<OrderDTO> = orderRepository.findAllWithItem()
+            .map { OrderDTO(it) }
+
+        return Result(
+            count = orders.size,
+            data = orders
+        )
+    }
+
+    /* V3: BatchSize를 통해 페이징 + 컬렉션 엔티티 조회
+     *      -> XToOne : 모두 fetch join (ToOne 관계는 row 수를 증가시키지 않음 -> 페이징 쿼리에 영향을 주지 않음)
+     *      -> 컬렉션 : 지연 로딩으로 조회, 성능 최적화를 위해 hibernate.default_batch_fetch_size(글로벌 설정), BatchSize(개별 최적화) 적용
+     *                  -> 위 옵션을 사용하면 컬렉션이나, 프록시 객체를 한꺼번에 설정한 size만큼 IN 쿼리로 조회
+     *      -> DB에서 가져올 때부터 중복 없이 가져옴 (ToOne만 fetch join 했고, 테이블 단위로 IN 쿼리가 나가기 때문)
+     */
+    @GetMapping("/api/v3/orders")
+    internal fun ordersV3(
+        @RequestParam(value = "offset", defaultValue = "0") offset: Int,
+        @RequestParam(value = "limit", defaultValue = "100") limit: Int): Result<List<OrderDTO>>
+    {
+        val orders: List<OrderDTO> = orderRepository.findAllWithMemberDeliveryWithPaging(offset, limit)
             .map { OrderDTO(it) }
 
         return Result(

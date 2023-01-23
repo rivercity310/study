@@ -62,9 +62,31 @@ class OrderRepository(private val em: EntityManager) {
     internal fun findOrderDTO(): List<OrderDTO> =
         /* NEW 명령어를 사용하여 엔티티를 DTO로 즉시 변환해서 가져옴 */
         em.createQuery(
-            "select new com.example.restapi.domain.OrderQueryDto(o.id, m.name, o.orderDate, o.status, d.address) " +
+            "select new com.example.restapi.domain.OrderDTO(o.id, m.name, o.orderDate, o.status, d.address) " +
                     " from Order o" +
             " join o.member m" +
             " join o.delivery d", OrderDTO::class.java)
+            .resultList
+
+    internal fun findAllWithItem(): List<Order> =
+        /* distinct: SQL 기능: 중복제거 + JPA에서의 기능: Order의 PK가 같으면 중복된 ROW 제거 */
+        /*      ---> 즉 엔티티가 중복인 경우 걸러서 컬렉션에 담아준다. DB에서 가져올 때는 걸러내지 못하고 4개를 가져옴 */
+        em.createQuery(
+            "select distinct o from Order o" +
+            " join fetch o.member m" +
+            " join fetch o.delivery d" +
+            " join fetch o.orderItems oi" +
+            " join fetch oi.item i", Order::class.java)
+            .setFirstResult(1)
+            .setMaxResults(100)
+            .resultList
+
+    internal fun findAllWithMemberDeliveryWithPaging(offset: Int, limit: Int): List<Order> =
+        em.createQuery(
+            "select o from Order o" +
+            " join fetch o.member m" +
+            " join fetch o.delivery d", Order::class.java)
+            .setFirstResult(offset)
+            .setMaxResults(limit)
             .resultList
 }
