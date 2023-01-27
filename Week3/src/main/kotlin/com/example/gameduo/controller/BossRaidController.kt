@@ -2,16 +2,14 @@ package com.example.gameduo.controller
 
 import com.example.gameduo.dto.BossRaidDTO
 import com.example.gameduo.dto.RaidStatusDTO
-import com.example.gameduo.dto.RankingInfo
+import com.example.gameduo.entity.RankingInfo
 import com.example.gameduo.repository.RankingInfoRepository
 import com.example.gameduo.service.BossRaidService
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PatchMapping
-import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
@@ -53,8 +51,6 @@ class BossRaidController(
                 isFirst = false
             }
         }
-
-        rankingList.forEach { println(it) }
 
         val result = Result(topRankerList = rankingList, myRankingInfo = myRank!!)
         return ResponseEntity.ok(result)

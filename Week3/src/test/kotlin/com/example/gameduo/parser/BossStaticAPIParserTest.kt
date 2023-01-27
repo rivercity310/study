@@ -7,12 +7,12 @@ import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest
 class BossStaticAPIParserTest {
-    private val bossStaticAPIParser = BossStaticAPIParser
+    private val staticDataAPIParser = StaticDataAPIParser
 
     @Test
     @DisplayName("외부 스태틱 데이터를 정상적으로 가져오는지 테스트")
     internal fun getStaticData() {
-        val staticData = bossStaticAPIParser.getStaticData()
+        val staticData = staticDataAPIParser.getStaticData()
 
         val bossRaidLimitSeconds: Long = staticData.bossRaidLimitSeconds!!
         val levels: Map<Long, Long> = staticData.levels

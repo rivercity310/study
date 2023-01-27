@@ -1,4 +1,4 @@
-package com.example.gameduo.dto
+package com.example.gameduo.entity
 
 import com.fasterxml.jackson.annotation.JsonIgnore
 import jakarta.persistence.Id

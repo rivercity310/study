@@ -3,7 +3,7 @@ package com.example.gameduo.service
 import com.example.gameduo.caching.CachingStaticData
 import com.example.gameduo.dto.BossRaidDTO
 import com.example.gameduo.dto.RaidStatusDTO
-import com.example.gameduo.dto.RankingInfo
+import com.example.gameduo.entity.RankingInfo
 import com.example.gameduo.entity.BossRaid
 import com.example.gameduo.entity.User
 import com.example.gameduo.repository.BossRaidRepository
