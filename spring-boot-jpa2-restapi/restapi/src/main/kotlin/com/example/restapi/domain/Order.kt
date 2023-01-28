@@ -18,7 +18,7 @@ class Order(
 
     @BatchSize(size = 100)
     @OneToMany(mappedBy = "order", cascade = [CascadeType.ALL])
-    var orderItems: List<OrderItem> = arrayListOf(),
+    var orderItems: MutableList<OrderItem> = arrayListOf(),
 
     @OneToOne(fetch = FetchType.LAZY, cascade = [CascadeType.ALL])
     @JoinColumn(name = "delivery_id")

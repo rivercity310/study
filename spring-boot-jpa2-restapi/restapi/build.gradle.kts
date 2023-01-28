@@ -10,12 +10,18 @@ plugins {
 
 /* Entity 프로퍼티와 함수를 open, no-arg constructor 자동 생성 플러그인 추가 */
 allOpen {
+	annotation("jakarta.persistence.Entity")
+	annotation("jakarta.persistence.MappedSuperclass")
+	annotation("jakarta.persistence.Embeddable")
 	annotation("javax.persistence.Entity")
 	annotation("javax.persistence.MappedSuperclass")
 	annotation("javax.persistence.Embeddable")
 }
 
 noArg {
+	annotation("jakarta.persistence.Entity")
+	annotation("jakarta.persistence.MappedSuperclass")
+	annotation("jakarta.persistence.Embeddable")
 	annotation("javax.persistence.Entity")
 	annotation("javax.persistence.MappedSuperclass")
 	annotation("javax.persistence.Embeddable")
@@ -36,7 +42,6 @@ dependencies {
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-	compileOnly("org.projectlombok:lombok")
 	runtimeOnly("org.postgresql:postgresql")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }

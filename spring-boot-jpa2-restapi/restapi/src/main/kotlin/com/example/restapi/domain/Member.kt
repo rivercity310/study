@@ -1,6 +1,5 @@
 package com.example.restapi.domain
 
-import com.fasterxml.jackson.annotation.JsonIgnore
 import jakarta.persistence.Column
 import jakarta.persistence.Embedded
 import jakarta.persistence.Entity
@@ -25,5 +24,5 @@ class Member(
 
     // @JsonIgnore -> 엔티티에 이런 로직이 들어가는 것은 좋지 않다
     @OneToMany(mappedBy = "member")
-    var orders: List<Order> = arrayListOf()
+    var orders: MutableList<Order> = arrayListOf()
 )

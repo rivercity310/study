@@ -1,6 +1,7 @@
 package com.example.restapi.api
 
 import com.example.restapi.domain.*
+import com.example.restapi.repository.OrderQueryRepository
 import com.example.restapi.repository.OrderRepository
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestParam
@@ -11,7 +12,7 @@ import java.time.LocalDateTime
  * 1대다(xToMany) 관계에서 컬렉션 조회 최적화하기
  */
 @RestController
-class OrderApiController2(private val orderRepository: OrderRepository) {
+class OrderApiController2(private val orderRepository: OrderRepository, private val orderQueryRepository: OrderQueryRepository) {
     data class Result<T>(val count: Int, val data: T)
     data class OrderDTO(private val order: Order) {
         var orderId: Long? = null
@@ -97,5 +98,14 @@ class OrderApiController2(private val orderRepository: OrderRepository) {
             count = orders.size,
             data = orders
         )
+    }
+
+    /* V4: DTO 직접 조회
+     *
+     */
+    @GetMapping("/api/v4/orders")
+    internal fun ordersV4(): Result<List<OrderQueryDTO>> {
+        val data = orderQueryRepository.findOrderQueryDTOs()
+        return Result(count = data.size, data = data)
     }
 }
