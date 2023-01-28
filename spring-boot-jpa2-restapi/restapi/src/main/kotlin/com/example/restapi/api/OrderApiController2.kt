@@ -101,11 +101,30 @@ class OrderApiController2(private val orderRepository: OrderRepository, private 
     }
 
     /* V4: DTO 직접 조회
-     *
+     *      -> 1:N 문제 발생 -> 개선해야됨
      */
     @GetMapping("/api/v4/orders")
     internal fun ordersV4(): Result<List<OrderQueryDTO>> {
         val data = orderQueryRepository.findOrderQueryDTOs()
+        return Result(count = data.size, data = data)
+    }
+
+    /* V5: DTO 직접 조회2 : 쿼리 2번
+     *      -> In을 이용하여 toMany 관계 쿼리 최적화
+     *      -> Map을 사용해서 매칭 성능 향상 O(1)
+     */
+    @GetMapping("/api/v5/orders")
+    internal fun orderV5(): Result<List<OrderQueryDTO>> {
+        val data = orderQueryRepository.findAllByDTO_optimization()
+        return Result(count = data.size, data = data)
+    }
+
+    /* v6: DTO 직접 조회3 : 한방 쿼리 (모두 JOIN)
+     *      -> 쿼리 1번이지만 직접 중복 제거를 해주어야 함 (구현 안한 상태)
+     * */
+    @GetMapping("/api/v6/orders")
+    internal fun orderV6(): Result<List<OrderFlatDTO>> {
+        val data = orderQueryRepository.findAllByDTO_flat()
         return Result(count = data.size, data = data)
     }
 }
