@@ -1,6 +1,7 @@
 package com.example.springdatajpa.demo.entity;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Getter;
 
 import java.util.ArrayList;
@@ -19,4 +20,11 @@ public class Member {
 
     @OneToMany(mappedBy = "member")
     private List<Order> orders = new ArrayList<>();
+
+    protected Member() { }
+
+    @Builder
+    public Member(String name) {
+        this.name = name;
+    }
 }
