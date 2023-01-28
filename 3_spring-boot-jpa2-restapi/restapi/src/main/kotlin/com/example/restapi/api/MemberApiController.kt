@@ -3,8 +3,6 @@ package com.example.restapi.api
 import com.example.restapi.domain.Address
 import com.example.restapi.domain.Member
 import com.example.restapi.service.MemberService
-import jakarta.persistence.EntityManager
-import jakarta.persistence.PersistenceContext
 import jakarta.validation.Valid
 import jakarta.validation.constraints.NotEmpty
 import org.springframework.web.bind.annotation.GetMapping

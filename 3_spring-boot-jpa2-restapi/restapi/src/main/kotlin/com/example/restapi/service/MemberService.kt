@@ -21,15 +21,15 @@ class MemberService(private val memberRepository: MemberRepository) {
         /** 변경 감지 방식으로 업데이트 (em.merge 사용 X)
         영속 상태 엔티티의 값을 변경하면 JPA가 자동으로 UPDATE 쿼리를 날림 (tx 커밋 시점)
          */
-        val member = memberRepository.findOne(id)
+        val member = memberRepository.findById(id).get()
         member.name = name
     }
 
     internal fun findMembers(): List<Member> =
         memberRepository.findAll()
 
-    internal fun findOne(memberId: Long) =
-        memberRepository.findOne(memberId)
+    internal fun findOne(memberId: Long): Member =
+        memberRepository.findById(memberId).get()
 
     private fun validateDuplicateMember(member: Member): Unit {
         memberRepository.findByName(member.name!!)

@@ -6,7 +6,7 @@ import jakarta.persistence.PersistenceContext
 import org.springframework.stereotype.Repository
 
 @Repository
-class MemberRepository(@PersistenceContext val em: EntityManager) {
+class MemberRepositoryOld(@PersistenceContext val em: EntityManager) {
     internal fun save(member: Member) =
         em.persist(member)
 
