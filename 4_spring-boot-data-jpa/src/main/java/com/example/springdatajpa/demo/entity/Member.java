@@ -8,6 +8,10 @@ import lombok.*;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @ToString(of = { "id", "userName", "age" })
+@NamedQuery(
+        name = "Member.findByUserName",
+        query = "select m from Member m where m.userName = :userName"
+)
 public class Member {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "member_id")
