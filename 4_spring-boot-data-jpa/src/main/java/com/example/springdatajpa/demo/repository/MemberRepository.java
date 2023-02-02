@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface MemberRepository extends JpaRepository<Member, Long> {
+public interface MemberRepository extends JpaRepository<Member, Long>, MemberRepositoryCustom {
     List<Member> findByUserNameAndAgeGreaterThan(String userName, int age);
 
     // @Query(name = "Member.findByUserName")   --> 관례상 생략 가능
