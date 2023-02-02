@@ -1,0 +1,10 @@
+package com.example.dsl.controller
+
+import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.RestController
+
+@RestController
+class HelloController {
+    @GetMapping("/hello")
+    internal fun hello(): String = "hello!"
+}

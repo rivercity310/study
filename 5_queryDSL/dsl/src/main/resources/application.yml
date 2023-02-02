@@ -17,4 +17,6 @@ logging:
   level:
     org.hibernate:
       sql: debug
-      type: trace
+      type:
+        descriptor:
+          sql: trace
