@@ -2,12 +2,12 @@ package com.example.springdatajpa.demo.repository;
 
 import com.example.springdatajpa.demo.dto.MemberDTO;
 import com.example.springdatajpa.demo.entity.Member;
+import jakarta.persistence.LockModeType;
+import jakarta.persistence.QueryHint;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Slice;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.jpa.repository.*;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
@@ -46,4 +46,25 @@ public interface MemberRepository extends JpaRepository<Member, Long> {
     @Modifying(clearAutomatically = true)  // executeUpdate 실행
     @Query("update Member m set m.age = m.age + 1 where m.age >= :age")
     Integer bulkAgePlus(@Param("age") int age);
+
+    @Query("select m from Member m left join fetch m.team")
+    List<Member> findMemberFetchJoin();
+
+    @Override
+    @EntityGraph(attributePaths = { "team" })
+    List<Member> findAll();
+
+    @EntityGraph(attributePaths = { "team" })
+    @Query("select m from Member m")
+    List<Member> findMemberEntityGraph();
+
+    // @EntityGraph(attributePaths = { "team" })
+    @EntityGraph("Member.all")
+    List<Member> findEntityGraphByUserName(@Param("userName") String userName);
+
+    @QueryHints(value = @QueryHint(name = "org.hibernate.readOnly", value = "true"))
+    Optional<Member> findReadOnlyByUserName(String userName);
+
+    @Lock(LockModeType.PESSIMISTIC_WRITE)
+    List<Member> findLockByUserName(String userName);
 }

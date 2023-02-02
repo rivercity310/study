@@ -228,4 +228,49 @@ class MemberRepositoryTest {
 
         assertThat(resultCount).isEqualTo(4);
     }
+
+    @Test
+    public void findMemberLazy() {
+        Team teamA = new Team("TeamA");
+        Team teamB = new Team("TeamB");
+        teamRepository.save(teamA);
+        teamRepository.save(teamB);
+
+        Member member1 = new Member("member1", 10, teamA);
+        Member member2 = new Member("member2", 20, teamB);
+        memberRepository.save(member1);
+        memberRepository.save(member2);
+
+        em.flush();
+        em.clear();
+
+        List<Member> members = memberRepository.findEntityGraphByUserName("member1");
+
+        for (Member member : members) {
+            System.out.println("member.getUserName() = " + member.getUserName());
+            System.out.println("member.getTeam().getClass() = " + member.getTeam().getClass());
+            System.out.println("member.getTeam().getTeamName() = " + member.getTeam().getTeamName());
+        }
+    }
+
+    @Test
+    public void queryHint() {
+        Member member1 = new Member("member1", 10);
+        memberRepository.save(member1);
+        em.flush();
+        em.clear();
+
+        Member findMember = memberRepository.findReadOnlyByUserName(member1.getUserName()).orElseGet(() -> fail("Not Found"));
+        findMember.changeName("member2");       // readOnly = true 이므로 변경 무시됨
+    }
+
+    @Test
+    public void lock() {
+        Member member1 = new Member("member1", 10);
+        memberRepository.save(member1);
+        em.flush();
+        em.clear();
+
+        List<Member> member = memberRepository.findLockByUserName("member1");
+    }
 }
