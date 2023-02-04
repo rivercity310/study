@@ -1,12 +1,10 @@
 package com.example.springwebsocket;
 
-import org.springframework.util.StringUtils;
 import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
 
-import java.io.IOException;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -67,6 +65,20 @@ public class WebSocketHandler extends TextWebSocketHandler {
 
     @Override
     public void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
-        super.afterConnectionClosed(session, status);
+        String sessionId = session.getId();
+        sessions.remove(sessionId);     /* 연결이 끊긴 사용자 삭제 */
+
+        final Message message = new Message();
+        message.closeConnect();
+        message.setSender(sessionId);
+
+        sessions.values().forEach(s -> {
+            try {
+                s.sendMessage(new TextMessage(Utils.getString(message)));
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
     }
 }
