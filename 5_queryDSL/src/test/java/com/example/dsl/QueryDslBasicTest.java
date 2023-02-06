@@ -1,14 +1,11 @@
 package com.example.dsl;
 
 import com.example.dsl.entity.Member;
-import com.example.dsl.entity.QMember;
-import com.example.dsl.entity.QTeam;
 import com.example.dsl.entity.Team;
 import com.querydsl.core.QueryResults;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -74,6 +71,7 @@ public class QueryDslBasicTest {
                 .where(member.username.eq("member1"))
                 .fetchOne();
 
+        assert result != null;
         assertThat(result.getUsername()).isEqualTo("member1");
         assertThat(result.getAge()).isEqualTo(10);
 
