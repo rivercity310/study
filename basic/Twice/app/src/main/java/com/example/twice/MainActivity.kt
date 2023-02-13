@@ -4,6 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
+import androidx.core.view.forEachIndexed
+import com.example.twice.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,6 +28,7 @@ class MainActivity : AppCompatActivity() {
             btn.setOnClickListener {
                 val intent = Intent(this, ImageInsideActivity::class.java)
                 intent.putExtra("data", (idx + 1).toString())
+                startActivity(intent)
             }
         }
     }

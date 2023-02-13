@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.twice'
+    namespace 'com.example.singer'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.twice"
+        applicationId "com.example.singer"
         minSdk 24
         targetSdk 33
         versionCode 1
@@ -29,9 +29,6 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
-    }
-    buildFeatures {
-        viewBinding = true
     }
 }
 

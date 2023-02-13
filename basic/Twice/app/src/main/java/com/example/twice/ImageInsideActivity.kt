@@ -12,7 +12,7 @@ class ImageInsideActivity : AppCompatActivity() {
 
         val data = intent.getStringExtra("data")
         val memberImage = findViewById<ImageView>(R.id.memberImageArea)
-        // Toast.makeText(this, data, Toast.LENGTH_LONG).show()
+        Toast.makeText(this, data, Toast.LENGTH_LONG).show()
 
         when (data) {
             "1" -> memberImage.setImageResource(R.drawable.member_1)
