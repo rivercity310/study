@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/trot_nav"
+    app:startDestination="@id/singer1Fragment">
+
+    <fragment
+        android:id="@+id/singer1Fragment"
+        android:name="com.example.trot.Singer1Fragment"
+        android:label="fragment_singer1"
+        tools:layout="@layout/fragment_singer1" >
+        <action
+            android:id="@+id/action_singer1Fragment_to_singer2Fragment"
+            app:destination="@id/singer2Fragment" />
+        <action
+            android:id="@+id/action_singer1Fragment_to_singer3Fragment"
+            app:destination="@id/singer3Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/singer2Fragment"
+        android:name="com.example.trot.Singer2Fragment"
+        android:label="fragment_singer2"
+        tools:layout="@layout/fragment_singer2" >
+        <action
+            android:id="@+id/action_singer2Fragment_to_singer3Fragment"
+            app:destination="@id/singer3Fragment" />
+        <action
+            android:id="@+id/action_singer2Fragment_to_singer1Fragment"
+            app:destination="@id/singer1Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/singer3Fragment"
+        android:name="com.example.trot.Singer3Fragment"
+        android:label="fragment_singer3"
+        tools:layout="@layout/fragment_singer3" >
+        <action
+            android:id="@+id/action_singer3Fragment_to_singer2Fragment"
+            app:destination="@id/singer2Fragment" />
+        <action
+            android:id="@+id/action_singer3Fragment_to_singer1Fragment"
+            app:destination="@id/singer1Fragment" />
+    </fragment>
+</navigation>
