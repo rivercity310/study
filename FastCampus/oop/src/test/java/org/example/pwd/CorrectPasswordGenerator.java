@@ -1,4 +1,6 @@
-package org.example;
+package org.example.pwd;
+
+import org.example.pwd.PasswordGenerator;
 
 public class CorrectPasswordGenerator implements PasswordGenerator {
     @Override

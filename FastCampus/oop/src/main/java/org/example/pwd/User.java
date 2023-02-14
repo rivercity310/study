@@ -1,4 +1,4 @@
-package org.example;
+package org.example.pwd;
 
 public class User {
     private String password;

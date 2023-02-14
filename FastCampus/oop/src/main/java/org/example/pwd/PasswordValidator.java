@@ -1,4 +1,4 @@
-package org.example;
+package org.example.pwd;
 
 public class PasswordValidator {
     public static void validate(String password) {

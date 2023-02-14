@@ -1,4 +1,4 @@
-package org.example;
+package org.example.pwd;
 
 import org.passay.CharacterData;
 import org.passay.CharacterRule;
@@ -6,7 +6,7 @@ import org.passay.EnglishCharacterData;
 import org.passay.PasswordGenerator;
 
 // 랜덤한 패스워드를 생성해주는 객체
-public class RandomPasswordGenerator implements org.example.PasswordGenerator {
+public class RandomPasswordGenerator implements org.example.pwd.PasswordGenerator {
     /**
      * Special characters allowed in password.
      */
