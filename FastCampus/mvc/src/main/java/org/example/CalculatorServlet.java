@@ -1,39 +1,33 @@
 package org.example;
 
+import org.example.calculator.Calculator;
+import org.example.calculator.PositiveNumber;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 @WebServlet("/calculate")
-public class CalculatorServlet implements Servlet {
+public class CalculatorServlet extends HttpServlet {
     private static final Logger log = LoggerFactory.getLogger(CalculatorServlet.class);
 
     @Override
-    public void init(ServletConfig config) throws ServletException {
-        log.info("init");
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        log.info("doGet");
 
-    }
+        int operand1 = Integer.parseInt(request.getParameter("operand1"));
+        String operator = request.getParameter("operator");
+        int operand2 = Integer.parseInt(request.getParameter("operand2"));
 
-    @Override
-    public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
-        log.info("service");
-    }
+        int result = new Calculator().calculate(new PositiveNumber(operand1), operator, new PositiveNumber(operand2));
 
-    @Override
-    public void destroy() {
-        log.info("destroy");
-    }
-
-    @Override
-    public ServletConfig getServletConfig() {
-        return null;
-    }
-
-    @Override
-    public String getServletInfo() {
-        return null;
+        PrintWriter writer = response.getWriter();
+        writer.println(result);
     }
 }
