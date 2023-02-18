@@ -1,6 +1,7 @@
-package org.example
+package org.example.domain
 
-import org.example.domain.MenuItem
+import org.assertj.core.api.Assertions
+import org.assertj.core.api.Assertions.*
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 
@@ -10,7 +11,8 @@ class CookingTest {
     fun makeCookTest() {
         val cooking = Cooking()
         val menuItem = MenuItem("돈까스", 7000)
-
         val cook: Cook = cooking.makeCook(menuItem)
+
+        assertThat(cook).isEqualTo(Cook("돈까스", 7000))
     }
 }

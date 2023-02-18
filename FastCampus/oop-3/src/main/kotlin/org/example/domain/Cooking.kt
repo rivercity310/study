@@ -1,8 +1,9 @@
-package org.example
+package org.example.domain
+
 
 class Cooking {
-    fun makeCook(: MenuItem): Any {
-
+    fun makeCook(menuItem: MenuItem): Cook {
+        return Cook(menuItem)
     }
 
 }

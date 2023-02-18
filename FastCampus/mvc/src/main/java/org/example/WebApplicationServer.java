@@ -1,3 +1,5 @@
+package org.example;
+
 import org.apache.catalina.LifecycleException;
 import org.apache.catalina.startup.Tomcat;
 import org.slf4j.Logger;

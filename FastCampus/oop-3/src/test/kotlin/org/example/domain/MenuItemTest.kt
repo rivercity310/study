@@ -1,7 +1,6 @@
-package org.example
+package org.example.domain
 
 import org.assertj.core.api.Assertions
-import org.example.domain.MenuItem
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 
