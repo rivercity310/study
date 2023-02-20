@@ -4,13 +4,11 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Slider
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -37,7 +35,10 @@ class MainActivity : ComponentActivity() {
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun Preview() {
+    val list = listOf("One", "Two", "Three", "Four", "Five", "Six")
+
     ComposeDemoTheme {
+        CustomList(list)
         DemoScreen()
     }
 }
@@ -47,7 +48,8 @@ fun DemoText(message: String, fontSize: Float) {
     Text(
         text = message,
         fontSize = fontSize.sp,
-        fontWeight = FontWeight.Bold
+        fontWeight = FontWeight.Bold,
+        color = Color.Magenta
     )
 }
 
@@ -85,5 +87,34 @@ fun DemoScreen() {
             style = MaterialTheme.typography.h2,
             text = sliderPosition.toInt().toString() + "sp"
         )
+
+        Spacer(modifier = Modifier.height(50.dp))
+
+        CustomSwitch()
+    }
+}
+
+@Composable
+fun CustomSwitch() {
+    val checked = remember { mutableStateOf(true) }
+
+    Column {
+        Switch(
+            checked = checked.value,
+            onCheckedChange = { checked.value = it }
+        )
+
+        if (checked.value) Text("Switch is On")
+        else Text("Switch is Off")
+    }
+}
+
+@Composable
+fun CustomList(items: List<String>) {
+    Column {
+        for (item in items) {
+            Text(item)
+            Divider(color = Color.Black)
+        }
     }
 }
