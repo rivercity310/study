@@ -10,6 +10,6 @@
 
 ### References
 
-## Web Server vs WAS
-https://gmlwjd9405.github.io/2018/10/27/webserver-vs-was.html
+#### Web Server vs WAS
+- https://gmlwjd9405.github.io/2018/10/27/webserver-vs-was.html
 
