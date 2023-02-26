@@ -7,7 +7,7 @@
 
 ### 구조도
 
-![img](https://user-images.githu용busercontent.com/95991654/220713790-28f7deee-2d25-458c-9948-2a46d9d4bc51.png)
+![img](https://user-images.githubusercontent.com/95991654/220713790-28f7deee-2d25-458c-9948-2a46d9d4bc51.png)
 
 ---
 
