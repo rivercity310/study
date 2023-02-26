@@ -12,7 +12,6 @@ public class RedirectView implements View {
         this.redirectName = redirectName;
     }
 
-
     @Override
     public void render(Map<String, ?> model, HttpServletRequest request, HttpServletResponse response) throws Exception {
         String path = redirectName.substring(DEFAULT_REDIRECT_PREFIX.length());
