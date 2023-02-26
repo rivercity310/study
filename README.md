@@ -11,6 +11,19 @@
 
 ---
 
+### 설정 (IntelliJ)
+
+- Project Structure -> main -> Output Path
+    - {Absolute Path}/webapps/WEB-INF/classes
+
+<br/>
+
+- Settings -> Build -> Build Tools -> Gradle
+    - Build and Run : Gradle -> IntelliJ IDEA
+
+
+---
+
 ### References
 
 - [Web Server vs WAS](https://gmlwjd9405.github.io/2018/10/27/webserver-vs-was.html)
