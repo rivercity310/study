@@ -2,4 +2,12 @@ mvc-arch/.gradle
 mvc-arch/.idea
 mvc-arch/build
 mvc-arch/out
-mvc-arch/webapps/
+mvc-arch/webapps
+mvc-arch/tomcat.8080
+
+refactor-to-kotlin/.gradle
+refactor-to-kotlin/.idea
+refactor-to-kotlin/tomcat.8080
+refactor-to-kotlin/webapps
+refactor-to-kotlin/out
+refactor-to-kotlin/build
