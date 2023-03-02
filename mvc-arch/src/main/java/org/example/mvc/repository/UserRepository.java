@@ -13,6 +13,7 @@ public class UserRepository {
     private final String USER_SAVE = "INSERT INTO usr(userId, name) VALUES(?, ?)";
     private final String USER_FIND_ALL = "SELECT * FROM usr";
 
+    @Inject
     public UserRepository() {
         this.jdbcTemplate = new JdbcTemplate();
     }

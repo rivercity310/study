@@ -10,7 +10,11 @@ import javax.servlet.http.HttpServletResponse;
 
 @Controller
 public class UserListController {
-    private final UserRepository userRepository;
+    private UserRepository userRepository;
+
+    public UserListController() {
+        this.userRepository = new UserRepository();
+    }
 
     @Inject
     public UserListController(UserRepository userRepository) {

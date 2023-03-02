@@ -1,8 +1,11 @@
 ## Spring Web MVC Architecture
+
 - Polymorphism
-- Java Reflection
+- Java Reflection -> Dependency Injection 구현
 - Stream API
-    
+- Raw JDBC
+- AssertJ 
+- Migration to Kotlin
 --- 
 
 ### 구조도

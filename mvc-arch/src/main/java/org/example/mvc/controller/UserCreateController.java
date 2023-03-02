@@ -11,7 +11,11 @@ import javax.servlet.http.HttpServletResponse;
 
 @Controller
 public class UserCreateController {
-    private final UserRepository userRepository;
+    private UserRepository userRepository;
+
+    public UserCreateController() {
+        this.userRepository = new UserRepository();
+    }
 
     @Inject
     public UserCreateController(UserRepository userRepository) {
