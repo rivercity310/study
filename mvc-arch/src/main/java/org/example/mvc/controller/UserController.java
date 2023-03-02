@@ -5,8 +5,15 @@ import org.example.mvc.annotation.Inject;
 import org.example.mvc.service.UserService;
 
 @Controller
-public record UserController(UserService userService) {
+public class UserController {
+    private final UserService userService;
+
     @Inject
-    public UserController {
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
+
+    public UserService getUserService() {
+        return userService;
     }
 }

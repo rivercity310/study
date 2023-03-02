@@ -26,11 +26,8 @@ import java.util.List;
 @WebServlet("/")
 public class DispatcherServlet extends HttpServlet {
     private static final Logger logger = LoggerFactory.getLogger(DispatcherServlet.class);
-
     private List<HandlerMapping> handlerMappings;
-
     private List<HandlerAdapter> handlerAdapters;
-
     private List<ViewResolver> viewResolvers;
 
     @Override

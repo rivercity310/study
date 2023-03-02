@@ -43,7 +43,7 @@ public class BeanFactoryTest {
         UserController userController = beanFactory.getBean(UserController.class);
 
         assertThat(userController).isNotNull();
-        assertThat(userController.userService()).isNotNull();
-        assertThat(userController.userService().getUserRepository()).isNotNull();
+        assertThat(userController.getUserService()).isNotNull();
+        assertThat(userController.getUserService().getUserRepository()).isNotNull();
     }
 }

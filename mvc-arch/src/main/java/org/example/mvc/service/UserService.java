@@ -9,7 +9,7 @@ public class UserService {
     private final UserRepository userRepository;
 
     @Inject
-    public UserService(UserRepository userRepository) {
+    protected UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
