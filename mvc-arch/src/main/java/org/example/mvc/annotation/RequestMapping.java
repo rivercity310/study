@@ -1,6 +1,6 @@
 package org.example.mvc.annotation;
 
-import org.example.mvc.RequestMethod;
+import org.example.mvc.controller.RequestMethod;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

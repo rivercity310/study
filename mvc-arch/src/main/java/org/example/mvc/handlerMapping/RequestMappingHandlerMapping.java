@@ -1,7 +1,7 @@
 package org.example.mvc.handlerMapping;
 
-import org.example.mvc.HandlerKey;
-import org.example.mvc.RequestMethod;
+import org.example.mvc.controller.HandlerKey;
+import org.example.mvc.controller.RequestMethod;
 import org.example.mvc.controller.*;
 
 import java.util.HashMap;

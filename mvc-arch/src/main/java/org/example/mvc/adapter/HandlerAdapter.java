@@ -1,6 +1,6 @@
 package org.example.mvc.adapter;
 
-import org.example.mvc.ModelAndView;
+import org.example.mvc.modelAndView.view.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

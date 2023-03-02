@@ -1,6 +1,5 @@
 package org.example.mvc.controller;
 
-import org.example.mvc.RequestMethod;
 import org.example.mvc.annotation.RequestMapping;
 import org.example.mvc.annotation.Controller;
 

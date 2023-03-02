@@ -1,6 +1,5 @@
 package org.example.di;
 
-import org.assertj.core.api.Assertions;
 import org.example.mvc.annotation.Controller;
 import org.example.mvc.annotation.Repository;
 import org.example.mvc.annotation.Service;
@@ -28,6 +27,7 @@ public class BeanFactoryTest {
         beanFactory = new BeanFactory(preInstantiatedClass);
     }
 
+    @SafeVarargs
     private Set<Class<?>> annotatedWith(Class<? extends Annotation>... annotations) {
         Set<Class<?>> beans = new HashSet<>();
 
@@ -43,6 +43,7 @@ public class BeanFactoryTest {
         UserController userController = beanFactory.getBean(UserController.class);
 
         assertThat(userController).isNotNull();
-        assertThat(userController.getUserService()).isNotNull();
+        assertThat(userController.userService()).isNotNull();
+        assertThat(userController.userService().getUserRepository()).isNotNull();
     }
 }

@@ -1,6 +1,6 @@
 package org.example.mvc.adapter;
 
-import org.example.mvc.ModelAndView;
+import org.example.mvc.modelAndView.view.ModelAndView;
 import org.example.mvc.handlerMapping.AnnotationHandler;
 
 import javax.servlet.http.HttpServletRequest;

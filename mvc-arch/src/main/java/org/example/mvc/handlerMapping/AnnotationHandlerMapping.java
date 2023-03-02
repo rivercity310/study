@@ -1,8 +1,8 @@
-package org.example.mvc;
+package org.example.mvc.handlerMapping;
 
 import org.example.mvc.annotation.RequestMapping;
-import org.example.mvc.handlerMapping.AnnotationHandler;
-import org.example.mvc.handlerMapping.HandlerMapping;
+import org.example.mvc.controller.HandlerKey;
+import org.example.mvc.controller.RequestMethod;
 import org.reflections.Reflections;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,12 +32,15 @@ public class AnnotationHandlerMapping implements HandlerMapping {
                 Arrays.stream(clazz.getDeclaredMethods()).forEach(declaredMethod -> {
                     RequestMapping requestMappingAnnotation = declaredMethod.getDeclaredAnnotation(RequestMapping.class);
 
-                    Arrays.stream(getRequestMethods(requestMappingAnnotation))
-                            .forEach(requestMethod -> handlers.put(
-                                    new HandlerKey(requestMethod, requestMappingAnnotation.value()),
-                                    new AnnotationHandler(clazz, declaredMethod)
-                            ));
+                    if (requestMappingAnnotation != null) {
+                        log.info(requestMappingAnnotation.toString());
 
+                        Arrays.stream(getRequestMethods(requestMappingAnnotation))
+                                .forEach(requestMethod -> handlers.put(
+                                        new HandlerKey(requestMethod, requestMappingAnnotation.value()),
+                                        new AnnotationHandler(clazz, declaredMethod)
+                                ));
+                    }
                 })
         );
     }
