@@ -7,6 +7,8 @@ import com.example.tmp.exception.AccountNotFoundException;
 import com.example.tmp.exception.EmailDuplicationException;
 import com.example.tmp.repository.AccountRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -30,6 +32,11 @@ public class AccountService {
         final Account account = accountRepository.findByEmail(email);
         if (account == null) throw new AccountNotFoundException(email);
         return account;
+    }
+
+    @Transactional(readOnly = true)
+    public Page<Account> findAll(Pageable pageable) {
+        return accountRepository.findAll(pageable);
     }
 
     @Transactional(readOnly = true)
