@@ -1,6 +1,8 @@
 package com.example.tmp.error;
 
+import com.example.tmp.exception.AccountNotFoundException;
 import com.example.tmp.exception.EmailDuplicationException;
+import com.example.tmp.exception.PasswordFailedExceededException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.BindingResult;
@@ -32,6 +34,21 @@ public class ErrorExceptionController {
         ErrorCode errorCode = ErrorCode.EMAIL_DUPLICATION;
         log.error(errorCode.getMessage(), e.getEmail() + e.getField());
         return buildError(errorCode);
+    }
+
+    @ExceptionHandler(AccountNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    protected ErrorResponse handleAccountNotFoundException(AccountNotFoundException e) {
+        ErrorCode errorCode = ErrorCode.ACCOUNT_NOT_FOUND;
+        log.error(errorCode.getMessage(), e.getId());
+        return buildError(errorCode);
+    }
+
+    @ExceptionHandler(PasswordFailedExceededException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    protected ErrorResponse handlePasswordFailedExceededException(PasswordFailedExceededException e) {
+        log.error(e.getMessage());
+        return buildError(e.getErrorCode());
     }
 
     private List<ErrorResponse.FieldError> getFieldErrors(BindingResult bindingResult) {
