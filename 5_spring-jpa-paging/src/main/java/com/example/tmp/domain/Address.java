@@ -12,11 +12,11 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Address {
-    @NotEmpty(message = "주소를 입력해주세요")
+    @NotEmpty(message = "주소(1)를 입력해주세요")
     @Column(nullable = false)
     private String address1;
 
-    @NotEmpty(message = "주소를 입력해주세요")
+    @NotEmpty(message = "주소(2)를 입력해주세요")
     @Column(nullable = false)
     private String address2;
 

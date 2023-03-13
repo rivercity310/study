@@ -14,10 +14,10 @@ import java.time.LocalDateTime;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Password {
-    @Column(name = "password")
+    @Column(name = "password", nullable = false)
     private String value;
 
-    @Column(name = "password_expiration_date")
+    @Column(name = "password_expiration_date", nullable = false)
     private LocalDateTime expirationDate;
 
     @Column(name = "password_failed_count")
@@ -28,6 +28,7 @@ public class Password {
 
     @Builder
     public Password(final String value) {
+        this.failedCount = 0;
         this.ttl = 1209_604L;     // 14 days
         this.value = encodePassword(value);
         this.expirationDate = extendExpirationDate();

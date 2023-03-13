@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Embeddable
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@JsonIgnoreProperties({ "host", "id" })
+@JsonIgnoreProperties({ "id", "host" })
 public class Email {
     @jakarta.validation.constraints.Email
     @Column(name = "email", nullable = false, unique = true)
@@ -28,7 +28,7 @@ public class Email {
 
     public String getHost() {
         int idx = value.indexOf("@");
-        return value.substring(idx);
+        return value.substring(idx + 1);
     }
 
     public String getId() {

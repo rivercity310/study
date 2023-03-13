@@ -18,7 +18,7 @@ public class AccountDto {
         @Valid private Email email;
         @NotEmpty private String firstName;
         @NotEmpty private String lastName;
-        private String password;
+        @NotEmpty private String password;
         @Valid private Address address;
 
         @Builder
@@ -44,7 +44,7 @@ public class AccountDto {
     @Getter
     @NoArgsConstructor(access = AccessLevel.PROTECTED)
     public static class MyAccountReq {
-        private Address address;
+        @Valid private Address address;
 
         @Builder
         public MyAccountReq(final Address address) {
