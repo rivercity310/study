@@ -10,8 +10,15 @@
 2_spring-boot-jpa/jpashop/src/test/resources/
 
 3_spring-boot-jpa2-restapi/restapi/.gitignore
+3_spring-boot-jpa2-restapi/restapi/.gradle
+3_spring-boot-jpa2-restapi/restapi/.idea
+
 4_spring-boot-data-jpa/.gitignore
+4_spring-boot-data-jpa/.gradle
+4_spring-boot-data-jpa/.idea
 
 5_spring-jpa-paging/.idea
 5_spring-jpa-paging/.gradle
 5_spring-jpa-paging/build
+
+6_queryDSL/src/main/generated

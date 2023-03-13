@@ -32,7 +32,7 @@ public class MemberController {
     }
 
     @GetMapping("/members2/{id}")
-    public String findMember2(@PathVariable("id") Member member) {    /* 도메인 클래스 컨버터 */
+    public  findMember2(@PathVariable("id") Member member) {    /* 도메인 클래스 컨버터 */
         return member.getUserName();
     }
 
