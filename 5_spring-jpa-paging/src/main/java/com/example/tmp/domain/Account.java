@@ -1,5 +1,6 @@
 package com.example.tmp.domain;
 
+import com.example.tmp.dto.AccountDto;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -35,5 +36,9 @@ public class Account extends AuditingFields {
         this.lastName = lastName;
         this.password = password;
         this.address = address;
+    }
+
+    public void updateMyAccount(AccountDto.MyAccountReq dto) {
+        this.address = dto.getAddress();
     }
 }
