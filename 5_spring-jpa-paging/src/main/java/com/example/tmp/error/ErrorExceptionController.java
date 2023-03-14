@@ -1,8 +1,6 @@
 package com.example.tmp.error;
 
-import com.example.tmp.exception.AccountNotFoundException;
-import com.example.tmp.exception.EmailDuplicationException;
-import com.example.tmp.exception.PasswordFailedExceededException;
+import com.example.tmp.exception.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.BindingResult;
@@ -47,6 +45,20 @@ public class ErrorExceptionController {
     @ExceptionHandler(PasswordFailedExceededException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     protected ErrorResponse handlePasswordFailedExceededException(PasswordFailedExceededException e) {
+        log.error(e.getMessage());
+        return buildError(e.getErrorCode());
+    }
+
+    @ExceptionHandler(DeliveryNotFoundException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    protected ErrorResponse handleDeliveryNotFoundException(DeliveryNotFoundException e) {
+        log.error(e.getMessage());
+        return buildError(e.getErrorCode());
+    }
+
+    @ExceptionHandler(DeliveryStatusEqualsException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    protected ErrorResponse handleDeliveryStatusEqualsException(DeliveryStatusEqualsException e) {
         log.error(e.getMessage());
         return buildError(e.getErrorCode());
     }

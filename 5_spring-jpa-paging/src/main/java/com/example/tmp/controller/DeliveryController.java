@@ -8,7 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("deliveries")
+@RequestMapping("/deliveries")
 @RequiredArgsConstructor
 public class DeliveryController {
     private final DeliveryService deliveryService;

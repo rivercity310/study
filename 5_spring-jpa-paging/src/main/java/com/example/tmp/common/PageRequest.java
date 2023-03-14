@@ -5,23 +5,14 @@ import org.springframework.data.domain.Sort;
 
 @Getter
 public final class PageRequest {
-    private int page;
-    private int size;
-    private Sort.Direction direction;
+    private final int page;
+    private final int size;
+    private final Sort.Direction direction;
 
-    public void setPage(int page) {
+    public PageRequest(int page, int size, Sort.Direction direction) {
         this.page = page <= 0 ? 1 : page;
-    }
-
-    public void setSize(int size) {
-        int default_size = 10;
-        int max_size = 50;
-        this.size = size > max_size ? default_size : size;
-    }
-
-    public void setDirection(Sort.Direction direction) {
-        if (direction == null) this.direction = Sort.Direction.ASC;
-        else this.direction = direction;
+        this.size = size > 50 ? 10 : size;
+        this.direction = direction == null ? Sort.Direction.ASC : direction;
     }
 
     public org.springframework.data.domain.PageRequest of() {

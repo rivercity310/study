@@ -12,7 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("accounts")
+@RequestMapping("/accounts")
 @RequiredArgsConstructor
 public class AccountController {
     private final AccountService accountService;
