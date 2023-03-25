@@ -24,3 +24,7 @@
 5_spring-jpa-paging/src/main/generated
 
 6_queryDSL/src/main/generated
+
+9_spring-security/.gradle
+9_spring-security/.idea
+9_spring-security/build
