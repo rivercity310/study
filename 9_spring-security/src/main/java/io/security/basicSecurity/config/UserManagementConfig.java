@@ -2,25 +2,23 @@ package io.security.basicSecurity.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.provisioning.JdbcUserDetailsManager;
+
+import javax.sql.DataSource;
 
 @Configuration
 public class UserManagementConfig {
     @Bean
-    public UserDetailsService userDetailsService() {
-        var userDetailsService = new InMemoryUserDetailsManager();
+    public UserDetailsService userDetailsService(DataSource dataSource) {
+        String usersByUsernameQuery =
+                "SELECT username, password, enabled FROM users WHERE username = ?";
 
-        var user = User.withUsername("seungsu")
-                .password("1111")
-                .authorities("read")
-                .build();
-
-        userDetailsService.createUser(user);
-        return userDetailsService;
+        var userDetailsManager = new JdbcUserDetailsManager(dataSource);
+        userDetailsManager.setUsersByUsernameQuery(usersByUsernameQuery);
+        return userDetailsManager;
     }
 
     @Bean
