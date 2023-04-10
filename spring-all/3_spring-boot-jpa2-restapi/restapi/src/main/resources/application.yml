@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/restapi
+    username: postgres
+    password: 1111
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+
+    properties:
+      hibernate:
+        format_sql: true
+        # show_sql: true
+        default_batch_fetch_size: 100       # in 쿼리 파라미터 개수 (100~1000 사이 권장)
+
+    # OSIV -> 활성화시 모든 지연 로딩을 Service Layer에서 처리해야 된다
+    # open-in-view: false
+
+logging:
+  level:
+    org.hibernate:
+      SQL: debug
+      type: TRACE
