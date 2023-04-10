@@ -1,0 +1,32 @@
+spring:
+  # DB
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/gameduo
+    username: postgres
+    password: 1111
+
+  # JPA
+  jpa:
+    hibernate:
+      ddl-auto: create
+
+    properties:
+      hibernate:
+        default_batch_fetch_size: 100
+        format_sql: true
+        # show_sql: true
+
+  # Redis
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+
+
+# LOG
+logging:
+  level:
+    org.hibernate:
+      SQL: debug
+      type: TRACE

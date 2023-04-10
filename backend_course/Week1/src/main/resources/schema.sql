@@ -1,0 +1,30 @@
+CREATE DATABASE IF NOT EXISTS assignment;
+
+use assignment;
+
+DROP TABLE IF EXISTS board;
+DROP TABLE IF EXISTS company;
+DROP TABLE IF EXISTS user;
+
+CREATE TABLE IF NOT EXISTS board(
+    seq INT PRIMARY KEY AUTO_INCREMENT,
+    id INT NOT NULL,
+    position VARCHAR(100) NOT NULL,
+    reward INT NOT NULL,
+    content VARCHAR(100) NOT NULL,
+    tech VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS company(
+    companyId INT NOT NULL PRIMARY KEY,
+    name VARCHAR(30) NOT NULL,
+    nation VARCHAR(30) NOT NULL,
+    location VARCHAR(30) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS user(
+    boardSeq INT NOT NULL,
+    userId VARCHAR(30) NOT NULL,
+    userName VARCHAR(30) NOT NULL,
+    userAge INT NOT NULL
+);
