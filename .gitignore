@@ -1,3 +1,8 @@
-# C
-algorithm/C/cmake-build-debug
+# basic
 
+# algorithm
+algorithm/C/cmake-build-debug
+algorithm/C/.idea
+algorithm/algorithm_cpp/.idea
+algorithm/algorithm_java/.idea
+algorithm/algorithm_python/.idea
