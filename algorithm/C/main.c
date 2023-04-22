@@ -53,5 +53,5 @@ extern void boj_2252();
 #endif
 
 int main() {
-    boj_2252();
+    adj_list_test();
 }

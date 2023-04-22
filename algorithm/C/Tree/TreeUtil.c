@@ -26,7 +26,7 @@ static void enqueue(QueueType* q, TreeNode* data) {
 
 static TreeNode* dequeue(QueueType* q) {
 	if (is_empty(q)) {
-		puts("Queue Empty!");
+		puts("Stack Empty!");
 		exit(1);
 	}
 

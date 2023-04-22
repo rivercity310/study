@@ -20,7 +20,6 @@ add_executable(Algorithm_Session
         boj_1620.cpp
         boj_1874.cpp
         boj_1920.cpp
-        boj_1966.cpp
         boj_2178.cpp
         boj_24060.cpp
         boj_2504.cpp

@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// bfs�� ���� ������ ť ����
 #define MAX 50
 
 typedef struct qType {
@@ -18,14 +17,13 @@ static int is_empty(QueueType* q) {
 	return q->front == q->rear;
 }
 
-/* rear�� MAX�� �����ϸ� �������ɷ� ���� */
 static int is_full(QueueType* q) {
 	return q->rear == MAX;
 }
 
 static void enqueue(QueueType* q, int data) {
 	if (is_full(q)) {
-		fprintf(stderr, "Queue Full\n");
+		fprintf(stderr, "Stack Full\n");
 		exit(1);
 	}
 
@@ -35,7 +33,7 @@ static void enqueue(QueueType* q, int data) {
 
 static int dequeue(QueueType* q) {
 	if (is_empty(q)) {
-		fprintf(stderr, "Queue Empty\n");
+		fprintf(stderr, "Stack Empty\n");
 		exit(1);
 	}
 
@@ -47,7 +45,6 @@ static int dequeue(QueueType* q) {
 
 // ----------------------------------------------------------------------
 
-// dfs ������ ���� ������ ���� ����
 typedef struct sType {
 	int tos;
 	int stk[MAX];

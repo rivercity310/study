@@ -40,7 +40,7 @@ static int lq_dequeue(LinkedQueueType* q) {
 	QueueNode* tmp = q->front;
 	
 	if (lq_isempty(q)) {
-		fprintf(stderr, "Queue Empty!\n");
+		fprintf(stderr, "Stack Empty!\n");
 		exit(1);
 	}
 

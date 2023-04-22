@@ -24,7 +24,7 @@ static int dq_is_full(Deque* dq) {
 }
 
 static void dq_print(Deque* dq) {
-	printf("(front = %d, rear = %d)\t", dq->front, dq->rear);
+	printf("(tos = %d, rear = %d)\t", dq->front, dq->rear);
 	
 	if (!dq_is_empty(dq)) {
 		int i = dq->front;

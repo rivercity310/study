@@ -25,7 +25,7 @@ static int rb_is_full(RingBuffer* rbuf) {
 }
 
 static void rb_print(RingBuffer* rbuf) {
-	printf("[front = %d, rear = %d]\n", rbuf->front, rbuf->rear);
+	printf("[tos = %d, rear = %d]\n", rbuf->front, rbuf->rear);
 
 	if (!rb_is_empty(rbuf)) {
 		int i = rbuf->front;

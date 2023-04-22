@@ -3,35 +3,35 @@
 
 #define MAX 50
 
-typedef struct q {
-	int arr[MAX + 1];
-	int front;
-} Queue;
+typedef struct stk {
+	int arr[MAX];
+	int tos;
+} Stack;
 
-static void init_queue(Queue* q) {
-	q->front = 0;
+static void init_queue(Stack* q) {
+	q->tos = 0;
 }
 
-static int Empty(Queue* q) {
-	return q->front < 0;
+static int Empty(Stack* q) {
+	return q->tos <= 0;
 }
 
-static void Enqueue(Queue* q, int data) {
-	if (q->front > MAX) {
-		fprintf(stderr, "Queue Full\n");
+static void StackPush(Stack* q, int data) {
+	if (q->tos > MAX) {
+		fprintf(stderr, "Stack Full\n");
 		return;
 	}
 
-	q->arr[q->front++] = data;
+	q->arr[q->tos++] = data;
 }
 
-static int Dequeue(Queue* q) {
-	if (q->front < 0) {
-		fprintf(stderr, "Queue Empty\n");
+static int StackPop(Stack* q) {
+	if (q->tos < 0) {
+		fprintf(stderr, "Stack Empty\n");
 		exit(1);
 	}
 
-	return q->arr[q->front--];
+	return q->arr[q->tos--];
 }
 
 
@@ -54,7 +54,6 @@ static void init_graph(GraphType* g) {
 		g->adj_list[v] = NULL;
 }
 
-/* ���� ���� */
 static void insert_vertex(GraphType* g, int v) {
 	if ((g->n) + 1 > MAX) {
 		fprintf(stderr, "Graph: Exceeds Vertex Size");
@@ -64,7 +63,6 @@ static void insert_vertex(GraphType* g, int v) {
 	g->n++;
 }
 
-/* ���� ���� */
 static void insert_edge(GraphType* g, int u, int v) {
 	if (u >= g->n || v >= g->n) {
 		fprintf(stderr, "Graph: Vertex Number Error");
@@ -74,13 +72,11 @@ static void insert_edge(GraphType* g, int u, int v) {
 	GraphNode* node = (GraphNode*)malloc(sizeof(GraphNode));
 	
 	if (node) {
-
 		node->vertex = v;
 		node->next = g->adj_list[u];
 		g->adj_list[u] = node;
 
 		/*
-
 		if (g->adj_list[u] == NULL) {
 			node->vertex = v;
 			node->next = g->adj_list[u];
@@ -96,7 +92,6 @@ static void insert_edge(GraphType* g, int u, int v) {
 
 			tmp->next = node;
 		}
-
 		*/
 	}
 
@@ -154,21 +149,21 @@ static void dfs_list(GraphType* g, int v, int visited[]) {
 }
 
 static void bfs_list(GraphType* g, int v, int visited[]) {
-	Queue* q = (Queue*)malloc(sizeof(Queue));
+	Stack* q = (Stack*)malloc(sizeof(Stack));
 	init_queue(q);
 
-	Enqueue(q, v);
+    StackPush(q, v);
 	visited[v] = 1;
 
 	while (!Empty(q)) {
-		int vt = Dequeue(q);
+		int vt = StackPop(q);
 
 		printf("%d -> ", vt);
 
 		GraphNode* tmp = g->adj_list[vt];
 		while (tmp) {
 			if (!visited[tmp->vertex]) {
-				Enqueue(q, tmp->vertex);
+                StackPush(q, tmp->vertex);
 				visited[tmp->vertex] = 1;
 			}
 

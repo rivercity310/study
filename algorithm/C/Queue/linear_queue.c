@@ -40,7 +40,7 @@ static int queue_is_empty(QueueType* q) {
 
 static void queue_Enqueue(QueueType* q, int data) {
 	if (queue_is_full(q)) {
-		error("Queue Full!");
+		error("Stack Full!");
 		return;
 	}
 
@@ -49,7 +49,7 @@ static void queue_Enqueue(QueueType* q, int data) {
 
 static int queue_Dequeue(QueueType* q) {
 	if (queue_is_empty(q)) {
-		error("Queue Empty!");
+		error("Stack Empty!");
 		return -1;
 	}
 
@@ -64,7 +64,7 @@ void linear_queue() {
 
 	int x;
 	while (1) {
-		printf("Enqueue: ");
+		printf("StackPush: ");
 		scanf("%d", &x);
 		if (x == -1) break;
 		queue_Enqueue(&q, x);
@@ -74,6 +74,6 @@ void linear_queue() {
 
 	while (!queue_is_empty(&q)) {
 		x = queue_Dequeue(&q);
-		printf("Dequeue: %d\n", x);
+		printf("StackPop: %d\n", x);
 	}
 }

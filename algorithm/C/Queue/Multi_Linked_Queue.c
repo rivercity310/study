@@ -65,7 +65,7 @@ static void terminate(LinkedQueueType q[], int size) {
 		QueueNode* tmp = q[i].front;
 		QueueNode* p = tmp;
 
-		printf("[ Queue(%d) �޸� ���� �۾� ���� ]\n", i);
+		printf("[ Stack(%d) �޸� ���� �۾� ���� ]\n", i);
 		while (tmp) {
 			tmp = p->next;
 			printf("%d ����\n", p->data);
@@ -83,7 +83,7 @@ void Multi_Linked_Queue_Test() {
 
 	for (int i = 0; i < MAX; i++) {
 		
-		printf("[ Queue(%d) push �۾��� �����մϴ�. ]\n", i);
+		printf("[ Stack(%d) push �۾��� �����մϴ�. ]\n", i);
 
 		push(q, 1, i);
 		push(q, 2, i);
@@ -95,7 +95,7 @@ void Multi_Linked_Queue_Test() {
 
 	for (int i = 0; i < MAX; i++) {
 		printf("q[%d] = %p\n", i, &q[i]);
-		printf("q[%d].front\n", i);
+		printf("q[%d].tos\n", i);
 		for (QueueNode* tmp = q[i].front; tmp; tmp = tmp->next)
 			printf("tmp->data = %d, data = %lu, tmp->next = %p, tmp->next = %p\n", tmp->data, &(tmp->data), tmp->next, &tmp->next);
 
@@ -107,8 +107,8 @@ void Multi_Linked_Queue_Test() {
 	
 	for (int i = 0; i < MAX; i++) {
 		
-		printf("[ Queue(%d) pop ]\n", i);
-		printf("q[%d] = %p, q[%d].front = %p\n", i, &q[i], i, q[i].front);
+		printf("[ Stack(%d) pop ]\n", i);
+		printf("q[%d] = %p, q[%d].tos = %p\n", i, &q[i], i, q[i].front);
 
 		putchar('\n');
 
