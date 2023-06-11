@@ -24,6 +24,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+static Stack stk;
+
 // 연산자 우선순위 반환
 static int prec(char op) {
     switch (op) {
@@ -42,8 +44,7 @@ static Boolean is_digit(char c) {
 }
 
 static char* infix_to_postfix(char* exp) {
-    Stack stk;
-    init_stack(&stk);
+    stack_init(&stk);
 
     int size = strlen(exp);
     char* postfix_exp = (char*)malloc(sizeof(char) * (size + 1));
@@ -61,7 +62,7 @@ static char* infix_to_postfix(char* exp) {
         // 연산자인 경우
         else if (c == '+' || c == '-' || c == '*' || c == '/') {
             // 스택의 top과 현재 연산자의 우선순위를 비교
-            while (!is_empty(&stk) && (prec(c) <= prec(peek(&stk)))) postfix_exp[idx++] = pop(&stk);
+            while (!stack_is_empty(&stk) && (prec(c) <= prec(stack_peek(&stk)))) postfix_exp[idx++] = pop(&stk);
             push(&stk, c);
         }
 
@@ -81,7 +82,7 @@ static char* infix_to_postfix(char* exp) {
     }
 
     // 스택에 남은 값들 모두 추가
-    while (!is_empty(&stk)) {
+    while (!stack_is_empty(&stk)) {
         postfix_exp[idx++] = pop(&stk);
     }
 
@@ -91,8 +92,7 @@ static char* infix_to_postfix(char* exp) {
 }
 
 static int eval(char* postfix) {
-    Stack stk;
-    init_stack(&stk);
+    stack_init(&stk);
 
     for (int i = 0; i < strlen(postfix); i++) {
         char c = *(postfix + i);
@@ -120,7 +120,9 @@ static int eval(char* postfix) {
 void stk2() {
     char* input = "9*(3/(5+4)-6)";
     char* postfix = infix_to_postfix(input);
+    terminate_stack(&stk);
 
     printf("%s\n", postfix);
     printf("후위 표기식 계산 결과: %d\n", eval(postfix));
+    terminate_stack(&stk);
 }

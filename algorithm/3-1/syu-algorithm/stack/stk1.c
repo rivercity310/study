@@ -18,7 +18,7 @@ static Boolean check_matching(Stack* stk, char* input) {
             break;
 
         case ')': case ']': case '}':
-            if (is_empty(stk)) {
+            if (stack_is_empty(stk)) {
                 return False;
             }
 
@@ -31,17 +31,19 @@ static Boolean check_matching(Stack* stk, char* input) {
         }
     }
 
-    if (!is_empty(stk)) return False;
+    if (!stack_is_empty(stk)) return False;
     return True;
 }
 
 void stk1() {
     Stack* stk;
-    init_stack(stk);
+    stack_init(stk);
 
     char* input = "{ A[(I+1)]=0;}";
     Boolean result = check_matching(stk, input);
 
     if (result) printf("정상 괄호 문자열\n");
     else printf("비정상 괄호 문자열\n");
+
+    terminate_stack(stk);
 }

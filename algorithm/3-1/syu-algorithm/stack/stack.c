@@ -6,44 +6,50 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void init_stack(Stack* stk) {
+void stack_init(Stack* stk) {
     stk->top = -1;
     stk->data = (char*)malloc(sizeof(char) * SIZE);
 }
 
-Boolean is_full(Stack* stk) {
+Boolean stack_is_full(Stack* stk) {
     if (stk->top == SIZE) return True;
     return False;
 }
 
-Boolean is_empty(Stack* stk) {
+Boolean stack_is_empty(Stack* stk) {
     if (stk->top == -1) return True;
     return False;
 }
 
 void push(Stack* stk, int x) {
-    if (is_full(stk)) {
-        fprintf(stderr, "Stack Full\n");
-        exit(0);
+    if (stack_is_full(stk)) {
+        stack_error("Stack Full!");
     }
 
     stk->data[++stk->top] = x;
 }
 
 int pop(Stack* stk) {
-    if (is_empty(stk)) {
-        fprintf(stderr, "Stack Empty!\n");
-        exit(0);
+    if (stack_is_empty(stk)) {
+        stack_error("Stack Empty!");
     }
 
     return stk->data[stk->top--];
 }
 
-int peek(Stack* stk) {
-    if (is_empty(stk)) {
-        fprintf(stderr, "Stack Empty!\n");
-        exit(0);
+int stack_peek(Stack* stk) {
+    if (stack_is_empty(stk)) {
+        stack_error("Stack Full!");
     }
 
     return stk->data[stk->top];
+}
+
+void stack_error(char* message) {
+    fprintf(stderr, "%s\n", message);
+    exit(0);
+}
+
+void terminate_stack(Stack* stk) {
+    free(stk->data);
 }
