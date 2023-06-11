@@ -2,6 +2,7 @@
 #define QUEUE
 #define RING_BUFFER
 #define TREE
+#define BST
 
 #ifdef STACK
 void stk1();
@@ -20,6 +21,10 @@ void rb1();
 void bt1();
 #endif
 
+#ifdef BST
+void bst1();
+#endif
+
 int main() {
-    bt1();
+    bst1();
 }

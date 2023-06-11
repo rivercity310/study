@@ -17,6 +17,7 @@ typedef struct bin_tree {
 } BinTree;
 
 BinTree* bt_create_node(BinTree* leftChild, BinTree* rightChild, element data);
+BinTree* create_sample_tree();
 void bt_terminate(BinTree* root);
 void bt_preorder(BinTree* root);
 void bt_inorder(BinTree* root);

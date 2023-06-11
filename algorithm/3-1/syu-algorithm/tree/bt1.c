@@ -5,17 +5,8 @@
 #include "bintree.h"
 #include <stdio.h>
 
-static BinTree* root;
-
 void bt1() {
-    BinTree *b, *c, *d, *e, *f;
-
-    d = bt_create_node(NULL, NULL, 'D');
-    e = bt_create_node(NULL, NULL, 'E');
-    f = bt_create_node(NULL, NULL, 'F');
-    b = bt_create_node(d, e, 'B');
-    c = bt_create_node(f, NULL, 'C');
-    root = bt_create_node(b, c, 'A');
+    BinTree* root = create_sample_tree();
 
     puts("[ 트리 전위순회 ]");
     bt_preorder(root);
