@@ -28,8 +28,9 @@ void bst1();
 
 #ifdef GRAPH
 void graph1();
+void graph2();
 #endif
 
 int main() {
-    graph1();
+    graph2();
 }
