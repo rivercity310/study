@@ -3,6 +3,7 @@
 #define RING_BUFFER
 #define TREE
 #define BST
+#define GRAPH
 
 #ifdef STACK
 void stk1();
@@ -25,6 +26,10 @@ void bt1();
 void bst1();
 #endif
 
+#ifdef GRAPH
+void graph1();
+#endif
+
 int main() {
-    bst1();
+    graph1();
 }
