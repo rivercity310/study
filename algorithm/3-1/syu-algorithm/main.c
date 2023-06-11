@@ -29,8 +29,9 @@ void bst1();
 #ifdef GRAPH
 void graph1();
 void graph2();
+void kruskal();
 #endif
 
 int main() {
-    graph2();
+    kruskal();
 }
